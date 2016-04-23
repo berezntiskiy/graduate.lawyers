@@ -18,6 +18,7 @@ export default class Root extends React.Component {
   }
 
   get devTools () {
+    return false;
     if (__DEBUG__) {
       if (__DEBUG_NEW_WINDOW__) {
         if (!window.devToolsExtension) {

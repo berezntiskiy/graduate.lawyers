@@ -9,8 +9,19 @@ import { Route, IndexRoute } from 'react-router'
 import CoreLayout from 'layouts/CoreLayout/CoreLayout'
 import HomeView from 'views/HomeView/HomeView'
 
+class Test extends React.Component {
+    render() {
+        return <div>
+            /test
+        </div>
+    }
+}
+
 export default (store) => (
   <Route path='/' component={CoreLayout}>
+      
+      <Route path="/test" compoent={Test} />
+      
     <IndexRoute component={HomeView} />
   </Route>
 )
