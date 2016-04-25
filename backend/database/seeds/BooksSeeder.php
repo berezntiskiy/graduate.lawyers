@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Book;
 
 class BooksSeeder extends Seeder
 {
@@ -26,7 +27,7 @@ class BooksSeeder extends Seeder
             $records[] = ['name' => 'Название книги '.$i, 'description' => 'Описание книги '.$i];
 
         foreach ($records as $record)
-            DB::table('books')->insert([
+            Book::create([
                 'name' => $record['name'],
                 'description' => $record['description']
             ]);

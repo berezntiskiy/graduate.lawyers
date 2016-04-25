@@ -12,13 +12,40 @@ class CreateStaff extends Migration
      */
     public function up()
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('staff', function(Blueprint $table)
+        {
             $table->increments('id');
-            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->softDeletes();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->foreign('created_by')->references('id')->on('staff');
+            $table->integer('updated_by')->unsigned()->nullable();
+            $table->foreign('updated_by')->references('id')->on('staff');
+            $table->integer('deleted_by')->unsigned()->nullable();
+            $table->foreign('deleted_by')->references('id')->on('staff');
+        });
+
+        Schema::create('staff_translations', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->integer('staff_id')->unsigned();
+            $table->string('name');
+            $table->string('locale')->index();
+
+            $table->unique(['staff_id','locale']);
+            $table->foreign('staff_id')->references('id')->on('staff')->onDelete('cascade');
+
+            $table->softDeletes();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->foreign('created_by')->references('id')->on('staff');
+            $table->integer('updated_by')->unsigned()->nullable();
+            $table->foreign('updated_by')->references('id')->on('staff');
+            $table->integer('deleted_by')->unsigned()->nullable();
+            $table->foreign('deleted_by')->references('id')->on('staff');
         });
     }
 
@@ -30,6 +57,7 @@ class CreateStaff extends Migration
     public function down()
     {
         Schema::drop('staff');
+        Schema::drop('staff_translations');
     }
 }
 

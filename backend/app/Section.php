@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Staff extends Entity
+class Section extends Entity
 {
     use SoftDeletes;
     use \Dimsav\Translatable\Translatable;
 
-    protected $table = 'staff';
+    protected $table = 'sections';
 
-    public $translatedAttributes = ['name'];
+    public $translatedAttributes = ['name', 'description'];
 }
-
