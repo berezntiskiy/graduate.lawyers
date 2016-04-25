@@ -3,10 +3,11 @@ import thunk from 'redux-thunk'
 import rootReducer from './rootReducer'
 import { routerMiddleware } from 'react-router-redux'
 import { apiMiddleware } from 'redux-api-middleware/lib/middleware'
+import API from './middleware/api'
 
 export default function configureStore (initialState = {}, history) {
   // Compose final middleware and use devtools in debug environment
-  let middleware = applyMiddleware(thunk, apiMiddleware, routerMiddleware(history))
+  let middleware = applyMiddleware(thunk, API, apiMiddleware, routerMiddleware(history))
   if (__DEBUG__) {
     const devTools = window.devToolsExtension
       ? window.devToolsExtension()

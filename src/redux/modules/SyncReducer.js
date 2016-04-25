@@ -4,6 +4,18 @@
 // ------------------------------------
 export const COUNTER_INCREMENT = 'COUNTER_INCREMENT'
 
+
+const SyncStatuses = {
+  // r
+};
+
+interface IData {
+  // status:
+}
+
+
+
+
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -34,7 +46,7 @@ export const doubleAsync = (): Function => {
       }, 200)
     })
   }
-};
+}
 
 export const actions = {
   increment,

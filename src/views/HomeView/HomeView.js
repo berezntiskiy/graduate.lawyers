@@ -4,6 +4,9 @@ import {connect} from 'react-redux'
 import {increment, doubleAsync} from '../../redux/modules/counter'
 import classes from './HomeView.scss'
 
+
+import {fetchAll} from '../../redux/modules/books'
+
 // We can use Flow (http://flowtype.org/) to type our component's props
 // and state. For convenience we've included both regular propTypes and
 // Flow types, but if you want to try just using Flow you'll want to
@@ -24,7 +27,10 @@ export class HomeView extends React.Component<void, Props, void> {
     static propTypes = {
         counter: PropTypes.number.isRequired,
         doubleAsync: PropTypes.func.isRequired,
-        increment: PropTypes.func.isRequired
+        fetchAll: PropTypes.func.isRequired,
+        increment: PropTypes.func.isRequired,
+        books: PropTypes.object,
+        state: PropTypes.object,
     };
 
     render() {
@@ -42,6 +48,10 @@ export class HomeView extends React.Component<void, Props, void> {
                     {' '}
                     <span className={classes['counter--green']}>{this.props.counter}</span>
                 </h2>
+                <button onClick={this.props.fetchAll}>FETCH BOOKS</button>
+                <pre>{JSON.stringify(this.props.books, null, 2) }</pre>
+                <hr/>
+                <pre>{JSON.stringify(this.props.state, null, 2) }</pre>
                 <button className='btn btn-default' onClick={this.props.increment}>
                     Increment
                 </button>
@@ -55,9 +65,12 @@ export class HomeView extends React.Component<void, Props, void> {
 }
 
 const mapStateToProps = (state) => ({
-    counter: state.counter
+    counter: state.counter,
+    books: state.books,
+    state: state
 })
 export default connect((mapStateToProps), {
+    fetchAll,
     increment: () => increment(1),
     doubleAsync
 })(HomeView)
