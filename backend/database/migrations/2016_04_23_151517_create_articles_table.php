@@ -16,8 +16,10 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('title')->index();
             $table->mediumText('text');
-            $table->integer('articles_id');
             $table->timestamps();
+
+            $table->integer('chapter_id')->unsigned();
+            $table->foreign('chapter_id')->references('id')->on('chapters');
         });
     }
 

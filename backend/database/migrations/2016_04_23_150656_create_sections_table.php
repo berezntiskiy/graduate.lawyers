@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGlaviTable extends Migration
+class CreateSectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateGlaviTable extends Migration
      */
     public function up()
     {
-        Schema::create('glavi', function (Blueprint $table) {
+        Schema::create('sections', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->index();
             $table->string('description')->nullable();
-            $table->integer('razdel_id');
             $table->timestamps();
+
+            $table->integer('book_id')->unsigned();
+            $table->foreign('book_id')->references('id')->on('books');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateGlaviTable extends Migration
      */
     public function down()
     {
-        Schema::drop('glavi');
+        Schema::drop('sections');
     }
 }

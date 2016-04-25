@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRazdelTable extends Migration
+class CreateChaptersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateRazdelTable extends Migration
      */
     public function up()
     {
-        Schema::create('razdeli', function (Blueprint $table) {
+        Schema::create('chapters', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->index();
+            $table->string('name');
             $table->string('description')->nullable();
-            $table->integer('book_id');
             $table->timestamps();
 
-//            $table->foreign('book_id', 'books.id');
+            $table->integer('section_id')->unsigned();
+            $table->foreign('section_id')->references('id')->on('sections');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateRazdelTable extends Migration
      */
     public function down()
     {
-        Schema::drop('razdeli');
+        Schema::drop('chapters');
     }
 }
