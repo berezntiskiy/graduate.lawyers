@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/api/book', 'BooksController');
+Route::resource('/api/chapter', 'ChaptersController');
+Route::resource('/api/section', 'SectionsController');
+Route::resource('/api/article', 'ArticlesController');
+Route::resource('/api/staff', 'StaffController');

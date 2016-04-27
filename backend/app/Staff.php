@@ -10,6 +10,7 @@ class Staff extends Entity
     use \Dimsav\Translatable\Translatable;
 
     protected $table = 'staff';
+    protected $hidden = ['password', 'email', 'remember_token'];
 
     public $translatedAttributes = ['name'];
 }

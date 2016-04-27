@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class StaffTranslation extends Entity
 {
     use SoftDeletes;
-    protected $table = 'book_translations';
+    protected $table = 'staff_translations';
 
     public $timestamps = false;
     protected $fillable = ['name', 'description'];

@@ -15,13 +15,13 @@ class StaffSeeder extends Seeder
         $records = [
             ['login' => 'admin', 'name' => 'Админ Админович'],
             ['login' => 'karl', 'name' => 'Бэр, Карл Эрнст фон'],
-            ['login' => 'morphius', 'name' => 'Лоуренсом Фишберном']
+            ['login' => 'morphius', 'name' => 'Лоренс Фишбёрн']
         ];
         foreach ($records as $record)
-            DB::table('staff')->insert([
+            \App\Staff::create([
 //                'login' => $record['login'],
                 'name' => $record['name'],
-                'email' => $record['name'] . '@gmail.com',
+                'email' => $record['login'] . '@gmail.com',
                 'password' => Hash::make('123'),
             ]);
     }

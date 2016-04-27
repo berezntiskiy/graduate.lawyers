@@ -1,5 +1,6 @@
 <?php
 
+use App\Section;
 use Illuminate\Database\Seeder;
 
 class SectionsSeeder extends Seeder
@@ -26,7 +27,7 @@ class SectionsSeeder extends Seeder
             $records[] = ['name' => 'Название раздела '.$i, 'description' => 'Описание раздела '.$i];
 
         foreach ($records as $record)
-            DB::table('sections')->insert([
+            Section::create([
                 'name' => $record['name'],
                 'description' => $record['description'],
                 'book_id' => rand(1,3)
