@@ -38,20 +38,18 @@ export class HomeView extends React.Component<void, Props, void> {
             <div className='container text-center'>
                 <div className='row'>
                     <div className='col-xs-2 col-xs-offset-5'>
-                        <img className={classes.duck}
-                             alt='This is a duck, because Redux.'/>
                     </div>
                 </div>
-                <h1>Welcome to the React Redux Starter Kit</h1>
+                <h1>pocketLawyer</h1>
                 <h2>
                     Sample Counter:
                     {' '}
                     <span className={classes['counter--green']}>{this.props.counter}</span>
                 </h2>
                 <button onClick={this.props.fetchAll}>FETCH BOOKS</button>
-                <pre>{JSON.stringify(this.props.books, null, 2) }</pre>
+                <pre style={{textAlign: 'left'}}>{JSON.stringify(this.props.books, null, 2) }</pre>
                 <hr/>
-                <pre>{JSON.stringify(this.props.state, null, 2) }</pre>
+                <pre style={{textAlign: 'left'}}>{JSON.stringify(this.props.state, null, 2) }</pre>
                 <button className='btn btn-default' onClick={this.props.increment}>
                     Increment
                 </button>
