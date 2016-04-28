@@ -16,23 +16,23 @@ class CrudController extends Controller
         return $model::all();
     }
 
-    function create() {
-
-    }
-
     function store() {
-
+        $model = $this->model;
+        return $model::create(Input::all());
     }
 
-    function show() {
-
+    function show($id) {
+        $model = $this->model;
+        return $model::find($id);
     }
 
     function update() {
-
+        $model = $this->model;
+        return $model::save(Input::all());
     }
 
-    function destroy() {
-
+    function destroy($id) {
+        $model = $this->model;
+        return $model::destroy($id);
     }
 }
