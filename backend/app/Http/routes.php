@@ -20,5 +20,5 @@ Route::resource('/api/chapter', 'ChaptersController');
 Route::resource('/api/section', 'SectionsController');
 Route::resource('/api/article', 'ArticlesController');
 Route::resource('/api/staff', 'StaffController');
-
 Route::resource('/api/service', 'ServicesController');
+Route::resource('/api/price', 'PricesController');
