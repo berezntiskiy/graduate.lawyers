@@ -15,8 +15,8 @@ function CoreLayout({children}) {
     return (
         <div className='page-container'>
             <HeaderMenu/>
-            <div className='view-container'>
-                
+            <br/><br/>{/* todo */}
+            <div className='view-container container'>
                 {children}
             </div>
         </div>
@@ -25,6 +25,6 @@ function CoreLayout({children}) {
 
 CoreLayout.propTypes = {
     children: PropTypes.element
-}
+};
 
 export default CoreLayout
