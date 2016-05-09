@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "laravel/homestead": "^3.0",
+        "laravel/homestead": "^2.0",
         "dimsav/laravel-translatable": "5.5.*",
         "sleeping-owl/admin": "2.*"
     },

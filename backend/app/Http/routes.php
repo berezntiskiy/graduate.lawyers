@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//sleep(1);
 Route::resource('/api/book', 'BooksController');
 Route::resource('/api/chapter', 'ChaptersController');
 Route::resource('/api/section', 'SectionsController');
