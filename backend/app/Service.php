@@ -13,6 +13,6 @@ class Service extends Entity
     protected $hidden = [];
 
     public $translatedAttributes = ['title', 'text'];
-    protected $fillable = ['naturalperson'];
+    protected $fillable = ['title', 'text', 'naturalperson'];
 }
 

@@ -11,9 +11,9 @@ return [
     |
     */
     'locales' => [
+        'en',
         'ru',
         'md',
-        'en',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     | you can specify what default should be used here.
     |
     */
-    'locale' => 'ru',
+    'locale' => null,
 
     /*
     |--------------------------------------------------------------------------

@@ -3,13 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Dimsav\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Book extends Entity
+class Book extends Eloquent
 {
     use SoftDeletes;
-    use \Dimsav\Translatable\Translatable;
+    use Translatable;
 
-    protected $table = 'books';
+    public $table = 'books';
 
+    protected $fillable = ['name', 'description'];
     public $translatedAttributes = ['name', 'description'];
 }

@@ -10,5 +10,6 @@ class BookTranslation extends Entity
     protected $table = 'book_translations';
 
     public $timestamps = false;
-    protected $fillable = ['name', 'description'];
+
+    public $fillable = array('name','description');
 }

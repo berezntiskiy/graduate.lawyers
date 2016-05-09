@@ -11,5 +11,6 @@ class Chapter extends Entity
 
     protected $table = 'chapters';
 
+    protected $fillable = ['name', 'description', 'section_id'];
     public $translatedAttributes = ['name', 'description'];
 }

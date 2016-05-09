@@ -11,6 +11,7 @@ class Section extends Entity
 
     protected $table = 'sections';
 
+    protected $fillable = ['name', 'book_id', 'description'];
     public $translatedAttributes = ['name', 'description'];
 
 //    function book() {

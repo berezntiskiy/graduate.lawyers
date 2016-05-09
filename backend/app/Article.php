@@ -11,5 +11,6 @@ class Article extends Entity
 
     protected $table = 'articles';
 
+    protected $fillable = ['title', 'text', 'chapter_id'];
     public $translatedAttributes = ['title', 'text'];
 }

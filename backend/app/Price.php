@@ -12,7 +12,7 @@ class Price extends Entity
     protected $table = 'prices';
     protected $hidden = [];
 
+    protected $fillable = ['price_min', 'price_max', 'title', 'text'];
     public $translatedAttributes = ['title', 'text'];
-    protected $fillable = ['price_min', 'price_max'];
 }
 
