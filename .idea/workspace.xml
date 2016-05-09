@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e1eaa00f-f6a5-4d01-af57-eb7769959a56" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/.env.example" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/.gitattributes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/Vagrantfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Article.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/ArticleTranslation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Book.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/BookTranslation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Chapter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/ChapterTranslation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Console/Commands/Inspire.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Console/Kernel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Entity.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Events/Event.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Exceptions/Handler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/ArticlesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/Auth/AuthController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/Auth/PasswordController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/BooksController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/ChaptersController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/CrudController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/PricesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/SectionsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/ServicesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Controllers/StaffController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Kernel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Middleware/Authenticate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Middleware/EncryptCookies.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Middleware/VerifyCsrfToken.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/Requests/Request.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Http/routes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Jobs/Job.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Listeners/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Policies/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Price.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/PriceTranslation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Providers/AppServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Providers/AuthServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Providers/EventServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Providers/RouteServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Section.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/SectionTranslation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Service.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/ServiceTranslation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/Staff.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/StaffTranslation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/app/User.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/artisan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/bootstrap/app.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/bootstrap/autoload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/bootstrap/cache/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/cleanMigrate.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/composer.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/app.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/auth.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/broadcasting.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/compile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/filesystems.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/mail.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/queue.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/services.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/session.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/translatable.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/config/view.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/factories/ModelFactory.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2016_04_21_210804_create_staff.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2016_04_21_212755_create_books.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2016_04_23_150656_create_sections_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2016_04_23_151033_create_chapters_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2016_04_23_151517_create_articles_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2016_04_27_231316_create_services_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/migrations/2016_04_28_114649_create_prices_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/ArticlesSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/BooksSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/ChaptersSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/DatabaseSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/PricesSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/SectionsSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/ServicesSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/database/seeds/StaffSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/gulpfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/phpunit.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/public/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/public/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/public/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/public/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/public/web.config" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resetDatabase.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/assets/sass/app.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/lang/en/auth.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/lang/en/pagination.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/lang/en/passwords.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/lang/en/validation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/views/errors/503.blade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/views/vendor/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/resources/views/welcome.blade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/server.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/storage/app/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/storage/app/public/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/storage/framework/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/storage/framework/cache/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/storage/framework/sessions/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/storage/framework/views/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/storage/logs/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/tests/ExampleTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend.old/tests/TestCase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.babelrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.eslintignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.eslintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.flowconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.reduxrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/bin/compile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/bin/flow-check.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/bin/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/.eslintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/blueprint/files/blueprints/__name__/files/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/blueprint/files/blueprints/__name__/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/blueprint/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/duck/files/__root__/redux/modules/__name__.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/duck/files/__test__/redux/modules/__name__.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/duck/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/dumb/files/__root__/components/__name__/__name__.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/dumb/files/__test__/components/__name__.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/dumb/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/form/files/__root__/forms/__name__Form/__name__Form.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/form/files/__root__/forms/__name__Form/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/form/files/__test__/forms/__name__Form.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/form/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/layout/files/__root__/layouts/__name__Layout/__name__Layout.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/layout/files/__root__/layouts/__name__Layout/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/layout/files/__test__/layouts/__name__Layout.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/layout/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/smart/files/__root__/containers/__name__.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/smart/files/__test__/containers/__name__.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/smart/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/view/files/__root__/views/__name__View/__name__View.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/view/files/__root__/views/__name__View/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/view/files/__test__/views/__name__View.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/blueprints/view/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/build/karma.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/build/webpack-compiler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/build/webpack.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/config/_base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/config/_development.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/config/_production.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/config/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/interfaces/image.d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/interfaces/webpack-globals.d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/jsconfig.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/node-server/lib/apply-express-middleware.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/node-server/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/node-server/middleware/webpack-dev.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/node-server/middleware/webpack-hmr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/nodemon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/components/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/components/Prices/PriceItem/Prices/PriceItem.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/components/Services/ServiceItem/Services/ServiceItem.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/DevTools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/DevToolsWindow.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/Header/Menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/Home/HomePage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/Root.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/Services/NaturalSwitcher.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/Services/ServiceList.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/Services/Services.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/containers/Support/consultants.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/layouts/CoreLayout/CoreLayout.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/layouts/CoreLayout/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/models/Book.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/models/Books.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/models/Collection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/models/Model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/config/services.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/configureStore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/middleware/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/modules/books.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/modules/counter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/modules/services.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/rootReducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/redux/utils/createDevToolsWindow.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/routes/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/static/consultants.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/static/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/static/humans.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/static/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/styles/_base.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/styles/core.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/styles/vendor/_normalize.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/AboutView/AboutView.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/AboutView/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/ArticlesView/ArticlesView.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/ArticlesView/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/ContactsView/ContactsView.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/ContactsView/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/HomeView/Duck.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/HomeView/HomeView.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/HomeView/HomeView.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/HomeView/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/PricesView/PricesView.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/PricesView/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/ServicesView/ServicesView.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/src/views/ServicesView/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/.eslintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/components/Header/MenuLink.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/components/Prices/PriceItem.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/components/Services/ServiceItem.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Header/Menu.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Home.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Home/HomePage.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Services.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Services/NaturalSwitcher.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Services/ServiceItem.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Services/ServiceList.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Services/Services.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/containers/Support/consultants.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/framework.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/layouts/CoreLayout.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/redux/modules/counter.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/test-bundler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/About/AboutView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/AboutView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/Articles/ArticlesView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/ArticlesView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/AsdView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/Contacts/ContactsView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/ContactsView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/HomeView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/Price/PriceView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/Prices/PricesView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/PricesView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend.old/tests/views/ServicesView.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/redux/modules/SyncReducer.js" afterPath="" />
+    </list>
+    <list id="c58262d2-6361-4ef4-abeb-21babadca017" name="New changelist" comment="" />
+    <ignored path="microLawyer.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="microLawyer" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/home/x-large/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/home/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/home/home.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/about/about.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding>
+                <marker date="1462763721000" expanded="true" signature="492:571" placeholder="..." />
+                <marker date="1462763721000" expanded="true" signature="583:646" placeholder="..." />
+                <marker date="1462763721000" expanded="true" signature="592:633" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.e2e.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/app.e2e.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#479#1091#0" expanded="false" />
+                <marker date="1462763721000" expanded="true" signature="1122:1970" placeholder="..." />
+                <marker date="1462763721000" expanded="true" signature="1157:1570" placeholder="..." />
+                <marker date="1462763721000" expanded="true" signature="1298:1336" placeholder="..." />
+                <marker date="1462763721000" expanded="true" signature="1405:1442" placeholder="..." />
+                <marker date="1462763721000" expanded="true" signature="1512:1550" placeholder="..." />
+                <marker date="1462763721000" expanded="true" signature="1813:1950" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/home/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="x-large.directive.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/home/x-large/x-large.directive.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/containers/Services/Services.js" />
+        <option value="$PROJECT_DIR$/src/redux/rootReducer.js" />
+        <option value="$PROJECT_DIR$/src/containers/Home/HomePage.js" />
+        <option value="$PROJECT_DIR$/node_modules/react/lib/ReactComponent.js" />
+        <option value="$PROJECT_DIR$/src/containers/Services/ServiceItem.js" />
+        <option value="$PROJECT_DIR$/src/layouts/CoreLayout/CoreLayout.js" />
+        <option value="$PROJECT_DIR$/src/views/ServicesView/ServicesView.js" />
+        <option value="$PROJECT_DIR$/src/containers/Services/NaturalSwitcher.js" />
+        <option value="$PROJECT_DIR$/src/redux/modules/services.js" />
+        <option value="$PROJECT_DIR$/src/components/Services/ServiceItem/Services/ServiceItem.js" />
+        <option value="$PROJECT_DIR$/src/containers/Services/ServiceList.js" />
+        <option value="$PROJECT_DIR$/src/views/ArticlesView/ArticlesView.js" />
+        <option value="$PROJECT_DIR$/src/routes/index.js" />
+        <option value="$PROJECT_DIR$/src/views/HomeView/HomeView.js" />
+        <option value="$PROJECT_DIR$/backend/database/migrations/2016_04_28_114649_create_prices_table.php" />
+        <option value="$PROJECT_DIR$/backend/app/PriceTranslation.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/PricesController.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/SectionsController.php" />
+        <option value="$PROJECT_DIR$/backend/database/seeds/PricesSeeder.php" />
+        <option value="$PROJECT_DIR$/src/views/PricesView/PricesView.js" />
+        <option value="$PROJECT_DIR$/src/components/Prices/PriceItem/Prices/PriceItem.js" />
+        <option value="$PROJECT_DIR$/src/views/AboutView/AboutView.js" />
+        <option value="$PROJECT_DIR$/src/views/ContactsView/ContactsView.js" />
+        <option value="$PROJECT_DIR$/src/redux/config/services.js" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/CrudController.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Middleware/ErrorsToJSON.php" />
+        <option value="$PROJECT_DIR$/backend/app/Exceptions/Handler.php" />
+        <option value="$PROJECT_DIR$/src/redux/modules/books.js" />
+        <option value="$PROJECT_DIR$/src/redux/middleware/api.js" />
+        <option value="$PROJECT_DIR$/src/models/Books.js" />
+        <option value="$PROJECT_DIR$/src/models/Book.js" />
+        <option value="$PROJECT_DIR$/src/models/Model.js" />
+        <option value="$PROJECT_DIR$/backend/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/backend/app/BookTranslation.php" />
+        <option value="$PROJECT_DIR$/backend.old/config/translatable.php" />
+        <option value="$PROJECT_DIR$/backend/config/app.php" />
+        <option value="$PROJECT_DIR$/backend/vendor/dimsav/laravel-translatable/src/Translatable/Translatable.php" />
+        <option value="$PROJECT_DIR$/backend/database/seeds/BooksSeeder.php" />
+        <option value="$PROJECT_DIR$/backend/app/Entity.php" />
+        <option value="$PROJECT_DIR$/backend/config/translatable.php" />
+        <option value="$PROJECT_DIR$/backend/composer.json" />
+        <option value="$PROJECT_DIR$/backend/app/Book.php" />
+        <option value="$PROJECT_DIR$/backend/app/Price.php" />
+        <option value="$PROJECT_DIR$/backend/app/Service.php" />
+        <option value="$PROJECT_DIR$/backend/app/Section.php" />
+        <option value="$PROJECT_DIR$/backend/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/backend/app/Staff.php" />
+        <option value="$PROJECT_DIR$/backend/app/Chapter.php" />
+        <option value="$PROJECT_DIR$/backend/app/Article.php" />
+        <option value="$PROJECT_DIR$/frontend/src/app/home/x-large/x-large.directive.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/home/home.component.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true">
+    <package-json value="$PROJECT_DIR$/frontend/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="617" />
+      <selected-paths>
+        <path>
+          <id value="$PROJECT_DIR$/frontend/package.json" />
+        </path>
+      </selected-paths>
+    </layout>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="553" />
+    <option name="y" value="23" />
+    <option name="width" value="1367" />
+    <option name="height" value="1173" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches">
+        <subPane />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="packa&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend.old/package.json&#10;articl&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Article.php&#10;staff.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Staff.php&#10;seed.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/database/seeds/DatabaseSeeder.php&#10;boo.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Book.php&#10;books&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/database/seeds/BooksSeeder.php&#10;composer.json&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;boo&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Book.php&#10;app&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/app.php&#10;databa&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/database/seeds/DatabaseSeeder.php&#10;app.p&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/app.php&#10;dimsav/laravel-translatable/&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/dimsav/laravel-translatable&#10;prices.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/database/migrations/2016_04_28_114649_create_prices_table.php&#10;CreateUsersTable&#9;null&#9;null&#10;composer.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;backend/&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend&#10;app/Exceptions/Handler.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Exceptions/Handler.php&#10;contact.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/views/ContactsView/ContactsView.js&#10;about&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/views/AboutView/AboutView.js&#10;contact.js&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/views/ContactsView/ContactsView.js&#10;books,&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/redux/modules/books.js&#10;webpack.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/build/webpack.config.js&#10;priceIte&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/components/Prices/PriceItem/Prices/PriceItem.js&#10;crudco&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/CrudController.php&#10;seeder&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/database/seeds/PricesSeeder.php&#10;priceview&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/views/PricesView/PricesView.js&#10;section.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/database/migrations/2016_04_23_150656_create_sections_table.php&#10;routes.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;home&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/containers/Home/HomePage.js&#10;ContactsView&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/views/ContactsView/ContactsView.js&#10;route/index.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/routes/index.js&#10;prices/&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/views/Prices&#10;service.js&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/redux/modules/services.js&#10;NaturalSwitcher&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/containers/Services/NaturalSwitcher.js&#10;layout.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/layouts/CoreLayout/CoreLayout.js&#10;ServicesServiceItem&#9;null&#9;null&#10;servicelist&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/containers/Services/ServiceList.js&#10;naturals&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/containers/Services/NaturalSwitcher.js&#10;contai/service&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/containers/Services/Services.js&#10;route.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;config/tra&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/translatable.php&#10;staffsee&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/database/seeds/StaffSeeder.php&#10;routes&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;articletran&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/ArticleTranslation.php&#10;database.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/database.php&#10;book.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Book.php&#10;app.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/app.php&#10;php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/BooksController.php&#10;root&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/src/redux/rootReducer.js&#10;combineRe&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/node_modules/redux/src/combineReducers.js" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
+    <property name="typescript-compiler-editor-notification" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend.old" />
+      <recent name="$PROJECT_DIR$/backend/database" />
+      <recent name="$PROJECT_DIR$/backend/database/factories" />
+      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/backend/untitled folder" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/database/migrations" />
+      <recent name="$PROJECT_DIR$/backend/database" />
+      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/backend/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/backend/app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1eaa00f-f6a5-4d01-af57-eb7769959a56" name="Default" comment="" />
+      <changelist id="c58262d2-6361-4ef4-abeb-21babadca017" name="New changelist" comment="" />
+      <created>1460301947377</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1460301947377</updated>
+      <workItem from="1460301948538" duration="3975000" />
+      <workItem from="1460748104722" duration="11315000" />
+      <workItem from="1460917609635" duration="5387000" />
+      <workItem from="1461180722393" duration="6207000" />
+      <workItem from="1461270441455" duration="16000" />
+      <workItem from="1461270461490" duration="4426000" />
+      <workItem from="1461307543830" duration="505000" />
+      <workItem from="1461423399999" duration="4386000" />
+      <workItem from="1461429085810" duration="77000" />
+      <workItem from="1461515145377" duration="969000" />
+      <workItem from="1461589467890" duration="19714000" />
+      <workItem from="1461703743299" duration="1402000" />
+      <workItem from="1461712938873" duration="4207000" />
+      <workItem from="1461792672936" duration="31523000" />
+      <workItem from="1462651807591" duration="26436000" />
+      <workItem from="1462765353503" duration="335000" />
+    </task>
+    <task id="LOCAL-00001" summary="HomeView: reformat">
+      <created>1460896825467</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1460896825467</updated>
+    </task>
+    <task id="LOCAL-00002" summary="backend: добавлены миграции и сидеры">
+      <created>1461427255233</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1461427255233</updated>
+    </task>
+    <task id="LOCAL-00003" summary="server-&gt;node-server">
+      <created>1461427324501</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1461427324501</updated>
+    </task>
+    <task id="LOCAL-00004" summary="server-&gt;node-server&#10;">
+      <created>1461427373441</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1461427373441</updated>
+    </task>
+    <task id="LOCAL-00005" summary="наброски лэйаута">
+      <created>1461427417499</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1461427417499</updated>
+    </task>
+    <task id="LOCAL-00006" summary="наброски лэйаута">
+      <created>1461427516231</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1461427516231</updated>
+    </task>
+    <task id="LOCAL-00007" summary="набросок апи и мидлвары">
+      <created>1461606051507</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1461606051507</updated>
+    </task>
+    <task id="LOCAL-00008" summary="набросок апи и мидлвары&#10;">
+      <created>1461606085396</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1461606085396</updated>
+    </task>
+    <task id="LOCAL-00009" summary="миграции и сидеры">
+      <created>1461611511522</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1461611511523</updated>
+    </task>
+    <task id="LOCAL-00010" summary="translatable: переписал меграции под нее, добавил недостающие модели">
+      <created>1461617218618</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1461617218618</updated>
+    </task>
+    <task id="LOCAL-00011" summary="сидеры, перевод стафф, контроллеры">
+      <created>1461798135992</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1461798135992</updated>
+    </task>
+    <task id="LOCAL-00012" summary="сервисы: миграция, модель, контроллер, сидер">
+      <created>1461800178200</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1461800178200</updated>
+    </task>
+    <task id="LOCAL-00013" summary="сервисы: миграция, модель, контроллер, сидер">
+      <created>1461800310875</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1461800310875</updated>
+    </task>
+    <task id="LOCAL-00014" summary="сервисы: пачка изменений для рабочего списка">
+      <created>1461834161098</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1461834161098</updated>
+    </task>
+    <task id="LOCAL-00015" summary="пачка пустых шаблонов">
+      <created>1461835664027</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1461835664027</updated>
+    </task>
+    <task id="LOCAL-00016" summary="удалил остатки от lumen">
+      <created>1461844803794</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1461844803794</updated>
+    </task>
+    <task id="LOCAL-00017" summary="prices: миграция, сидер и пр">
+      <created>1461844842005</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1461844842005</updated>
+    </task>
+    <task id="LOCAL-00018" summary="добавил в контроллер CRUD операции">
+      <created>1461845168948</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1461845168948</updated>
+    </task>
+    <task id="LOCAL-00019" summary="before downgrade to 5.1">
+      <created>1462757796173</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1462757796173</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="120880000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="553" y="23" width="1367" height="1173" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.55411655" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.44588345" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32747456" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1813136" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38205364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265495" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23497757" sideWeight="0.43796712" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18190213" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38227147" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23497757" sideWeight="0.5620329" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="HomeView: reformat" />
+    <MESSAGE value="backend: добавлены миграции и сидеры" />
+    <MESSAGE value="server-&gt;node-server" />
+    <MESSAGE value="server-&gt;node-server&#10;" />
+    <MESSAGE value="наброски лэйаута" />
+    <MESSAGE value="набросок апи и мидлвары" />
+    <MESSAGE value="набросок апи и мидлвары&#10;" />
+    <MESSAGE value="миграции и сидеры" />
+    <MESSAGE value="translatable: переписал меграции под нее, добавил недостающие модели" />
+    <MESSAGE value="сидеры, перевод стафф, контроллеры" />
+    <MESSAGE value="сервисы: миграция, модель, контроллер, сидер" />
+    <MESSAGE value="сервисы: пачка изменений для рабочего списка" />
+    <MESSAGE value="пачка пустых шаблонов" />
+    <MESSAGE value="удалил остатки от lumen" />
+    <MESSAGE value="prices: миграция, сидер и пр" />
+    <MESSAGE value="добавил в контроллер CRUD операции" />
+    <MESSAGE value="before downgrade to 5.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="before downgrade to 5.1" />
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/backend_old/app/Http/Controllers/CrudController.php" />
+    <entry file="file://$PROJECT_DIR$/backend_old/app/Exceptions/Handler.php" />
+    <entry file="file://$PROJECT_DIR$/frontend.old/src/redux/middleware/api.js" />
+    <entry file="file://$PROJECT_DIR$/backend.old/Homestead.yaml" />
+    <entry file="file://$PROJECT_DIR$/backend.old/composer.json" />
+    <entry file="file://$PROJECT_DIR$/backend.old/app/User.php" />
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ArticlesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend.old/app/Http/routes.php" />
+    <entry file="file://$PROJECT_DIR$/backend/Vagrantfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/Homestead.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resetDatabase.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/migrations/2016_04_28_114649_create_prices_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/seeds/PricesSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/seeds/BooksSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Entity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/BookTranslation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1651">
+          <caret line="2569" column="64" selection-start-line="2569" selection-start-column="62" selection-end-line="2569" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/dimsav/laravel-translatable/src/Translatable/Translatable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend.old/config/translatable.php" />
+    <entry file="file://$PROJECT_DIR$/backend/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Section.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Price.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/translatable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="93" column="53" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Service.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Chapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/seeds/StaffSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend.old/package.json" />
+    <entry file="file://$PROJECT_DIR$/frontend/config/webpack.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/home/x-large/x-large.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/home/x-large/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/home/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/about/about.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <marker date="1462763721000" expanded="true" signature="492:571" placeholder="..." />
+            <marker date="1462763721000" expanded="true" signature="583:646" placeholder="..." />
+            <marker date="1462763721000" expanded="true" signature="592:633" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.e2e.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#479#1091#0" expanded="false" />
+            <marker date="1462763721000" expanded="true" signature="1122:1970" placeholder="..." />
+            <marker date="1462763721000" expanded="true" signature="1157:1570" placeholder="..." />
+            <marker date="1462763721000" expanded="true" signature="1298:1336" placeholder="..." />
+            <marker date="1462763721000" expanded="true" signature="1405:1442" placeholder="..." />
+            <marker date="1462763721000" expanded="true" signature="1512:1550" placeholder="..." />
+            <marker date="1462763721000" expanded="true" signature="1813:1950" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
