@@ -15,14 +15,14 @@ class PricesSeeder extends Seeder
             [
                 'price_min' => 1000,
                 'price_max' => 2500,
-                'title' => 'услуга 1',
-                'text' => 'описание услуги 1'
+                'title' => 'Услуга 1',
+                'text' => 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.'
             ],
             [
                 'price_min' => 5000,
                 'price_max' => 7500,
-                'title' => 'услуга 2',
-                'text' => 'описание услуги 2'
+                'title' => 'Услуга 2',
+                'text' => 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.'
             ],
 
         ];

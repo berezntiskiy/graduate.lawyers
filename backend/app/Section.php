@@ -12,4 +12,8 @@ class Section extends Entity
     protected $table = 'sections';
 
     public $translatedAttributes = ['name', 'description'];
+
+//    function book() {
+//        return $this->hasOne(Book::class);
+//    }
 }

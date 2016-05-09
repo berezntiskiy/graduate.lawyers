@@ -1,7 +1,6 @@
 /* @flow */
 
-// import { CALL_API } from 'redux-api-middleware';
-import { CALL_API } from '../middleware/api';
+import { CALL_API, createApiActionTypes, crudApiActionTypes, apiActionTypes, apiActionTypeMethods, createCrudReducers } from '../middleware/api';
 
 // ------------------------------------
 // Constants
@@ -11,105 +10,149 @@ export const COUNTER_INCREMENT = 'COUNTER_INCREMENT';
 // ------------------------------------
 // Actions
 // ------------------------------------
-// NOTE: "Action" is a Flow interface defined in https://github.com/TechnologyAdvice/flow-interfaces
-// If you're unfamiliar with Flow, you are completely welcome to avoid annotating your code, but
-// if you'd like to learn more you can check out: flowtype.org.
-// DOUBLE NOTE: there is currently a bug with babel-eslint where a `space-infix-ops` error is
-// incorrectly thrown when using arrow functions, hence the oddity.
-export function increment (value: number = 1): Action {
-  return {
-    type: COUNTER_INCREMENT,
-    payload: value
-  }
-}
-
-// This is a thunk, meaning it is a function that immediately
-// returns a function for lazy evaluation. It is incredibly useful for
-// creating async actions, especially when combined with redux-thunk!
-// NOTE: This is solely for demonstration purposes. In a real application,
-// you'd probably want to dispatch an action of COUNTER_DOUBLE and let the
-// reducer take care of this logic.
-export const doubleAsync = (): Function => {
-  return (dispatch: Function, getState: Function): Promise => {
-    return new Promise((resolve: Function): void => {
-      setTimeout(() => {
-        dispatch(increment(getState().counter));
-        resolve()
-      }, 200)
-    })
-  }
-};
-
-export const actionTypes = {
-  REQUEST: ('BOOKS/REQUEST'),
-  SUCCESS: ('BOOKS/SUCCESS'),
-  FAILURE: ('BOOKS/FAILURE'),
-};
 
 
 import { Schema, arrayOf, normalize } from 'normalizr'
 
 const bookSchema = new Schema('book', {
-  idAttribute: 'id'
+    idAttribute: 'id'
 });
 
 
 // Schemas for Github API responses.
 export const Schemas = {
-  BOOK: bookSchema,
-  BOOK_ARRAY: arrayOf(bookSchema)
+    ENTITY: bookSchema,
+    COLLECTION: arrayOf(bookSchema)
 };
 
+const BOOKS_CRUD = 'BOOKS';
 
-export function fetchAll() {
-  return {
-    [CALL_API]: {
-      types: [ actionTypes.REQUEST, actionTypes.SUCCESS, actionTypes.FAILURE ],
-      endpoint: `book`,
-      schema: Schemas.BOOK_ARRAY
-    }
-  };
-  // return {
-  //   [CALL_API]: {
-  //     endpoint: 'http://192.168.50.10/api/book',
-  //     method: 'GET',
-  //     types: [actionTypes.REQUEST, actionTypes.SUCCESS, actionTypes.FAILURE]
-  //   }
-  // }
+// export const fetchActionTypes = createApiActionTypes('FETCH_BOOKS', Schemas.COLLECTION);
+
+const CRUD_ACTION_TYPES = crudApiActionTypes(BOOKS_CRUD, Schemas);
+
+const CORE_API_ROOT_ENDPOINT = 'http://192.168.50.10/api/';
+
+const booksService = {
+    rootEndpoint: CORE_API_ROOT_ENDPOINT,
+    types: CRUD_ACTION_TYPES,
+    endpoint: 'book',
+    schema: Schemas
+};
+
+import {each} from "lodash";
+
+function required(target, requiredFields, prefix = '') {
+    requiredFields.forEach(field => {
+        if (target[field] === undefined) throw new Error((prefix ? `${prefix}: ` : prefix) + 'UNDEFINED ' + field);
+    });
 }
 
-export const actions = {
-  increment,
-  doubleAsync
-};
+function createApiAction(service, apiActionType, args = {}) {
+    const method = apiActionTypeMethods[apiActionType];
+
+    let endpoint;
+    switch (apiActionType) {
+        case apiActionTypes.FETCH_ONE:
+            required(args, ['id']);
+            endpoint = service.endpoint + '/' + args.id;
+            break;
+        default:
+            endpoint = service.endpoint;
+            break;
+    }
+
+    const action = {
+        endpoint: service.rootEndpoint + endpoint,
+        method: method,
+        types: service.types[apiActionType].asArray(),
+        headers: { 'Content-Type': 'application/json' }
+    };
+
+    return {
+        [CALL_API]: action
+    };
+}
+
+function createCrudActions(service) {
+    return {
+        [apiActionTypes.FETCH_ALL]: () => createApiAction(service, apiActionTypes.FETCH_ALL),
+        [apiActionTypes.FETCH_ONE]: ({id}) => createApiAction(service, apiActionTypes.FETCH_ONE, {id}),
+        // [apiActionTypes.CREATE_ONE]: createApiAction(service, apiActionTypes.CREATE_ONE),
+        // [apiActionTypes.CREATE_ALL]: createApiAction(service, apiActionTypes.CREATE_ALL),
+        // [apiActionTypes.UPDATE_ONE]: createApiAction(service, apiActionTypes.UPDATE_ONE),
+        // [apiActionTypes.UPDATE_ALL]: createApiAction(service, apiActionTypes.UPDATE_ALL),
+        // [apiActionTypes.DELETE_ONE]: createApiAction(service, apiActionTypes.DELETE_ONE),
+        // [apiActionTypes.DELETE_ALL]: createApiAction(service, apiActionTypes.DELETE_ALL),
+    };
+}
+
+export const CRUD_ACTIONS = createCrudActions(booksService);
 
 
+const CRUD_ACTION_HANDLERS = createCrudReducers(BOOKS_CRUD, booksService, CRUD_ACTION_TYPES);
 
+export function fetchAll() {
+    return CRUD_ACTIONS.FETCH_ALL({id: 1133});
+    // return {
+    //     [CALL_API]: {
+    //         types: fetchActionTypes.asArray(),
+    //         endpoint: `book`,
+    //         schema: Schemas.BOOK_ARRAY
+    //     }
+    // };
+    // console.info(createApiAction(booksService, apiActionTypes.FETCH_ALL));
+    // return createApiAction(booksService, apiActionTypes.FETCH_ALL);
+    // return {
+    //     [CALL_API]: {
+    //         endpoint: 'book',
+    //         method: 'GET',
+    //         types: CRUD_ACTION_TYPES.FETCH_ALL.asArray()
+    //     }
+    // }
+}
 
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
+console.warn(CRUD_ACTION_TYPES);
+
 const ACTION_HANDLERS = {
-  [COUNTER_INCREMENT]: (state: number, action: {payload: number}): number => state + action.payload,
-  [actionTypes.REQUEST]: (state, action: {payload: number}) => {
-    // console.info(state, action);
-    return state;
-  },
-  [actionTypes.SUCCESS]: (state, action: {payload: number}) => {
-    console.info(state, action);
-    Object.assign(state, action.response);
-    return state;
-  }
+    // [CRUD_ACTION_TYPES.FETCH_ONE.SUCCESS.type]: (state, action: {payload: number}) => {
+    //     return Object.assign({}, state, {entities: action.payload.entities, isLoading: true});
+    // },
+    // [CRUD_ACTION_TYPES.FETCH_ONE.FAILURE.type]: (state, action: {payload: number}) => {
+    //     return Object.assign({}, state, {isLoading: false});
+    //     // return Object.assign({}, state, {status: action.payload});
+    // },
+    // [CRUD_ACTION_TYPES.FETCH_ONE.REQUEST.type]: (state, action: {payload: number}) => {
+    //     return Object.assign({}, state, {isLoading: true});
+    //     // return Object.assign({}, state, {status: action.payload});
+    // },
+    //
+    //
+    //
+    // [CRUD_ACTION_TYPES.FETCH_ALL.SUCCESS.type]: (state, action: {payload: number}) => {
+    //     return Object.assign({}, state, {entities: action.payload.entities});
+    // },
 };
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = {};
+const initialState = {
+    entities: {},
+    isLoading: false
+};
 export default function booksReducer (state = initialState, action: Action): number {
-  // const handler = ACTION_HANDLERS[action.type];
-  const handler = ACTION_HANDLERS[action.type];
+    console.info(CRUD_ACTION_HANDLERS);
+    const crud_handler = CRUD_ACTION_HANDLERS[action.type];
+    const handler = ACTION_HANDLERS[action.type];
 
-  return handler ? handler(state, action) : state;
+    console.info('in crud handler', crud_handler);
+    state = crud_handler ? crud_handler(state, action) : state;
+    console.info(state);
+    state = handler ? handler(state, action) : state;
+    return state;
 }

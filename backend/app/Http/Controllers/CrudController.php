@@ -6,6 +6,7 @@ use App\Book;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Mockery\CountValidator\Exception;
 
 class CrudController extends Controller
 {
@@ -23,7 +24,10 @@ class CrudController extends Controller
 
     function show($id) {
         $model = $this->model;
-        return $model::find($id);
+        $entity = $model::find($id);
+        if (!$entity)
+            throw new Exception('WRONG_ID');
+        return $entity;
     }
 
     function update() {

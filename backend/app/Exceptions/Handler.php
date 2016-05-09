@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -45,6 +46,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        $isJsonRequest = $request->header('Content-Type') == 'application/json';
+        if ($isJsonRequest || $request->ajax() || $request->wantsJson()) {
+            return new JsonResponse(['error' => $e->getMessage()], 400);
+        }
+
         return parent::render($request, $e);
     }
 }
