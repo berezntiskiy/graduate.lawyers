@@ -1,0 +1,19 @@
+<?php
+
+Admin::model(\App\ServiceTranslation::class)->title('')->with()->filters(function ()
+{
+
+})->columns(function ()
+{
+
+})->form(function ()
+{
+	FormItem::select('service_id', 'Service')->list(Service::class);
+	FormItem::text('title', 'Title');
+	FormItem::text('locale', 'Locale');
+	FormItem::timestamp('deleted_at', 'Deleted At');//->seconds(true);
+	FormItem::select('created_by', 'Created By')->list(Staff::class);
+	FormItem::select('updated_by', 'Updated By')->list(Staff::class);
+	FormItem::select('deleted_by', 'Deleted By')->list(Staff::class);
+	FormItem::ckeditor('text', 'Text');
+});

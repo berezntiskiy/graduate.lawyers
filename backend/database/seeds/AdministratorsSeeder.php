@@ -12,7 +12,7 @@ class AdministratorsSeeder extends Seeder
         $default = [
             'username' => 'admin',
             'password' => '123',
-            'name'     => 'SleepingOwl Administrator'
+            'name'     => 'Vlad Bereznitskiy'
         ];
 
         try

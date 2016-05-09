@@ -15,6 +15,9 @@
  * 		});
  */
 
+//\Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DummyController@getIndex');
+
+
 Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DummyController@getIndex');
 Admin::menu(\App\Book::class)->icon('fa-globe');;
 Admin::menu(\App\Staff::class)->icon('fa-globe');;
