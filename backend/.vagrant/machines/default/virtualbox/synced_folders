@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/backend":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/backend","hostpath":"/Users/Vlad/Code/pocketLawyer/backend","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/Vlad/Code/pocketLawyer/backend","disabled":false,"__vagrantfile":true}}}

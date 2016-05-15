@@ -156,8 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-
-        SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
+        Frozennode\Administrator\AdministratorServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
     ],
 

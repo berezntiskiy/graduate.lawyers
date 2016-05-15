@@ -11,18 +11,40 @@ use Mockery\CountValidator\Exception;
 class CrudController extends Controller
 {
     protected $model = Book::class;
+    protected $request = null;
 
-    function index() {
-        $model = $this->model;
-        return $model::all();
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
     }
 
-    function store() {
+
+    function getIndexFilters()
+    {
+        $res = [];
+        return $res;
+    }
+
+    function index()
+    {
+        $Model = $this->model;
+        $model = $Model::whereRaw('1 = 1');
+
+        $filters = $this->getIndexFilters();
+        foreach ($filters as $k => $v) {
+            $model = $model->where($k, $v);
+        }
+        return $model->get();
+    }
+
+    function store()
+    {
         $model = $this->model;
         return $model::create(Input::all());
     }
 
-    function show($id) {
+    function show($id)
+    {
         $model = $this->model;
         $entity = $model::find($id);
         if (!$entity)
@@ -30,12 +52,14 @@ class CrudController extends Controller
         return $entity;
     }
 
-    function update() {
+    function update()
+    {
         $model = $this->model;
         return $model::save(Input::all());
     }
 
-    function destroy($id) {
+    function destroy($id)
+    {
         $model = $this->model;
         return $model::destroy($id);
     }

@@ -21,7 +21,7 @@ class ArticlesSeeder extends Seeder
 //            ['name' => '', 'description' => ''],
         ];
         $rCount = count($records);
-        for($i = $rCount - 1; $i < $rCount + 10; $i++)
+        for($i = $rCount - 1; $i < $rCount + 70; $i++)
             $records[] = ['name' => 'Название статьи '.$i, 'description' => 'Описание статьи '.$i];
 
         foreach ($records as $record)

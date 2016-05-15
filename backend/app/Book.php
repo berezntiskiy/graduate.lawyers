@@ -15,10 +15,4 @@ class Book extends Entity
 
     protected $fillable = ['name', 'description'];
     public $translatedAttributes = ['name', 'description'];
-
-    public $appends = ['LANG_md_name'];
-
-    function getLANGMdNameAttribute() {
-        return 'asd';
-    }
 }

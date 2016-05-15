@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//sleep(1);
+//sleep(2);
+
+// Book -> Section -> Chapter -> Article
 Route::resource('/api/book', 'BooksController');
-Route::resource('/api/chapter', 'ChaptersController');
 Route::resource('/api/section', 'SectionsController');
+Route::resource('/api/chapter', 'ChaptersController');
 Route::resource('/api/article', 'ArticlesController');
 Route::resource('/api/staff', 'StaffController');
 Route::resource('/api/service', 'ServicesController');
