@@ -28,3 +28,4 @@ Route::resource('/api/price', 'PricesController');
 
 
 Route::resource('/admin/books', 'Admin\AdminBooksController');
+Route::resource('/admin', 'Admin\AdminDashboardController');

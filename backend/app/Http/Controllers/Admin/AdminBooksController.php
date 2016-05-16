@@ -10,12 +10,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\View;
 use Mockery\CountValidator\Exception;
+use Zofe\Rapyd\DataGrid\DataGrid;
 
-class AdminBooksController extends AdminController
+class AdminBooksController extends AdminCrudController
 {
     protected $model = Book::class;
     protected $request = null;
     protected $name = 'books';
+    protected $entitiesPerPage = 10;
 
     public function __construct(Request $request)
     {
@@ -23,32 +25,33 @@ class AdminBooksController extends AdminController
     }
 
 
+    function getCreateLink() {
+        return route('admin.books.create');
+    }
+
     public function index()
     {
-        return $this->createPage(View::make('admin.books.list'));
-//        return View::make('admin.books.list');
-//
-//        $grid = \DataGrid::source(Book::whereRaw('1 = 1'));
-//
-//        $grid->add('id','ID', true)->style("width:100px");
-//        $grid->add('name','Name');
-//        $grid->add('description','Description');
-//
-//        $grid->edit('/rapyd-demo/edit', 'Edit','show|modify');
-//        $grid->link('/rapyd-demo/edit',"New Article", "TR");
-//        $grid->orderBy('id','desc');
-////        $grid->paginate(10);
-//
-////        $grid->row(function ($row) {
-////            if ($row->cell('id')->value == 20) {
-////                $row->style("background-color:#CCFF66");
-////            } elseif ($row->cell('id')->value > 15) {
-////                $row->cell('title')->style("font-weight:bold");
-////                $row->style("color:#f00");
-////            }
-////        });
-//
-//        return  view('rapyd::demo.grid', compact('grid'));
+        $grid = DataGrid::source(Book::whereRaw('1 = 1'));
+
+        $grid->add('id', 'ID', true)->style("width:100px");
+        $grid->add('name', 'Name');
+        $grid->add('description', 'Description');
+
+        $grid->edit('/rapyd-demo/edit', 'Edit', 'show|modify');
+        $grid->link($this->getCreateLink(), "New Entity", "TR");
+        $grid->orderBy('id', 'desc');
+        $grid->paginate($this->entitiesPerPage);
+
+//        $grid->row(function ($row) {
+//            if ($row->cell('id')->value == 20) {
+//                $row->style("background-color:#CCFF66");
+//            } elseif ($row->cell('id')->value > 15) {
+//                $row->cell('title')->style("font-weight:bold");
+//                $row->style("color:#f00");
+//            }
+//        });
+
+        return $this->createPage(view('admin.layout.crud.list', ['grid' => ''.$grid]));
     }
 
 
@@ -77,5 +80,9 @@ class AdminBooksController extends AdminController
     {
         $model = $this->model;
         return $model::destroy($id);
+    }
+    
+    function create() {
+        return $this->createPage(view('admin.layout.crud.create', []));
     }
 }

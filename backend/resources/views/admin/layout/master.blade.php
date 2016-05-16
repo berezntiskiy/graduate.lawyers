@@ -27,13 +27,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">PocketLawyer</a>
+            <a class="navbar-brand" href="{!! route('admin.index') !!}">PocketLawyer</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                @foreach($menuLinks as $name => $route)
+                @foreach($menuLinks as $linkName => $route)
                     <li class="@if(strpos(Request::url(), route($route.'.index')) > -1) active @endif">
-                        <a href="{!! route($route.'.index') !!}">{{$name}}</a>
+                        <a href="{!! route($route.'.index') !!}">{{$linkName}}</a>
                     </li>
                 @endforeach
             </ul>
@@ -42,13 +42,12 @@
 </nav>
 
 <div class="container">
-    <div><br><br><!-- space before header --></div>
+    <div><br><br><br><!-- space before header --></div>
     <div>
         @if($name)
-            <h1>{{ $name }}</h1>
+            <h1 style="margin-top: 0;">{{ $name }}</h1>
         @endif
-        {{--<p class="lead">Use this document as a way to quickly start any new project.</p>--}}
-        @yield('content')
+        {!! $content !!}
     </div>
 
 </div><!-- /.container -->

@@ -26,9 +26,9 @@ class AdminController extends Controller
         $this->request = $request;
     }
 
-    protected function createPage($content)
+    protected function createPage($content, $options = [])
     {
-        return view($this->layout, ['content' => $content, 'menuLinks' => $this->menuLinks, 'name' => $this->name]);
+        return view($this->layout, $options + ['content' => $content, 'menuLinks' => $this->menuLinks, 'name' => $this->name]);
     }
 
 
