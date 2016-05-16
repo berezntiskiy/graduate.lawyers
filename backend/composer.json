@@ -9,8 +9,7 @@
         "laravel/framework": "5.2.*",
         "laravel/homestead": "^2.0",
         "dimsav/laravel-translatable": "5.5.*",
-        "laravelrus/sleepingowl": "4.*@dev",
-        "frozennode/administrator": "^5.0"
+        "zofe/rapyd": "2.2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
