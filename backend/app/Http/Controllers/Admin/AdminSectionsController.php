@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Book;
+use App\Section;
 
 use App\Http\Requests;
 
-class AdminBooksController extends AdminCrudController
+class AdminSectionsController extends AdminCrudController
 {
-    protected $model = Book::class;
-    protected $name = 'books';
-    protected $route = 'admin.books';
+    protected $model = Section::class;
+    protected $name = 'sections';
+    protected $route = 'admin.sections';
 
     public function addIndexColumns($grid)
     {
@@ -20,12 +20,12 @@ class AdminBooksController extends AdminCrudController
     }
 
 
-    function store(Requests\BookRequest $request)
+    function store(Requests\SectionRequest $request)
     {
         return $this->_store($request);
     }
 
-    function update($id, Requests\BookRequest $request)
+    function update($id, Requests\SectionRequest $request)
     {
         return $this->_update($id, $request);
     }

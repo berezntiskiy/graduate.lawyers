@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
 use Illuminate\Support\Facades\Config;
 use Zofe\Rapyd\DataGrid\DataGrid;
+use Illuminate\Http\Request;
 
 class AdminCrudController extends AdminController
 {
@@ -27,7 +27,15 @@ class AdminCrudController extends AdminController
         $model = $Model::whereRaw('1 = 1');
         return $model;
     }
-
+    
+    public function getModelForIndex()
+    {
+        $model = $this->getModel();
+        if ($this->request->query->get('withDeleted'))
+            $model->withTrashed();
+        return $model;
+    }
+    
     public function index()
     {
         $grid = DataGrid::source($this->getModelForIndex());
