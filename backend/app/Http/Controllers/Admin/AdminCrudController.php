@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class AdminCrudController extends AdminController
 {
     protected $route = '';
+    protected $name = '';
     protected $request = null;
     protected $entitiesPerPage = 10;
 
@@ -43,8 +44,8 @@ class AdminCrudController extends AdminController
         $this->addIndexColumns($grid);
 
         $placeholder = '000-000-000';
-        $re = route('admin.books.edit', ['books' => $placeholder]);
-        $rd = route('admin.books.delete', ['books' => $placeholder]);
+        $re = route($this->route.'.edit', [$placeholder]);
+        $rd = route($this->route.'.delete', [$placeholder]);
         $re = str_replace($placeholder, '{{$id}}', $re);
         $rd = str_replace($placeholder, '{{$id}}', $rd);
         $grid->add('
