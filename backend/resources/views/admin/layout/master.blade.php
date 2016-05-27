@@ -14,6 +14,18 @@
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+    <script>
+        var CSRF_TOKEN = "{{ csrf_token() }}";
+    </script>
+    <script>
+        $(function(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': CSRF_TOKEN
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
