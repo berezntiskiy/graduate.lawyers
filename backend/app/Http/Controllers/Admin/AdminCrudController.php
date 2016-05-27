@@ -3,67 +3,94 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
+use Zofe\Rapyd\DataGrid\DataGrid;
 
 class AdminCrudController extends AdminController
 {
+    protected $route = '';
+    
     protected function createPage($content, $options = [])
     {
         return parent::createPage($content, ['content' => $content, 'menuLinks' => $this->menuLinks] + $options);
     }
 
+    protected function getModel() {
+        $Model = $this->model;
+        $model = $Model::whereRaw('1 = 1');
+        return $model;
+    }
 
-//
-//    public function index()
-//    {
-//
-//        $grid = \DataGrid::source(Book::whereRaw('1 = 1'));
-//
-//        $grid->add('id','ID', true)->style("width:100px");
-//        $grid->add('name','Name');
-//        $grid->add('description','Description');
-//
-//        $grid->edit('/rapyd-demo/edit', 'Edit','show|modify');
-//        $grid->link('/rapyd-demo/edit',"New Article", "TR");
-//        $grid->orderBy('id','desc');
-////        $grid->paginate(10);
-//
-////        $grid->row(function ($row) {
-////            if ($row->cell('id')->value == 20) {
-////                $row->style("background-color:#CCFF66");
-////            } elseif ($row->cell('id')->value > 15) {
-////                $row->cell('title')->style("font-weight:bold");
-////                $row->style("color:#f00");
-////            }
-////        });
-//
-//        return  view('rapyd::demo.grid', compact('grid'));
-//    }
-//
-//
-//    function store()
-//    {
-//        $model = $this->model;
-//        return $model::create(Input::all());
-//    }
-//
-//    function show($id)
-//    {
-//        $model = $this->model;
-//        $entity = $model::find($id);
-//        if (!$entity)
-//            throw new Exception('WRONG_ID');
-//        return $entity;
-//    }
-//
-//    function update()
-//    {
-//        $model = $this->model;
-//        return $model::save(Input::all());
-//    }
-//
-//    function destroy($id)
-//    {
-//        $model = $this->model;
-//        return $model::destroy($id);
-//    }
+    public function index()
+    {
+        $grid = DataGrid::source($this->getModelForIndex());
+
+        $this->addIndexColumns($grid);
+
+        $placeholder = '000-000-000';
+        $re = route('admin.books.edit', ['books' => $placeholder]);
+        $rd = route('admin.books.delete', ['books' => $placeholder]);
+        $re = str_replace($placeholder, '{{$id}}', $re);
+        $rd = str_replace($placeholder, '{{$id}}', $rd);
+        $grid->add('
+            <a href="' . $re . '"><span class="glyphicon glyphicon-edit"> </span></a>
+            
+            @if(!$deleted_at)
+                <a class="text-danger" onclick="processDelete(event, {{$id}})"><span class="glyphicon glyphicon-trash"> </span></a>
+            @else
+                <a class="text-success" onclick="processRestore(event, {{$id}})"><span class="glyphicon glyphicon-leaf"> </span></a>
+            @endif
+            ', 'Actions');
+        $grid->orderBy('id', 'desc');
+        $grid->paginate($this->entitiesPerPage);
+
+        return $this->createPage(view('admin.layout.crud.list', ['grid' => '' . $grid, 'route' => $this->route, 'query' => $_GET]));
+    }
+    
+    protected function toIndex() {
+        $route = $this->route;
+        return redirect()->route("${route}.index");
+    }
+    
+    protected function _update($id, $request) {
+        $model = $this->getModel()->findOrFail($id);
+        $model->fill($request->all());
+        $model->save();
+        return $this->toIndex();
+    }
+    
+    protected function _edit($id) {
+        $Model = $this->model;
+        $model = $Model::findOrFail($id);
+        return $this->createPage(view('admin.layout.crud.update', ['book' => $model->translationTree(['ru', 'en', 'md'])]));
+    }
+
+    protected function _store($request) {
+        $model = $this->model;
+        $model::create($request->all());
+        return $this->toIndex();
+    }
+
+    public function destroy($id)
+    {
+        if ($this->request->get('action') == 'restore') {
+            $model = $this->getModel()->withTrashed()->findOrFail($id);
+            $model->restore();
+            return [];
+        } else {
+            $Model = $this->model;
+            $Model::destroy($id);
+            return [];
+        }
+    }
+    
+    function show($id)
+    {
+        $model = $this->getModel();
+        return $model->findOrFail($id);
+    }
+
+    function create()
+    {
+        return $this->createPage(view('admin.layout.crud.create', ['form' => '']));
+    }
 }
