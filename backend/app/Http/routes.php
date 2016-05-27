@@ -41,6 +41,8 @@ function createAdminCrudRoutes($entity, $controller) {
 
 createAdminCrudRoutes('books', 'AdminBooksController');
 createAdminCrudRoutes('sections', 'AdminSectionsController');
+createAdminCrudRoutes('chapters', 'AdminChaptersController');
+createAdminCrudRoutes('articles', 'AdminArticlesController');
 
 
 

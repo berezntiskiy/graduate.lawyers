@@ -13,4 +13,8 @@ class Chapter extends Entity
 
     protected $fillable = ['name', 'description', 'section_id'];
     public $translatedAttributes = ['name', 'description'];
+
+    function section() {
+        return $this->belongsTo(Section::class);
+    }
 }

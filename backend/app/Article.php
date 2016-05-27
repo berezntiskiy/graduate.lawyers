@@ -13,4 +13,8 @@ class Article extends Entity
 
     protected $fillable = ['title', 'text', 'chapter_id'];
     public $translatedAttributes = ['title', 'text'];
+
+    function chapter() {
+        return $this->belongsTo(Chapter::class);
+    }
 }

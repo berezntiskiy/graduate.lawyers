@@ -19,7 +19,9 @@ class AdminController extends Controller
     protected $name = null;
     protected $menuLinks = [
         'books' => 'admin.books',
-        'sections' => 'admin.sections'
+        'sections' => 'admin.sections',
+        'chapters' => 'admin.chapters',
+        'articles' => 'admin.articles',
     ];
 
     public function __construct(Request $request)
