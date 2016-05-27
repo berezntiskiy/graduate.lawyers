@@ -1,20 +1,23 @@
-<h3>Creation new entity</h3>
+<h3>New entity creation</h3>
 
-{!! BootForm::open()->action( route('admin.books.update', $book) )->put() !!}
-{!! BootForm::bind($book) !!}
-
-@include('admin.books.form.entity')
+@if ($isNew)
+    {!! BootForm::open()->action( route('admin.'.$name.'.store') )->post() !!}
+@else
+    {!! BootForm::open()->action( route('admin.'.$name.'.update', $entity) )->put() !!}
+    {!! BootForm::bind($entity) !!}
+@endif
+@include('admin.'.$name.'.form.entity')
 
 
 <div class="panel-group" id="accordion" role="tablist">
     @foreach(Config::get("translatable.locales") as $i => $lang)
+    {{-- */$isLocaleActive = isset($entity[$lang]);/* --}}
 
 
-
-        <div class="panel {{!isset($book[$lang]) ? 'panel-default' : 'panel-primary'}}">
+        <div class="panel {{!$isLocaleActive ? 'panel-default' : 'panel-primary'}}">
             <div class="panel-heading" role="tab">
                 <h4 class="panel-title">
-                    @if(!isset($book[$lang]))
+                    @if(!$isLocaleActive)
                         <a role="button" data-toggle="collapse" href="#form_lang_pannel-{{$lang}}">
                             Translation for {{['ru'=>'Russian', 'md' => 'Moldavian', 'en' => 'English'][$lang]}}
                         </a>
@@ -24,12 +27,12 @@
                     @endif
                 </h4>
             </div>
-            <div id="form_lang_pannel-{{$lang}}" class="panel-collapse collapse {{isset($book[$lang]) ? 'in' : ''}}"
+            <div id="form_lang_pannel-{{$lang}}" class="panel-collapse collapse {{$isLocaleActive ? 'in' : ''}}"
                  role="tabpanel">
                 <div class="panel-body">
                     <input type="hidden" class="activeLangFlag" name="activeLangs[{{$lang}}]"
-                           value="{{isset($book[$lang]) ? 'true' : 'false'}}"/>
-                    @include('admin.books.form.translations')
+                           value="{{$isLocaleActive ? 'true' : 'false'}}"/>
+                    @include('admin.'.$name.'.form.translations')
                 </div>
             </div>
         </div>

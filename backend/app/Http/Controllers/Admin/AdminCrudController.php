@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Config;
 use Zofe\Rapyd\DataGrid\DataGrid;
 
 class AdminCrudController extends AdminController
@@ -52,8 +53,17 @@ class AdminCrudController extends AdminController
     }
     
     protected function _update($id, $request) {
+        $req = $request->all();
+        $locales = Config::get('translatable.locales');
+        foreach ($locales as $locale) {
+            if (isset($req[$locale])) {
+                if($req['activeLangs'][$locale] !== 'true') {
+                    unset($req[$locale]);
+                }
+            }
+        }
         $model = $this->getModel()->findOrFail($id);
-        $model->fill($request->all());
+        $model->fill($req);
         $model->save();
         return $this->toIndex();
     }
@@ -61,7 +71,7 @@ class AdminCrudController extends AdminController
     protected function _edit($id) {
         $Model = $this->model;
         $model = $Model::findOrFail($id);
-        return $this->createPage(view('admin.layout.crud.update', ['book' => $model->translationTree(['ru', 'en', 'md'])]));
+        return $this->createPage(view('admin.layout.crud.update', ['name' => $this->name, 'isNew' => false, 'entity' => $model->translationTree(['ru', 'en', 'md'])]));
     }
 
     protected function _store($request) {
@@ -91,6 +101,6 @@ class AdminCrudController extends AdminController
 
     function create()
     {
-        return $this->createPage(view('admin.layout.crud.create', ['form' => '']));
+        return $this->createPage(view('admin.layout.crud.update', ['name' => $this->name, 'isNew' => true, 'entity' => []]));
     }
 }
