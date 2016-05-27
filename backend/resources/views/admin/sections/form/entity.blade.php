@@ -1,1 +1,1 @@
-{!! BootForm::text('id', 'id') !!}
+{!! BootForm::select('Book', 'book_id', $books) !!}

@@ -1,1 +1,0 @@
-{!! BootForm::text('id', 'id') !!}

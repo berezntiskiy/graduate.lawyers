@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Book;
 use App\Section;
 
 use App\Http\Requests;
@@ -17,6 +18,16 @@ class AdminSectionsController extends AdminCrudController
         $grid->add('id', 'ID', true)->style("width:100px");
         $grid->add('name', 'Name');
         $grid->add('description', 'Description');
+    }
+
+    function getDataForForm()
+    {
+        $books = Book::all();
+        $books_options = [];
+        foreach($books as $book) {
+            $books_options[$book['id']] = $book['name'];
+        }
+        return ['books'=>$books_options];
     }
 
 

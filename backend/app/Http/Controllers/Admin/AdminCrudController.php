@@ -92,7 +92,7 @@ class AdminCrudController extends AdminController
     protected function _edit($id) {
         $Model = $this->model;
         $model = $Model::findOrFail($id);
-        return $this->createPage(view('admin.layout.crud.update', ['name' => $this->name, 'isNew' => false, 'entity' => $model->translationTree(['ru', 'en', 'md'])]));
+        return $this->createPage(view('admin.layout.crud.update', $this->getDataForForm() + ['name' => $this->name, 'isNew' => false, 'entity' => $model->translationTree(['ru', 'en', 'md'])]));
     }
 
     protected function _store($request) {
@@ -122,6 +122,10 @@ class AdminCrudController extends AdminController
 
     function create()
     {
-        return $this->createPage(view('admin.layout.crud.update', ['name' => $this->name, 'isNew' => true, 'entity' => []]));
+        return $this->createPage(view('admin.layout.crud.update', $this->getDataForForm() + ['name' => $this->name, 'isNew' => true, 'entity' => []]));
+    }
+
+    function getDataForForm() {
+        return [];
     }
 }
