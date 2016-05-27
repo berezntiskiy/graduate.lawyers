@@ -3,22 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Book;
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
 class AdminBooksController extends AdminCrudController
 {
     protected $model = Book::class;
-    protected $request = null;
     protected $name = 'books';
-    protected $entitiesPerPage = 10;
     protected $route = 'admin.books';
 
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-    }
 
     public function getModelForIndex()
     {
@@ -35,10 +28,6 @@ class AdminBooksController extends AdminCrudController
         $grid->add('description', 'Description');
     }
 
-    function edit($id)
-    {
-        return $this->_edit($id);
-    }
 
     function store(Requests\BookRequest $request)
     {

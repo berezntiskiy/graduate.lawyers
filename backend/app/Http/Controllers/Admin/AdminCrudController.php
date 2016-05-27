@@ -9,7 +9,14 @@ use Zofe\Rapyd\DataGrid\DataGrid;
 class AdminCrudController extends AdminController
 {
     protected $route = '';
-    
+    protected $request = null;
+    protected $entitiesPerPage = 10;
+
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
+
     protected function createPage($content, $options = [])
     {
         return parent::createPage($content, ['content' => $content, 'menuLinks' => $this->menuLinks] + $options);
@@ -66,6 +73,11 @@ class AdminCrudController extends AdminController
         $model->fill($req);
         $model->save();
         return $this->toIndex();
+    }
+
+    function edit($id)
+    {
+        return $this->_edit($id);
     }
     
     protected function _edit($id) {
