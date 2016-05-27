@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1eaa00f-f6a5-4d01-af57-eb7769959a56" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminCrudController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminDashboardController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/list.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/resources/views/admin/page/dashboard.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/resources/views/admin/books/list.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminBooksController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminBooksController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminController.php" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/app/Http/routes.php" afterPath="$PROJECT_DIR$/backend/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/resources/views/admin/layout/master.blade.php" afterPath="$PROJECT_DIR$/backend/resources/views/admin/layout/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="c58262d2-6361-4ef4-abeb-21babadca017" name="New changelist" comment="" />
     <ignored path="microLawyer.iws" />
@@ -34,7 +26,23 @@
     <favorites_list name="microLawyer" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="update.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/update.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="61" column="11" selection-start-line="59" selection-start-column="8" selection-end-line="61" selection-end-column="11" />
+              <folding>
+                <marker date="1464375163000" expanded="true" signature="1735:2318" placeholder="..." />
+                <marker date="1464375163000" expanded="true" signature="1753:2317" placeholder="..." />
+                <marker date="1464375163000" expanded="true" signature="1943:2310" placeholder="..." />
+                <marker date="1464375163000" expanded="true" signature="1956:2267" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
@@ -54,19 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/platform/browser/providers.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/core/ServiceConnector.ts" />
-        <option value="$PROJECT_DIR$/frontend/node_modules/angular2-rest/angular2-rest.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/core/CoreConnector.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/sidebar-item.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/book.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/section.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/book.ts" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/SectionsController.php" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/sidebar-list.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/section.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/books.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/books/chapter.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/books/chapter.service.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/books/books.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/books/article.ts" />
@@ -88,23 +83,36 @@
         <option value="$PROJECT_DIR$/frontend/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/service.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/books/library-sidebar.component.ts" />
-        <option value="$PROJECT_DIR$/backend/composer.json" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/BooksController.php" />
-        <option value="$PROJECT_DIR$/backend/config/app.php" />
         <option value="$PROJECT_DIR$/backend/app/Book.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/admin/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/admin/books/list.blade.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/backend/vendor/zofe/rapyd/views/demo/grid.blade.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/admin/page/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminController.php" />
+        <option value="$PROJECT_DIR$/backend/vendor/zofe/rapyd/src/DataGrid/DataGrid.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminCrudController.php" />
+        <option value="$PROJECT_DIR$/backend/composer.json" />
+        <option value="$PROJECT_DIR$/backend/config/app.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Requests/AdminBookSave.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminDashboardController.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/list.blade.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/create.blade.php" />
+        <option value="$PROJECT_DIR$/backend/vendor/adamwathan/form/src/AdamWathan/Form/FormBuilder.php" />
+        <option value="$PROJECT_DIR$/backend/vendor/adamwathan/form/src/AdamWathan/Form/Binding/BoundData.php" />
+        <option value="$PROJECT_DIR$/backend/app/Entity.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminBooksController.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/backend/resources/views/admin/page/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Requests/BookRequest.php" />
+        <option value="$PROJECT_DIR$/backend/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/admin/layout/master.blade.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminController.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminDashboardController.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminCrudController.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/form/fields/translations.blade.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/admin/books/form/entity.blade.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/form/fields/root.blade.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/admin/books/form/translations.blade.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/update.blade.php" />
       </list>
     </option>
   </component>
@@ -132,9 +140,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="-2" />
     <option name="y" value="23" />
-    <option name="width" value="1538" />
+    <option name="width" value="1440" />
     <option name="height" value="1023" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -182,7 +190,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,6 +366,82 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fields" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="books" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pocketLawyer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -454,7 +548,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="master&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/admin/layout/master.blade.php&#10;datagrid.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/zofe/rapyd/src/DataGrid/DataGrid.php&#10;datagrid.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/zofe/rapyd/views/datagrid.blade.php&#10;rapyd/demo/grid&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/zofe/rapyd/views/demo/grid.blade.php&#10;routes.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;routes&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;app.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/app.php&#10;composer.json&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;angular-rest&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/angular2-rest/angular2-rest.ts&#10;services.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/services/services.component.ts&#10;node/material/&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/@angular2-material&#10;articlecontroller&#9;null&#9;null&#10;con&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/CrudController.php&#10;articleseed&#9;null&#9;null&#10;material/ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/@angular2-material/toolbar/toolbar.scss&#10;sectioncon&#9;null&#9;null&#10;book.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/BooksController.php&#10;sectionphp&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Section.php&#10;routes.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;material/.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/@angular2-material/radio/radio.d.ts&#10;books-sidebar-list&#9;null&#9;null&#10;book.h&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/books/books.html&#10;books.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/books/books.component.ts&#10;books-si&#9;null&#9;null&#10;providers.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/platform/browser/providers.ts&#10;bootstrap.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/angular2/ts/examples/core/ts/bootstrap/bootstrap.ts&#10;angular2rest&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/node_modules/angular2-rest/angular2-rest.js&#10;rest.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/angular2-rest/angular2-rest.d.ts&#10;res&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/core/RestClient.ts&#10;bookservice&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/books/book.service.ts&#10;welcome.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/welcome.blade.php&#10;session.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/session.php&#10;composer&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;app/config/packages/frozennode/administrator/administrator.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/frozennode/administrator/examples/app/config/packages/frozennode/administrator/administrator.php&#10;packages/fro/admin&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/frozennode/administrator/examples/app/config/packages/frozennode/administrator/administrator.php&#10;admin.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/administrator.php&#10;SleepingOwl\Admin\Form\Element\Text&#9;null&#9;null&#10;\SleepingOwl\Admin\Display\DisplayTable&#9;null&#9;null&#10;SleepingOwl\Admin\Facades\Admin&#9;null&#9;null&#10;app.p&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/app.php&#10;tra.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/translatable.php&#10;entit&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Entity.php&#10;SleepingOwlModel&#9;null&#9;null&#10;com.lock&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.lock&#10;composer.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;eloquent/model.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php&#10;FormItem&#9;null&#9;null&#10;Admin/Models/Form/FormItem/Select.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/sleeping-owl/admin/src/SleepingOwl/Admin/Models/Form/FormItem/Select.php&#10;select.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/sleeping-owl/admin/src/SleepingOwl/Admin/Models/Form/FormItem/Select.php&#10;Administrator&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="master.b&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/admin/layout/master.blade.php&#10;appservice&#9;null&#9;null&#10;update&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/admin/layout/crud/update.blade.php&#10;bounddata.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/adamwathan/form/src/AdamWathan/Form/Binding/BoundData.php&#10;formbuilder&#9;null&#9;null&#10;master.bla&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/admin/layout/master.blade.php&#10;book&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Requests/BookRequest.php&#10;csrf&#9;null&#9;null&#10;master.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/admin/layout/master.blade.php&#10;AdminBooksController&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/Admin/AdminBooksController.php&#10;AdminDashboardController&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/Admin/AdminDashboardController.php&#10;adminBookSave&#9;null&#9;null&#10;app.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/app.php&#10;composer.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;routes.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;edit.blade&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/zofe/rapyd/views/demo/edit.blade.php&#10;routes&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;master&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/admin/layout/master.blade.php&#10;datagrid.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/zofe/rapyd/src/DataGrid/DataGrid.php&#10;datagrid.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/zofe/rapyd/views/datagrid.blade.php&#10;rapyd/demo/grid&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/zofe/rapyd/views/demo/grid.blade.php&#10;composer.json&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;angular-rest&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/angular2-rest/angular2-rest.ts&#10;services.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/services/services.component.ts&#10;node/material/&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/@angular2-material&#10;articlecontroller&#9;null&#9;null&#10;con&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/CrudController.php&#10;articleseed&#9;null&#9;null&#10;material/ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/@angular2-material/toolbar/toolbar.scss&#10;sectioncon&#9;null&#9;null&#10;book.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/Controllers/BooksController.php&#10;sectionphp&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Section.php&#10;routes.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/app/Http/routes.php&#10;material/.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/@angular2-material/radio/radio.d.ts&#10;books-sidebar-list&#9;null&#9;null&#10;book.h&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/books/books.html&#10;books.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/books/books.component.ts&#10;books-si&#9;null&#9;null&#10;providers.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/platform/browser/providers.ts&#10;bootstrap.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/angular2/ts/examples/core/ts/bootstrap/bootstrap.ts&#10;angular2rest&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/node_modules/angular2-rest/angular2-rest.js&#10;rest.ts&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/node_modules/angular2-rest/angular2-rest.d.ts&#10;res&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/core/RestClient.ts&#10;bookservice&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/frontend/src/app/books/book.service.ts&#10;welcome.&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/resources/views/welcome.blade.php&#10;session.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/session.php&#10;composer&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/composer.json&#10;app/config/packages/frozennode/administrator/administrator.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/frozennode/administrator/examples/app/config/packages/frozennode/administrator/administrator.php&#10;packages/fro/admin&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/vendor/frozennode/administrator/examples/app/config/packages/frozennode/administrator/administrator.php&#10;admin.php&#9;FILE&#9;file:///Users/Vlad/Code/pocketLawyer/backend/config/administrator.php" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="JavaScriptPreferStrict" value="false" />
@@ -468,19 +562,19 @@
     <property name="editor.config.accepted" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/resources/views/admin/books/form" />
+      <recent name="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/form/fields" />
+      <recent name="$PROJECT_DIR$/backend/resources/views/admin/layout/crud" />
+      <recent name="$PROJECT_DIR$/backend/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/form/fields" />
+      <recent name="$PROJECT_DIR$/backend/resources/views/admin/layout/crud/form" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/frontend.old" />
       <recent name="$PROJECT_DIR$/backend/database" />
-      <recent name="$PROJECT_DIR$/backend/database/factories" />
-      <recent name="$PROJECT_DIR$/backend/untitled folder" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/backend/app/Http/Controllers/Admin" />
-      <recent name="$PROJECT_DIR$/backend/app/Http/Controllers/Admin/" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/services" />
-      <recent name="$PROJECT_DIR$/frontend/src/app" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/about" />
     </key>
   </component>
   <component name="RunManager">
@@ -567,7 +661,10 @@
       <workItem from="1463264893771" duration="623000" />
       <workItem from="1463312522951" duration="2406000" />
       <workItem from="1463324229465" duration="228000" />
-      <workItem from="1463338642909" duration="21597000" />
+      <workItem from="1463338642909" duration="27864000" />
+      <workItem from="1463569085226" duration="66000" />
+      <workItem from="1463657731286" duration="670000" />
+      <workItem from="1464334752725" duration="21280000" />
     </task>
     <task id="LOCAL-00001" summary="HomeView: reformat">
       <created>1460896825467</created>
@@ -716,11 +813,25 @@
       <option name="project" value="LOCAL" />
       <updated>1463425157798</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="просмотр книг">
+      <created>1463429899774</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1463429899774</updated>
+    </task>
+    <task id="LOCAL-00023" summary="просмотр книг">
+      <created>1463429922706</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1463429922706</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203049000" />
+    <option name="totallyTimeSpent" value="231332000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,19 +843,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1538" height="1023" extended-state="0" />
-    <editor active="false" />
+    <frame x="-2" y="23" width="1440" height="1023" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25334224" sideWeight="0.5305466" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26323318" sideWeight="0.52112675" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25334224" sideWeight="0.46945336" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32747456" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53061223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26323318" sideWeight="0.47887325" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5300896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47798067" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="21" y="320" width="1496" height="429" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6616541" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="21" y="320" width="1496" height="429" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -817,7 +928,8 @@
     <MESSAGE value="before downgrade to 5.1" />
     <MESSAGE value="прототип библиотеки работает" />
     <MESSAGE value="пустая админка" />
-    <option name="LAST_COMMIT_MESSAGE" value="пустая админка" />
+    <MESSAGE value="просмотр книг" />
+    <option name="LAST_COMMIT_MESSAGE" value="просмотр книг" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -827,143 +939,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/src/core/CoreConnector.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/books.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-          <folding>
-            <marker date="1463267633000" expanded="true" signature="7:279" placeholder="..." />
-            <marker date="1463267633000" expanded="true" signature="2552:2555" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/section.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/article.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/books.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1463265300000" expanded="true" signature="1679:1690" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/chapter.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/database/seeds/ArticlesSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/article.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/chapter.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/sidebar-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <marker date="1463263355000" expanded="false" signature="7:17" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/books/library-main.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <marker date="1463328839000" expanded="true" signature="759:781" placeholder="..." />
-            <marker date="1463328839000" expanded="true" signature="782:835" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/CrudController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ArticlesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/ChaptersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/BooksController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,10 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="82" column="29" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1463341473000" expanded="true" signature="4333:4400" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -982,7 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -990,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -998,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,9 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1024,7 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,12 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <marker date="1463341032000" expanded="true" signature="865:971" placeholder="..." />
-            <marker date="1463341032000" expanded="true" signature="1004:1431" placeholder="..." />
-            <marker date="1463341032000" expanded="true" signature="1037:1416" placeholder="..." />
-            <marker date="1463341032000" expanded="true" signature="1127:1284" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,16 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119">
           <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding>
-            <marker date="1463354920000" expanded="true" signature="1256:2315" placeholder="..." />
-            <marker date="1463354920000" expanded="true" signature="1291:1930" placeholder="..." />
-            <marker date="1463354920000" expanded="true" signature="1432:1470" placeholder="..." />
-            <marker date="1463354920000" expanded="true" signature="1539:1576" placeholder="..." />
-            <marker date="1463354920000" expanded="true" signature="1646:1684" placeholder="..." />
-            <marker date="1463354920000" expanded="true" signature="1757:1798" placeholder="..." />
-            <marker date="1463354920000" expanded="true" signature="1870:1910" placeholder="..." />
-            <marker date="1463354920000" expanded="true" signature="2158:2295" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,9 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1072,18 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="51" column="96" selection-start-line="51" selection-start-column="96" selection-end-line="51" selection-end-column="96" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1463354841000" expanded="true" signature="644:723" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="735:1470" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="744:785" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="828:1102" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="912:957" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="1043:1087" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="1140:1246" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="1285:1457" placeholder="..." />
-            <marker date="1463354841000" expanded="true" signature="1302:1442" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1091,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1099,12 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding>
-            <marker date="1463413408000" expanded="true" signature="868:974" placeholder="..." />
-            <marker date="1463413408000" expanded="true" signature="1007:1342" placeholder="..." />
-            <marker date="1463413408000" expanded="true" signature="1040:1327" placeholder="..." />
-            <marker date="1463413408000" expanded="true" signature="1129:1293" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1112,15 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="224" column="45" selection-start-line="224" selection-start-column="45" selection-end-line="224" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,7 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="917" column="9" selection-start-line="917" selection-start-column="9" selection-end-line="917" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,15 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1152,7 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,7 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,31 +1076,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/books/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/books/list.blade.php" />
     <entry file="file://$PROJECT_DIR$/backend/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
           <caret line="781" column="50" selection-start-line="781" selection-start-column="50" selection-end-line="781" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/vendor/zofe/rapyd/src/DataGrid/DataGrid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="75" column="29" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,67 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminDashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminCrudController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminBooksController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="85" column="67" selection-start-line="85" selection-start-column="67" selection-end-line="85" selection-end-column="67" />
-          <folding>
-            <element signature="e#46#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1268,23 +1098,230 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/zofe/rapyd/views/demo/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/zofe/rapyd/src/DataGrid/DataGrid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Book.php">
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="90">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminCrudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="185" column="18" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminDashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#46#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="555">
+          <caret line="46" column="60" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/BookTranslation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/adamwathan/form/src/AdamWathan/Form/Binding/BoundData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/adamwathan/form/src/AdamWathan/Form/FormBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="259" column="5" selection-start-line="259" selection-start-column="5" selection-end-line="259" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="89" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/form/fields/translations.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/form/fields/root.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/books/form/entity.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Entity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Requests/BookRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Admin/AdminBooksController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+          <folding>
+            <element signature="e#46#62#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/books/form/translations.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/admin/layout/crud/update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="61" column="11" selection-start-line="59" selection-start-column="8" selection-end-line="61" selection-end-column="11" />
+          <folding>
+            <marker date="1464375163000" expanded="true" signature="1735:2318" placeholder="..." />
+            <marker date="1464375163000" expanded="true" signature="1753:2317" placeholder="..." />
+            <marker date="1464375163000" expanded="true" signature="1943:2310" placeholder="..." />
+            <marker date="1464375163000" expanded="true" signature="1956:2267" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

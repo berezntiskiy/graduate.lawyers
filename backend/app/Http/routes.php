@@ -11,6 +11,11 @@
 |
 */
 
+header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With, Content-Type, Content-Range, Content-Disposition, Content-Description');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,5 +32,16 @@ Route::resource('/api/service', 'ServicesController');
 Route::resource('/api/price', 'PricesController');
 
 
-Route::resource('/admin/books', 'Admin\AdminBooksController');
+function createAdminCrudRoutes($entity, $controller) {
+    Route::resource("/admin/$entity", "Admin\\$controller");
+
+//    Route::get("/admin/$entity", [ 'as' => "admin.$entity.index", 'uses' => "Admin\\$controller@index"]);
+//    Route::get("/admin/$entity/mutation", [ 'as' => "admin.$entity.mutation", 'uses' => "Admin\\$controller@mutation"]);
+    Route::get("/admin/$entity/{books}/delete", [ 'as' => "admin.$entity.delete", 'uses' => "Admin\\$controller@delete"]);
+}
+
+createAdminCrudRoutes('books', 'AdminBooksController');
+
+
+
 Route::resource('/admin', 'Admin\AdminDashboardController');

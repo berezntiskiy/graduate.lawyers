@@ -158,7 +158,10 @@ return [
 
         Dimsav\Translatable\TranslatableServiceProvider::class,
 
-        Zofe\Rapyd\RapydServiceProvider::class
+        Zofe\Rapyd\RapydServiceProvider::class,
+
+        AdamWathan\BootForms\BootFormsServiceProvider::class
+
     ],
 
     /*
@@ -204,6 +207,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'BootForm' => AdamWathan\BootForms\Facades\BootForm::class,
     ],
 
 ];
