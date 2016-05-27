@@ -29,10 +29,14 @@ class AdminArticlesController extends AdminCrudController
 
     function getDataForForm()
     {
-        $chapters = Section::all();
+        $chapters = Chapter::with('section.book')->get();
         $chapters_options = [];
-        foreach ($chapters as $chapter) {
-            $chapters_options[$chapter['id']] = $chapter['name'];
+
+        foreach ($chapters->toArray() as $chapter) {
+            $key = $chapter['section']['book']['name'] . ' - ' . $chapter['section']['name'];
+            if (!isset($chapters_options[$key]))
+                $chapters_options[$key] = [];
+            $chapters_options[$key][$chapter['id']] = $chapter['name'];
         }
         return ['chapters' => $chapters_options];
     }

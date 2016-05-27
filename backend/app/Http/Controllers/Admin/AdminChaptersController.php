@@ -28,10 +28,13 @@ class AdminChaptersController extends AdminCrudController
 
     function getDataForForm()
     {
-        $sections = Section::all();
+        $sections = Section::with('book')->get();
         $sections_options = [];
-        foreach ($sections as $section) {
-            $sections_options[$section['id']] = $section['name'];
+        foreach ($sections->toArray() as $section) {
+            $key = $section['book']['name'];
+            if (!isset($sections_options[$key]))
+                $sections_options[$key] = [];
+            $sections_options[$key][$section['id']] = $section['name'];
         }
         return ['sections' => $sections_options];
     }
