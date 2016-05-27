@@ -37,9 +37,13 @@ class AdminCrudController extends AdminController
         return $model;
     }
     
+    protected function pathIndexModel($model) {
+        return $model;
+    }
+    
     public function index()
     {
-        $grid = DataGrid::source($this->getModelForIndex());
+        $grid = DataGrid::source($this->pathIndexModel($this->getModelForIndex()));
 
         $this->addIndexColumns($grid);
 

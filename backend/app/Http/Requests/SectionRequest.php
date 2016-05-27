@@ -26,7 +26,6 @@ class SectionRequest extends EntityRequest
     public function entityRules()
     {
         return [
-            'id' => 'required',
             'book_id' => 'required|exists:books,id',
         ];
     }

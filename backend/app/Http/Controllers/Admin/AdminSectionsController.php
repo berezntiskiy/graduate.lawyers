@@ -13,10 +13,16 @@ class AdminSectionsController extends AdminCrudController
     protected $name = 'sections';
     protected $route = 'admin.sections';
 
+    public function pathIndexModel($model)
+    {
+        return $model->with('book');
+    }
+
     public function addIndexColumns($grid)
     {
         $grid->add('id', 'ID', true)->style("width:100px");
         $grid->add('name', 'Name');
+        $grid->add('book.name', 'Book');
         $grid->add('description', 'Description');
     }
 
@@ -24,10 +30,10 @@ class AdminSectionsController extends AdminCrudController
     {
         $books = Book::all();
         $books_options = [];
-        foreach($books as $book) {
+        foreach ($books as $book) {
             $books_options[$book['id']] = $book['name'];
         }
-        return ['books'=>$books_options];
+        return ['books' => $books_options];
     }
 
 

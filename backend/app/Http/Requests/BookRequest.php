@@ -26,7 +26,6 @@ class BookRequest extends EntityRequest
     public function entityRules()
     {
         return [
-            'id' => 'required',
         ];
     }
 }

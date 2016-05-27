@@ -14,7 +14,7 @@ class Section extends Entity
     protected $fillable = ['name', 'book_id', 'description'];
     public $translatedAttributes = ['name', 'description'];
 
-//    function book() {
-//        return $this->hasOne(Book::class);
-//    }
+    function book() {
+        return $this->belongsTo(Book::class);
+    }
 }
