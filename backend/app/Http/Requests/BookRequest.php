@@ -2,9 +2,8 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
 
-class BookRequest extends Request
+class BookRequest extends EntityRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,21 +12,21 @@ class BookRequest extends Request
      */
     public function authorize()
     {
-        // todo
         return true;
     }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
+    
+    public function translationRules()
     {
-        dd($this->request);
         return [
-//            'name' => 'required|max:255',
-//            'description' => 'required',
+            'name' => 'required|max:2553',
+            'description' => 'required|max:2555',
+        ];
+    }
+
+    public function entityRules()
+    {
+        return [
+            'id' => 'required',
         ];
     }
 }

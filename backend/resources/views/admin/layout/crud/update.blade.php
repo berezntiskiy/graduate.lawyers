@@ -16,17 +16,18 @@
                 <h4 class="panel-title">
                     @if(!isset($book[$lang]))
                         <a role="button" data-toggle="collapse" href="#form_lang_pannel-{{$lang}}">
-                            Текст на {{['ru'=>'Русском', 'md' => 'Румынском', 'en' => 'Английском'][$lang]}}
+                            Translation for {{['ru'=>'Russian', 'md' => 'Moldavian', 'en' => 'English'][$lang]}}
                         </a>
                     @else
-                        Текст на {{['ru'=>'Русском', 'md' => 'Румынском', 'en' => 'Английском'][$lang]}}
+                        <small class="pull-right">Can't be deleted</small>
+                        Translation for {{['ru'=>'Russian', 'md' => 'Moldavian', 'en' => 'English'][$lang]}}
                     @endif
                 </h4>
             </div>
             <div id="form_lang_pannel-{{$lang}}" class="panel-collapse collapse {{isset($book[$lang]) ? 'in' : ''}}"
                  role="tabpanel">
                 <div class="panel-body">
-                    <input type="text" name="activeLangs[{{$lang}}]"
+                    <input type="hidden" class="activeLangFlag" name="activeLangs[{{$lang}}]"
                            value="{{isset($book[$lang]) ? 'true' : 'false'}}"/>
                     @include('admin.books.form.translations')
                 </div>
@@ -57,8 +58,16 @@
 
 <script>
     $(function () {
-        $('a').click(function(){
-            if(!confirm('Вы действительно хотите удалить перевод?'))return false;
+        $('a[data-toggle="collapse"]').click(function () {
+            var el = $(this);
+            var target = $(el.attr('href'));
+            var isIn = target.hasClass('in');
+            if (isIn)
+                if (!confirm('Are you sure what to delete translation?')) {
+                    target.find('.activeLangFlag').val('false');
+                    return false;
+                }
+            target.find('.activeLangFlag').val('true');
         });
         var lang_block = $('.lang-block');
         lang_block.each(function () {
