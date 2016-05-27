@@ -11,7 +11,7 @@
 
 <div class="panel-group" id="accordion" role="tablist">
     @foreach(Config::get("translatable.locales") as $i => $lang)
-    {{-- */$isLocaleActive = isset($entity[$lang]);/* --}}
+    {{-- */$isLocaleActive = isset($entity[$lang]) || $i == 0;/* --}}
 
 
         <div class="panel {{!$isLocaleActive ? 'panel-default' : 'panel-primary'}}">
