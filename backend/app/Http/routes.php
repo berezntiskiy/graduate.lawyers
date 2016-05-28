@@ -43,6 +43,7 @@ createAdminCrudRoutes('books', 'AdminBooksController');
 createAdminCrudRoutes('sections', 'AdminSectionsController');
 createAdminCrudRoutes('chapters', 'AdminChaptersController');
 createAdminCrudRoutes('articles', 'AdminArticlesController');
+createAdminCrudRoutes('services', 'AdminServicesController');
 createAdminCrudRoutes('admins', 'AdminAdminsController');
 
 

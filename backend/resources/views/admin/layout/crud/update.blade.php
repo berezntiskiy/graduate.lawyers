@@ -1,4 +1,4 @@
-<h3>New entity creation</h3>
+<h3>{{$isNew ? 'New entity creation' : 'Updating entity'}}</h3>
 
 @if ($isNew)
     {!! BootForm::open()->action( route('admin.'.$name.'.store') )->post() !!}

@@ -24,6 +24,7 @@ class AdminController extends Controller
         'sections' => 'admin.sections',
         'chapters' => 'admin.chapters',
         'articles' => 'admin.articles',
+        'services' => 'admin.services',
         'admins' => 'admin.admins',
     ];
 

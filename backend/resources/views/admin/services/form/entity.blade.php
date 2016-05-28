@@ -1,0 +1,1 @@
+{!! BootForm::select('For', 'naturalperson', [1 => 'Person', 0 => 'Company']) !!}
