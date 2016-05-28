@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Mail;
 
 class AdminDashboardController extends AdminController
 {
@@ -11,7 +12,11 @@ class AdminDashboardController extends AdminController
     protected $name = null;
 
     function index() {
-//        $this->
+        Mail::send('emails.resetpassword', [], function ($m) {
+            $m->from('hello@app.com', 'Your Application');
+
+            $m->to('test@ta.ru', 'test')->subject('Your Reminder!');
+        });
         return $this->createPage(view('admin.page.dashboard'));
     }
 }

@@ -21,6 +21,7 @@ class Handler extends ExceptionHandler
         HttpException::class,
         ModelNotFoundException::class,
         ValidationException::class,
+        LogicException::class
     ];
 
     /**
@@ -45,6 +46,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+//        if ($request->header('content-type') == 'application/json' || $request->isJson()) {
+//            return [
+//                'status' => 'error',
+//                'error_code' => $e->getMessage()
+//            ];
+//        }
         return parent::render($request, $e);
     }
 }

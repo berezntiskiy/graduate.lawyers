@@ -45,6 +45,7 @@ createAdminCrudRoutes('chapters', 'AdminChaptersController');
 createAdminCrudRoutes('articles', 'AdminArticlesController');
 createAdminCrudRoutes('services', 'AdminServicesController');
 createAdminCrudRoutes('admins', 'AdminAdminsController');
+createAdminCrudRoutes('staff', 'AdminStaffController');
 
 
 
@@ -53,3 +54,14 @@ Route::post('/admin/login', 'Admin\AdminLoginController@login');
 Route::any('/admin/logout', 'Admin\AdminLoginController@logout');
 
 Route::resource('/admin', 'Admin\AdminDashboardController');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+
+
+
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+//Route::post('password/reset', 'Auth\PasswordController@postReset');
+Route::post('password/reset', 'Auth\PasswordController@ajaxReset');

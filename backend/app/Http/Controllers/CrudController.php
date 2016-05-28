@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Exceptions\LogicException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Mockery\CountValidator\Exception;
 
-class CrudController extends Controller
+class CrudController extends RestController
 {
     protected $model = Book::class;
     protected $request = null;
@@ -48,7 +48,7 @@ class CrudController extends Controller
         $model = $this->model;
         $entity = $model::find($id);
         if (!$entity)
-            throw new Exception('WRONG_ID');
+            throw new LogicException('WRONG_ID');
         return $entity;
     }
 
