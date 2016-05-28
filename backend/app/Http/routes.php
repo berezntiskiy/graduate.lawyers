@@ -36,14 +36,19 @@ function createAdminCrudRoutes($entity, $controller) {
 
 //    Route::get("/admin/$entity", [ 'as' => "admin.$entity.index", 'uses' => "Admin\\$controller@index"]);
 //    Route::get("/admin/$entity/mutation", [ 'as' => "admin.$entity.mutation", 'uses' => "Admin\\$controller@mutation"]);
-    Route::get("/admin/$entity/{books}/delete", [ 'as' => "admin.$entity.delete", 'uses' => "Admin\\$controller@delete"]);
+    Route::get("/admin/$entity/{books}/delete", [ 'as' => "admin.$entity.delete", 'uses' => "Admin\\$controller@delete"])->middleware(['admin_check']);
 }
 
 createAdminCrudRoutes('books', 'AdminBooksController');
 createAdminCrudRoutes('sections', 'AdminSectionsController');
 createAdminCrudRoutes('chapters', 'AdminChaptersController');
 createAdminCrudRoutes('articles', 'AdminArticlesController');
+createAdminCrudRoutes('admins', 'AdminAdminsController');
 
 
+
+Route::get('/admin/login', 'Admin\AdminLoginController@index');
+Route::post('/admin/login', 'Admin\AdminLoginController@login');
+Route::any('/admin/logout', 'Admin\AdminLoginController@logout');
 
 Route::resource('/admin', 'Admin\AdminDashboardController');

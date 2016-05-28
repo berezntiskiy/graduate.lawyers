@@ -12,23 +12,20 @@ class AdminCrudController extends AdminController
     protected $name = '';
     protected $request = null;
     protected $entitiesPerPage = 10;
-
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-    }
+    protected $hasTranslations = true;
 
     protected function createPage($content, $options = [])
     {
         return parent::createPage($content, ['content' => $content, 'menuLinks' => $this->menuLinks] + $options);
     }
 
-    protected function getModel() {
+    protected function getModel()
+    {
         $Model = $this->model;
         $model = $Model::whereRaw('1 = 1');
         return $model;
     }
-    
+
     public function getModelForIndex()
     {
         $model = $this->getModel();
@@ -36,11 +33,12 @@ class AdminCrudController extends AdminController
             $model->withTrashed();
         return $model;
     }
-    
-    protected function pathIndexModel($model) {
+
+    protected function pathIndexModel($model)
+    {
         return $model;
     }
-    
+
     public function index()
     {
         $grid = DataGrid::source($this->pathIndexModel($this->getModelForIndex()));
@@ -48,8 +46,8 @@ class AdminCrudController extends AdminController
         $this->addIndexColumns($grid);
 
         $placeholder = '000-000-000';
-        $re = route($this->route.'.edit', [$placeholder]);
-        $rd = route($this->route.'.delete', [$placeholder]);
+        $re = route($this->route . '.edit', [$placeholder]);
+        $rd = route($this->route . '.delete', [$placeholder]);
         $re = str_replace($placeholder, '{{$id}}', $re);
         $rd = str_replace($placeholder, '{{$id}}', $rd);
         $grid->add('
@@ -66,18 +64,20 @@ class AdminCrudController extends AdminController
 
         return $this->createPage(view('admin.layout.crud.list', ['grid' => '' . $grid, 'route' => $this->route, 'query' => $_GET]));
     }
-    
-    protected function toIndex() {
+
+    protected function toIndex()
+    {
         $route = $this->route;
         return redirect()->route("${route}.index");
     }
-    
-    protected function _update($id, $request) {
+
+    protected function _update($id, $request)
+    {
         $req = $request->all();
         $locales = Config::get('translatable.locales');
         foreach ($locales as $locale) {
             if (isset($req[$locale])) {
-                if($req['activeLangs'][$locale] !== 'true') {
+                if ($req['activeLangs'][$locale] !== 'true') {
                     unset($req[$locale]);
                 }
             }
@@ -92,14 +92,21 @@ class AdminCrudController extends AdminController
     {
         return $this->_edit($id);
     }
-    
-    protected function _edit($id) {
+
+    protected function _edit($id)
+    {
         $Model = $this->model;
         $model = $Model::findOrFail($id);
-        return $this->createPage(view('admin.layout.crud.update', $this->getDataForForm() + ['name' => $this->name, 'isNew' => false, 'entity' => $model->translationTree(['ru', 'en', 'md'])]));
+        return $this->createPage(view('admin.layout.crud.update', $this->getDataForForm() + [
+                'name' => $this->name,
+                'isNew' => false,
+                'entity' => $model->translationTree(['ru', 'en', 'md']),
+                'hasTranslations' => $this->hasTranslations
+            ]));
     }
 
-    protected function _store($request) {
+    protected function _store($request)
+    {
         $model = $this->model;
         $model::create($request->all());
         return $this->toIndex();
@@ -117,7 +124,7 @@ class AdminCrudController extends AdminController
             return [];
         }
     }
-    
+
     function show($id)
     {
         $model = $this->getModel();
@@ -126,10 +133,16 @@ class AdminCrudController extends AdminController
 
     function create()
     {
-        return $this->createPage(view('admin.layout.crud.update', $this->getDataForForm() + ['name' => $this->name, 'isNew' => true, 'entity' => []]));
+        return $this->createPage(view('admin.layout.crud.update', $this->getDataForForm() + [
+                'name' => $this->name,
+                'isNew' => true,
+                'entity' => [],
+                'hasTranslations' => $this->hasTranslations
+            ]));
     }
 
-    function getDataForForm() {
+    function getDataForForm()
+    {
         return [];
     }
 }

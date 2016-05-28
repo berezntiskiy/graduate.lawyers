@@ -8,7 +8,7 @@
 @endif
 @include('admin.'.$name.'.form.entity')
 
-
+@if($hasTranslations)
 <div class="panel-group" id="accordion" role="tablist">
     @foreach(Config::get("translatable.locales") as $i => $lang)
     {{-- */$isLocaleActive = isset($entity[$lang]) || $i == 0;/* --}}
@@ -41,7 +41,7 @@
 
     @endforeach
 </div>
-
+@endif
 
 {!! BootForm::submit('Submit') !!}
 {!! BootForm::close() !!}

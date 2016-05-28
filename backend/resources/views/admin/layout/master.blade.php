@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <title>PocketLawyer - backend</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -49,6 +49,11 @@
                         <a href="{!! route($route.'.index') !!}">{{$linkName}}</a>
                     </li>
                 @endforeach
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a href="/admin/logout">Logout ({{Session::get('admin_name')}})</a>
+                </li>
             </ul>
         </div>
     </div>

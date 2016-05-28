@@ -22,11 +22,11 @@ class CreatePricesTable extends Migration
 
             $table->softDeletes();
             $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('staff');
+            $table->foreign('created_by')->references('id')->on('administrators');
             $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('staff');
+            $table->foreign('updated_by')->references('id')->on('administrators');
             $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('staff');
+            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
 
         Schema::create('price_translations', function(Blueprint $table)
@@ -44,11 +44,11 @@ class CreatePricesTable extends Migration
 
             $table->softDeletes();
             $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('staff');
+            $table->foreign('created_by')->references('id')->on('administrators');
             $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('staff');
+            $table->foreign('updated_by')->references('id')->on('administrators');
             $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('staff');
+            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
     }
 

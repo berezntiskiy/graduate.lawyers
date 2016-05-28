@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Article;
 use App\Book;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\AdminCheck;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,6 +16,7 @@ class AdminController extends Controller
     protected $model = Book::class;
     protected $request = null;
     protected $layout = 'admin.layout.master';
+    protected $isSecured = true;
 
     protected $name = null;
     protected $menuLinks = [
@@ -27,6 +29,8 @@ class AdminController extends Controller
     public function __construct(Request $request)
     {
         $this->request = $request;
+        if ($this->isSecured)
+            $this->middleware(AdminCheck::class);
     }
 
     protected function createPage($content, $options = [])
