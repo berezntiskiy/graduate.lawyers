@@ -23,7 +23,6 @@ export class CoreClient extends RESTClient {
 
 
     protected responseInterceptor(res:Response):Response {
-        console.info('response: ',res.json()['data']);
         return res.json()['data'];
     }
 }
