@@ -13,12 +13,6 @@ class CrudController extends RestController
     protected $model = Book::class;
     protected $request = null;
 
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-    }
-
-
     function getIndexFilters()
     {
         $res = [];

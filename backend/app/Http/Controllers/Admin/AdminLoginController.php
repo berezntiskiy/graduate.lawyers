@@ -14,7 +14,7 @@ class AdminLoginController extends AdminController
     
     function login() {
         $admin = Admin::where('email', '=', $this->request->get('email'))->first();
-        $isValid = Hash::check($this->request->get('password'), $admin->password);
+        $isValid = $admin && Hash::check($this->request->get('password'), $admin->password);
         if (!$isValid) {
             return redirect('admin/login/')
                 ->withErrors(['wrong'])
