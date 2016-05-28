@@ -70,18 +70,23 @@ class AdminCrudController extends AdminController
         $route = $this->route;
         return redirect()->route("${route}.index");
     }
-
-    protected function _update($id, $request)
-    {
-        $req = $request->all();
+    
+    protected function getRequestData() {
+        $data = $this->request->all();
         $locales = Config::get('translatable.locales');
         foreach ($locales as $locale) {
-            if (isset($req[$locale])) {
-                if ($req['activeLangs'][$locale] !== 'true') {
-                    unset($req[$locale]);
+            if (isset($data[$locale])) {
+                if ($data['activeLangs'][$locale] !== 'true') {
+                    unset($data[$locale]);
                 }
             }
         }
+        return $data;
+    }
+
+    protected function _update($id, $request)
+    {
+        $req = $this->getRequestData();
         $model = $this->getModel()->findOrFail($id);
         $model->fill($req);
         $model->save();
@@ -108,7 +113,7 @@ class AdminCrudController extends AdminController
     protected function _store($request)
     {
         $model = $this->model;
-        $model::create($request->all());
+        $model::create($this->getRequestData());
         return $this->toIndex();
     }
 

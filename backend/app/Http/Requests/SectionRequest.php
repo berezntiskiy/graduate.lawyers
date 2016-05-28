@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 
-class SectionRequest extends EntityRequest
+class SectionRequest extends TranslatableEntityRequest
 {
     /**
      * Determine if the user is authorized to make this request.

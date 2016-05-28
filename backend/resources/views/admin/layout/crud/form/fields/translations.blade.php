@@ -1,2 +1,2 @@
-{!! BootForm::text("${lang}[name]", "${lang}[name]") !!}
-{!! BootForm::text("${lang}[description]", "${lang}[description]") !!}
+{!! BootForm::text("Name", "${lang}[name]") !!}
+{!! BootForm::text("Description", "${lang}[description]") !!}

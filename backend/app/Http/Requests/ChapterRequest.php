@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 
-class ChapterRequest extends EntityRequest
+class ChapterRequest extends TranslatableEntityRequest
 {
     /**
      * Determine if the user is authorized to make this request.

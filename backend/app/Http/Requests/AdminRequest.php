@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 
-class BookRequest extends TranslatableEntityRequest
+class AdminRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,17 +15,12 @@ class BookRequest extends TranslatableEntityRequest
         return true;
     }
     
-    public function translationRules()
+    public function rules()
     {
         return [
-            'name' => 'required|max:2553',
-            'description' => 'required|max:2555',
-        ];
-    }
-
-    public function entityRules()
-    {
-        return [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'new_password' => 'min:6|max:255',
         ];
     }
 }

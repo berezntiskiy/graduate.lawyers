@@ -24,6 +24,7 @@ class AdminController extends Controller
         'sections' => 'admin.sections',
         'chapters' => 'admin.chapters',
         'articles' => 'admin.articles',
+        'admins' => 'admin.admins',
     ];
 
     public function __construct(Request $request)

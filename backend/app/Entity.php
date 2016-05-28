@@ -10,6 +10,7 @@ class Entity extends Model
     function translationTree($translations)
     {
         $model = $this->toArray();
+        if (!$this->translatedAttributes) return $model;
         foreach($this->translatedAttributes as $translatedAttribute)
             unset($model[$translatedAttribute]);
 
