@@ -1,0 +1,24 @@
+<div class="card-container">
+    <md-card x-large class="sample-content">Your Content Here</md-card>
+    <md-card>
+        <md-card-title>Local State</md-card-title>
+        <md-card-content>
+            <div style="display: flex;">
+                <!-- Books -->
+                <library-sidebar [isLoading]="loadingBooks" [collection]="books"
+                                 (open)="openBook($event.value)"></library-sidebar>
+                <!-- Sections -->
+                <library-sidebar [isLoading]="loadingSections" [collection]="sections"
+                                 (open)="openSection($event.value)"></library-sidebar>
+                <!-- Chapters -->
+                <library-sidebar [isLoading]="loadingChapters" [collection]="chapters"
+                                 (open)="openChapter($event.value)"></library-sidebar>
+                <!-- Articles -->
+                <library-main>
+                    <article-list [isLoading]="loadingArticles" [collection]="articles"></article-list>
+                </library-main>
+            </div>
+        </md-card-content>
+    </md-card>
+
+</div>
