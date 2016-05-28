@@ -33,7 +33,7 @@ class AdminAdminsController extends AdminCrudController
         if (isset($data['password']))
             unset($data['password']);
 
-        if (isset($data['new_password'])) {
+        if (isset($data['new_password']) && strlen($data['new_password'])) {
             $data['password'] = Hash::make($data['new_password']);
             unset($data['new_password']);
         }

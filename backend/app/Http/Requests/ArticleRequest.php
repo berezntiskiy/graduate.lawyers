@@ -19,7 +19,7 @@ class ArticleRequest extends TranslatableEntityRequest
     {
         return [
             'title' => 'required|max:2553',
-            'text' => 'required|max:2555',
+            'text' => 'required',
         ];
     }
 

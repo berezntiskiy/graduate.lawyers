@@ -18,8 +18,8 @@ class ChapterRequest extends TranslatableEntityRequest
     public function translationRules()
     {
         return [
-            'name' => 'required|max:2553',
-            'description' => 'required|max:2555',
+            'name' => 'required|max:512',
+            'description' => 'max:512',
         ];
     }
 
