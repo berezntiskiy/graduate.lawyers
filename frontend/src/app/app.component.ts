@@ -8,7 +8,6 @@ import {isPresent} from '@angular/core/src/facade/lang';
 import {Home} from './home';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
-import {Books} from "./library/books.component";
 import {Library} from "./library/library.component";
 import {Services} from "./services"
 
