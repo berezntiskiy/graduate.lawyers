@@ -2,6 +2,7 @@ import {ServiceConnector} from "./ServiceConnector";
 import {RESTClient, GET, PUT, POST, DELETE, BaseUrl, Headers, DefaultHeaders, Path, Body, Query} from 'angular2-rest/angular2-rest.ts';
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response, Request} from '@angular/http';
+import {SessionFactory} from "../app/auth/session.factory";
 
 
 
@@ -16,6 +17,7 @@ export class CoreClient extends RESTClient {
     // }
 
     protected requestInterceptor(req: Request) {
+        req.headers.append('X-CSRF-TOKEN', SessionFactory.csrfToken);
         // if (SessionFactory.getInstance().isAuthenticated) {
         //     req.headers.append('jwt', SessionFactory.getInstance().credentials.jwt);
         // }
@@ -23,6 +25,12 @@ export class CoreClient extends RESTClient {
 
 
     protected responseInterceptor(res:Response):Response {
-        return res.json()['data'];
+        const csrf = res.headers.get('X-CSRF-TOKEN');
+        console.info(res.headers);
+        if (csrf)
+            SessionFactory.csrfToken = csrf;
+
+        let body = res.json();
+        return body.data || { };
     }
 }

@@ -24,6 +24,8 @@ class ResponseWrap
             )));
         }
 
+        $response->headers->set('X-CSRF-TOKEN', rand());
+
         return $response;
     }
 }

@@ -43,7 +43,7 @@ import {Chapter} from "./chapter";
 })
 export class ArticleList {
     @Input() isLoading:boolean;
-    @Input() collection:Array;
+    @Input() collection:any[];
     @Output() open: EventEmitter<any> = new EventEmitter();
 
     emmitOpen(entity) {

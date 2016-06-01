@@ -1,8 +1,9 @@
 /*
  * Angular 2 decorators and services
  */
-import {Component, ViewEncapsulation} from '@angular/core';
-import {RouteConfig, Router} from '@angular/router-deprecated';
+import {Component, ViewEncapsulation, Query, QueryList} from '@angular/core';
+import {RouteConfig, Router, RouterLink} from '@angular/router-deprecated';
+import {isPresent} from '@angular/core/src/facade/lang';
 
 import {Home} from './home';
 import {AppState} from './app.service';
@@ -16,17 +17,29 @@ import {Services} from "./services"
  * Top Level Component
  */
 @Component({
-  selector: 'app',
-  pipes: [ ],
-  providers: [ ],
-  directives: [ RouterActive ],
-  encapsulation: ViewEncapsulation.None,
-  styles: [
-    require('normalize.css'),
-    `html, body{
+    selector: 'app',
+    pipes: [],
+    providers: [],
+    directives: [
+        RouterActive
+    ],
+    encapsulation: ViewEncapsulation.None,
+    styles: [
+        require('normalize.css'),
+        `html, body{
       height: 100%;
       background: #F4FAFA;
     }
+    
+    .hw3d0 {
+      -webkit-transform: translate3d(0,0,0);
+      -moz-transform: translate3d(0,0,0);
+      -ms-transform: translate3d(0,0,0);
+      -o-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+    }
+    
+    
     button.active{
       background: #fff;
       color: #009688;
@@ -41,6 +54,22 @@ import {Services} from "./services"
       margin: 15px;
       flex: 1;
     }
+    
+    md-toolbar {
+        transition: all 800ms ease;
+        
+        min-height: 0;
+    }
+    .toolbar-bg-wrap{
+        background-size: cover;
+        background-position: center;
+        background-image: url('assets/img/header.jpg');
+    }
+    .expanded md-toolbar {
+        min-height: 600px !important;
+        background: transparent !important;
+    }
+    
     .home{
       flex: 1;
     }
@@ -57,28 +86,30 @@ import {Services} from "./services"
       justify-content: center;
       background: #fff;
     }`
-  ],
-  template: `
+    ],
+    template: `
     <md-content>
-      <md-toolbar color="primary">
-          <span>{{ name }}</span>
-          <span class="fill"></span>
-          <button md-button router-active [routerLink]=" ['Index'] ">
-            Index
-          </button>
-          <button md-button router-active [routerLink]=" ['Home'] ">
-            Home
-          </button>
-          <button md-button router-active [routerLink]=" ['About'] ">
-            About
-          </button>
-          <button md-button router-active [routerLink]=" ['Services'] ">
-            Services
-          </button>
-          <button md-button router-active [routerLink]=" ['Library'] ">
-            Library
-          </button>
-      </md-toolbar>
+        <div class="toolbar-bg-wrap hw3d0" [ngClass]="{expanded: expandHeader}">
+          <md-toolbar color="primary" class="hw3d0">
+              <span>{{ name }}</span>
+              <span class="fill"></span>
+              <button md-button router-active [routerLink]=" ['Index'] ">
+                Index
+              </button>
+              <button md-button router-active [routerLink]=" ['Home'] ">
+                Home
+              </button>
+              <button md-button router-active [routerLink]=" ['About'] ">
+                About
+              </button>
+              <button md-button router-active [routerLink]=" ['Services'] ">
+                Services
+              </button>
+              <button md-button router-active [routerLink]=" ['Library'] ">
+                Library
+              </button>
+          </md-toolbar>
+        </div>
       
       <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
 
@@ -94,34 +125,51 @@ import {Services} from "./services"
   `
 })
 @RouteConfig([
-  { path: '/',      name: 'Index', component: Home, useAsDefault: true },
-  { path: '/library', name: 'Library', component: Library },
-  { path: '/home',  name: 'Home',  component: Home },
-  { path: '/services',  name: 'Services',  component: Services },
-  // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
+    {path: '/', name: 'Index', component: Home, useAsDefault: true},
+    {path: '/library', name: 'Library', component: Library},
+    {path: '/home', name: 'Home', component: Home},
+    {path: '/services', name: 'Services', component: Services},
+    // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
+    {path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About')}
 ])
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  loading = false;
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+    angularclassLogo = 'assets/img/angularclass-avatar.png';
+    loading = false;
+    name = 'PocketLawyer';
+    url = 'https://twitter.com/AngularClass';
+    expandHeader:boolean;
 
-  constructor(
-    public appState: AppState) {
+    constructor(public appState:AppState,
+                private router:Router,
+                @Query(RouterLink) public routerLink:QueryList<RouterLink>) {
+        this.subscribeForHeaderToggling();
+    }
 
-  }
+    ngOnInit() {
+    }
 
-  ngOnInit() {
-    console.log('Initial App State', this.appState.state);
-  }
+
+    private _findRootRouter():Router {
+        let router:Router = this.router;
+        while (isPresent(router.parent)) {
+            router = router.parent;
+        }
+        return router;
+    }
+
+    private toggleHeader() {
+        const currentUrl = this.router.currentInstruction.toRootUrl();
+        const masterUrl = this.router.generate(['/Index']).toRootUrl();
+        this.expandHeader = currentUrl == masterUrl;
+    }
+
+    private subscribeForHeaderToggling() {
+        this.routerLink.changes.subscribe(() => {
+            this.toggleHeader();
+            this._findRootRouter().subscribe(() => {
+                this.toggleHeader();
+            });
+        });
+    }
 
 }
-
-/*
- * Please review the https://github.com/AngularClass/angular2-examples/ repo for
- * more angular app examples that you may copy/paste
- * (The examples may not be updated as quickly. Please open an issue on github for us to update it)
- * For help or questions please contact us at @AngularClass on twitter
- * or our chat on Slack at https://AngularClass.com/slack-join
- */

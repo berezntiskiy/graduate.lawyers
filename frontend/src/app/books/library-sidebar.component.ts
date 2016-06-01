@@ -42,7 +42,7 @@ import {Chapter} from "./chapter";
 })
 export class LibrarySidebar {
     @Input() isLoading:boolean;
-    @Input() collection:Array;
+    @Input() collection:any[];
     @Output() open:EventEmitter<any> = new EventEmitter();
 
     emmitOpen(entity) {

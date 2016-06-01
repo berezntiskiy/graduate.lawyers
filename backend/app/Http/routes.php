@@ -12,7 +12,7 @@
 */
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With, Content-Type, Content-Range, Content-Disposition, Content-Description');
+header('Access-Control-Allow-Headers: X-CSRF-TOKEN, Origin, Content-Type, Accept, Authorization, X-Request-With, Content-Type, Content-Range, Content-Disposition, Content-Description');
 
 
 Route::get('/', function () {
@@ -54,10 +54,6 @@ Route::post('/admin/login', 'Admin\AdminLoginController@login');
 Route::any('/admin/logout', 'Admin\AdminLoginController@logout');
 
 Route::resource('/admin', 'Admin\AdminDashboardController');
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
 
 
 
