@@ -32,14 +32,28 @@
   <!-- base url -->
   <base href="<%= webpackConfig.metadata.baseUrl %>">
 
+  <style>
+    .app-starting {
+    }
 
+    .app-starting .app-starting-loading {
+      display: block;
+    }
+
+    .app-starting-loading {
+      color: red;
+      display: none;
+      position: fixed;
+      z-index: 999999999999;
+    }
+  </style>
 </head>
 
-<body>
-
-  <app>
-    Loading...
-  </app>
+<body class="app-starting">
+  <div class="app-starting-loading">
+    <h1>App is loading...</h1>
+  </div>
+  <app></app>
 
   <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
   <!--<script>-->

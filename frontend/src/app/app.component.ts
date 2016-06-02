@@ -10,6 +10,8 @@ import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 import {Library} from "./library/library.component";
 import {Services} from "./services"
+import {Auth} from "./auth/auth.component"
+import {Chat} from "./chat/chat.component";
 
 /*
  * App Component
@@ -68,6 +70,12 @@ import {Services} from "./services"
         min-height: 600px !important;
         background: transparent !important;
     }
+    .expanded md-toolbar button {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .expanded md-toolbar button.active {
+        background-color: rgba(255, 255, 255, 1);
+    }
     
     .home{
       flex: 1;
@@ -107,6 +115,9 @@ import {Services} from "./services"
               <button md-button router-active [routerLink]=" ['Library'] ">
                 Library
               </button>
+              <button md-button router-active [routerLink]=" ['Auth'] ">
+                Login
+              </button>
           </md-toolbar>
         </div>
       
@@ -128,6 +139,8 @@ import {Services} from "./services"
     {path: '/library', name: 'Library', component: Library},
     {path: '/home', name: 'Home', component: Home},
     {path: '/services', name: 'Services', component: Services},
+    {path: '/auth', name: 'Auth', component: Auth},
+    {path: '/chat', name: 'Chat', component: Chat},
     // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
     {path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About')}
 ])
@@ -145,6 +158,7 @@ export class App {
     }
 
     ngOnInit() {
+        this.appLoaded();
     }
 
 
@@ -171,4 +185,7 @@ export class App {
         });
     }
 
+    appLoaded() {
+        document.body.className = document.body.className.replace("app-starting","");
+    }
 }
