@@ -27,7 +27,7 @@ import {Chat} from "./chat/chat.component";
     encapsulation: ViewEncapsulation.None,
     styles: [
         require('normalize.css'),
-        `html, body{
+        `html, body {
       height: 100%;
       background: #F4FAFA;
     }
@@ -39,7 +39,6 @@ import {Chat} from "./chat/chat.component";
       -o-transform: translate3d(0,0,0);
       transform: translate3d(0,0,0);
     }
-    
     
     button.active{
       background: #fff;
@@ -71,9 +70,11 @@ import {Chat} from "./chat/chat.component";
         background: transparent !important;
     }
     .expanded md-toolbar button {
-        background-color: rgba(0, 0, 0, 0.3);
+        text-shadow: 0 0 7px #000000;
     }
     .expanded md-toolbar button.active {
+        text-shadow: none;
+        color: #000;
         background-color: rgba(255, 255, 255, 1);
     }
     
@@ -92,17 +93,25 @@ import {Chat} from "./chat/chat.component";
       align-items: center;
       justify-content: center;
       background: #fff;
-    }`
+    }
+    
+    .logo-title {
+        transition: all 800ms ease;
+        font-size: 1em;
+    }
+    .expanded md-toolbar .logo-title {
+        text-shadow: 0 0 7px #000000;
+        font-size: 2em;
+        margin-top: 15px;
+    }
+`
     ],
     template: `
     <md-content>
         <div class="toolbar-bg-wrap hw3d0" [ngClass]="{expanded: expandHeader}">
           <md-toolbar color="primary" class="hw3d0">
-              <span>{{ name }}</span>
+              <span class="logo-title">{{ name }}</span>
               <span class="fill"></span>
-              <button md-button router-active [routerLink]=" ['Index'] ">
-                Index
-              </button>
               <button md-button router-active [routerLink]=" ['Home'] ">
                 Home
               </button>
@@ -135,9 +144,8 @@ import {Chat} from "./chat/chat.component";
   `
 })
 @RouteConfig([
-    {path: '/', name: 'Index', component: Home, useAsDefault: true},
+    {path: '/', name: 'Home', component: Home, useAsDefault: true},
     {path: '/library', name: 'Library', component: Library},
-    {path: '/home', name: 'Home', component: Home},
     {path: '/services', name: 'Services', component: Services},
     {path: '/auth', name: 'Auth', component: Auth},
     {path: '/chat', name: 'Chat', component: Chat},
@@ -172,7 +180,7 @@ export class App {
 
     private toggleHeader() {
         const currentUrl = this.router.currentInstruction.toRootUrl();
-        const masterUrl = this.router.generate(['/Index']).toRootUrl();
+        const masterUrl = this.router.generate(['/Home']).toRootUrl();
         this.expandHeader = currentUrl == masterUrl;
     }
 
