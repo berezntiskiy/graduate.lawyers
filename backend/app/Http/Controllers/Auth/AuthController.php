@@ -101,7 +101,7 @@ class AuthController extends RestController
             $this->incrementLoginAttempts($request);
         }
 
-        throw new LogicException('WRONG_CREDENTIALS', ['ATTEMPTS_LEFT' => $this->retriesLeft($request), 'LOCKOUT_TIME' => $this->lockoutTime(), 'RETRY_AFTER' => $this->lockoutTime()]);
+        throw new LogicException('WRONG_CREDENTIALS', ['ATTEMPTS_LEFT' => $this->retriesLeft($request), 'LOCKOUT_TIME' => $this->lockoutTime()]);
     }
 
 }

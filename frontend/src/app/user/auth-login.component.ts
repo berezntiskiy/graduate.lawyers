@@ -18,8 +18,7 @@ import {DurationPipe} from "angular2-moment/index";
     directives: [
         ControlMessages
     ],
-    pipes: [
-    ],
+    pipes: [],
     styles: [
         `
       md-card{
@@ -90,8 +89,15 @@ export class AuthLogin implements OnInit {
                     this.attemptsLeft = err.ATTEMPTS_LEFT + 1;
                     this.invalidCredentials = err.ERROR_CODE == 'WRONG_CREDENTIALS';
                     this.lockout = true;
-                    this.retryAfter = err.RETRY_AFTER;
-                    this.retryAfter$ = Observable.range(0, err.RETRY_AFTER + 1).zip(Observable.timer(0, 1000), function (x) { return x; });
+                    if (err.RETRY_AFTER) {
+                        this.retryAfter = err.RETRY_AFTER;
+                        this.retryAfter$ = Observable.range(0, err.RETRY_AFTER + 1).zip(Observable.timer(0, 1000), function (x) {
+                            return x;
+                        });
+                    } else {
+                        this.retryAfter = 0;
+                        this.retryAfter$ = null;
+                    }
                 }
             );
     }
