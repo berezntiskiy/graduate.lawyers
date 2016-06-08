@@ -10,7 +10,7 @@ import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 import {Library} from "./library/library.component";
 import {Services} from "./services"
-import {Auth} from "./auth/auth.component"
+import {Auth} from "./user/auth.component"
 import {Chat} from "./chat/chat.component";
 
 /*
@@ -18,16 +18,16 @@ import {Chat} from "./chat/chat.component";
  * Top Level Component
  */
 @Component({
-    selector: 'app',
-    pipes: [],
-    providers: [],
-    directives: [
-        RouterActive
-    ],
-    encapsulation: ViewEncapsulation.None,
-    styles: [
-        require('normalize.css'),
-        `html, body {
+  selector: 'app',
+  pipes: [],
+  providers: [],
+  directives: [
+    RouterActive
+  ],
+  encapsulation: ViewEncapsulation.None,
+  styles: [
+    require('normalize.css'),
+    `html, body {
       height: 100%;
       background: #F4FAFA;
     }
@@ -105,8 +105,8 @@ import {Chat} from "./chat/chat.component";
         margin-top: 15px;
     }
 `
-    ],
-    template: `
+  ],
+  template: `
     <md-content>
         <div class="toolbar-bg-wrap hw3d0" [ngClass]="{expanded: expandHeader}">
           <md-toolbar color="primary" class="hw3d0">
@@ -115,16 +115,13 @@ import {Chat} from "./chat/chat.component";
               <button md-button router-active [routerLink]=" ['Home'] ">
                 Home
               </button>
-              <button md-button router-active [routerLink]=" ['About'] ">
-                About
-              </button>
               <button md-button router-active [routerLink]=" ['Services'] ">
                 Services
               </button>
               <button md-button router-active [routerLink]=" ['Library'] ">
                 Library
               </button>
-              <button md-button router-active [routerLink]=" ['Auth'] ">
+              <button md-button router-active [routerLink]=" ['UserAuth'] ">
                 Login
               </button>
           </md-toolbar>
@@ -144,56 +141,56 @@ import {Chat} from "./chat/chat.component";
   `
 })
 @RouteConfig([
-    {path: '/', name: 'Home', component: Home, useAsDefault: true},
-    {path: '/library', name: 'Library', component: Library},
-    {path: '/services', name: 'Services', component: Services},
-    {path: '/auth', name: 'Auth', component: Auth},
-    {path: '/chat', name: 'Chat', component: Chat},
-    // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-    {path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About')}
+  {path: '/', name: 'Home', component: Home, useAsDefault: true},
+  {path: '/library', name: 'Library', component: Library},
+  {path: '/services', name: 'Services', component: Services},
+  {path: '/user/auth', name: 'UserAuth', component: Auth},
+  {path: '/chat', name: 'Chat', component: Chat},
+  // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
+  // {path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About')}
 ])
 export class App {
-    angularclassLogo = 'assets/img/angularclass-avatar.png';
-    loading = false;
-    name = 'PocketLawyer';
-    url = 'https://twitter.com/AngularClass';
-    expandHeader:boolean;
+  angularclassLogo = 'assets/img/angularclass-avatar.png';
+  loading = false;
+  name = 'PocketLawyer';
+  url = 'https://twitter.com/AngularClass';
+  expandHeader:boolean;
 
-    constructor(public appState:AppState,
-                private router:Router,
-                @Query(RouterLink) public routerLink:QueryList<RouterLink>) {
-        this.subscribeForHeaderToggling();
+  constructor(public appState:AppState,
+              private router:Router,
+              @Query(RouterLink) public routerLink:QueryList<RouterLink>) {
+    this.subscribeForHeaderToggling();
+  }
+
+  ngOnInit() {
+    this.appLoaded();
+  }
+
+
+  private _findRootRouter():Router {
+    let router:Router = this.router;
+    while (isPresent(router.parent)) {
+      router = router.parent;
     }
+    return router;
+  }
 
-    ngOnInit() {
-        this.appLoaded();
-    }
+  private toggleHeader() {
+    const currentUrl = this.router.currentInstruction.toRootUrl();
+    const masterUrl = this.router.generate(['/Home']).toRootUrl();
+    this.expandHeader = currentUrl == masterUrl;
+  }
 
+  private subscribeForHeaderToggling() {
+    this.routerLink.changes.subscribe(() => {
+      this.toggleHeader();
+      this._findRootRouter().subscribe(() => {
+        this.toggleHeader();
+      });
+    });
+  }
 
-    private _findRootRouter():Router {
-        let router:Router = this.router;
-        while (isPresent(router.parent)) {
-            router = router.parent;
-        }
-        return router;
-    }
-
-    private toggleHeader() {
-        const currentUrl = this.router.currentInstruction.toRootUrl();
-        const masterUrl = this.router.generate(['/Home']).toRootUrl();
-        this.expandHeader = currentUrl == masterUrl;
-    }
-
-    private subscribeForHeaderToggling() {
-        this.routerLink.changes.subscribe(() => {
-            this.toggleHeader();
-            this._findRootRouter().subscribe(() => {
-                this.toggleHeader();
-            });
-        });
-    }
-
-    appLoaded() {
-        document.body.className = document.body.className.replace("app-starting","");
-    }
+  appLoaded() {
+    document.body.className = document.body.className.replace("app-starting", "");
+  }
 }
