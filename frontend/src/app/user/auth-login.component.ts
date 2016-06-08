@@ -32,30 +32,26 @@ import {DurationPipe} from "angular2-moment/index";
       `
     ],
     template: `
-    <md-card>
-      <md-card-content>
-        <form [ngFormModel]="authForm" (submit)="login()">
-            <md-input placeholder="Email" ngControl="email" style="width:100%">
-              <md-hint align="end">
-                  <control-messages control="email"></control-messages>
-              </md-hint>
-            </md-input>
-            <md-input placeholder="Password" ngControl="password" style="width:100%">
-              <md-hint align="end">
-                  <control-messages control="password"></control-messages>
-              </md-hint>
-            </md-input>
-            <div class="bad" *ngIf="attemptsLeft < 1 && retryAfter - (retryAfter$ | async) > 0">
-                You have locked out for {{retryAfter - (retryAfter$ | async)}} seconds
-            </div>
-            <div class="bad" *ngIf="invalidCredentials">
-                Invalid credentials. <span *ngIf="attemptsLeft != null">Attempts left: {{attemptsLeft}}</span><br>
-                Lockout time is {{lockoutTime}} seconds.
-            </div>
-            <button md-raised-button color="primary" type="submit" [disabled]="!authForm.valid">Submit</button>
-        </form>
-      </md-card-content>
-    </md-card>
+    <form [ngFormModel]="authForm" (submit)="login()">
+        <md-input placeholder="Email" ngControl="email" style="width:100%">
+          <md-hint align="end">
+              <control-messages control="email"></control-messages>
+          </md-hint>
+        </md-input>
+        <md-input placeholder="Password" ngControl="password" style="width:100%">
+          <md-hint align="end">
+              <control-messages control="password"></control-messages>
+          </md-hint>
+        </md-input>
+        <div class="bad" *ngIf="attemptsLeft < 1 && retryAfter - (retryAfter$ | async) > 0">
+            You have locked out for {{retryAfter - (retryAfter$ | async)}} seconds
+        </div>
+        <div class="bad" *ngIf="invalidCredentials">
+            Invalid credentials. <span *ngIf="attemptsLeft != null">Attempts left: {{attemptsLeft}}</span><br>
+            Lockout time is {{lockoutTime}} seconds.
+        </div>
+        <button md-raised-button color="primary" type="submit" [disabled]="!authForm.valid || isLoading">{{isLoading ? 'Trying to login' : 'Login'}}</button>
+    </form>
 
 `
 })
@@ -66,6 +62,7 @@ export class AuthLogin implements OnInit {
     lockoutTime:number = 1;
     retryAfter$:any;
     retryAfter:number;
+    isLoading:boolean = false;
 
     constructor(public appState:AppState,
                 _builder:FormBuilder,
@@ -81,12 +78,15 @@ export class AuthLogin implements OnInit {
     }
 
     login() {
+        this.isLoading = true;
         this.userService.login(this.authForm.value)
             .subscribe(
                 (data) => {
+                    this.isLoading = false;
                     this.invalidCredentials = false;
                 },
                 (err:AuthFail) => {
+                    this.isLoading = false;
                     this.attemptsLeft = err.ATTEMPTS_LEFT + 1;
                     this.invalidCredentials = err.ERROR_CODE == 'WRONG_CREDENTIALS';
                     this.lockoutTime = err.LOCKOUT_TIME;

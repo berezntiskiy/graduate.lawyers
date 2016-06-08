@@ -4,24 +4,26 @@ import {ControlMessages} from "../control-messages.component";
 import {FormBuilder, Validators} from "@angular/common";
 import {ValidationService} from "../validation.service";
 import {AuthLogin} from "./auth-login.component";
+import {AuthResetPassword} from "./auth-resetpassword.component";
 
 
 @Component({
-  selector: 'auth',
-  providers: [],
-  viewProviders: [],
-  directives: [
-    AuthLogin
-  ],
-  pipes: [],
-  styles: [
-    `
+    selector: 'auth',
+    providers: [],
+    viewProviders: [],
+    directives: [
+        AuthLogin,
+        AuthResetPassword
+    ],
+    pipes: [],
+    styles: [
+        `
       md-card{
               margin: 25px;
       }
       `
-  ],
-  template: `
+    ],
+    template: `
     <md-card>
       For hot module reloading run
       <pre>npm run start:hmr</pre>
@@ -31,29 +33,39 @@ import {AuthLogin} from "./auth-login.component";
         patrick@AngularClass.com
       </h3>
     </md-card>
-    <auth-login></auth-login>
-
+    <md-card>
+      <md-card-content>
+        <h1>Login</h1>
+        <auth-login></auth-login>
+      </md-card-content>
+    </md-card>
+    <md-card>
+      <md-card-content>
+        <h1>Reset password</h1>
+        <auth-resetpassword></auth-resetpassword>
+      </md-card-content>
+    </md-card>
 `
 })
 export class Auth implements OnInit {
-  userForm:any;
-  // TypeScript public modifiers
-  constructor(public appState:AppState,
-              _builder:FormBuilder
-              // public title:Title,
-              // public bookService:BookService,
-              // public chapterService:ChapterService,
-              // public sectionService:SectionService,
-              // public articleService:ArticleService
-  ) {
-    this.userForm = _builder.group({
-      'password': ['', Validators.required],
-      'email': ['', Validators.compose([Validators.required, ValidationService.emailValidator])]
-    });
+    userForm:any;
+    // TypeScript public modifiers
+    constructor(public appState:AppState,
+                _builder:FormBuilder
+                // public title:Title,
+                // public bookService:BookService,
+                // public chapterService:ChapterService,
+                // public sectionService:SectionService,
+                // public articleService:ArticleService
+    ) {
+        this.userForm = _builder.group({
+            'password': ['', Validators.required],
+            'email': ['', Validators.compose([Validators.required, ValidationService.emailValidator])]
+        });
 
-  }
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

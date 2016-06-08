@@ -18,6 +18,7 @@ import {Observable} from "rxjs/Observable";
 import {CoreClient} from "../../core/CoreConnector";
 import {User} from "./user";
 import {Auth} from "./auth";
+import {ResetPassword} from "./resetpassword";
 
 export interface AuthFail {
     ERROR_CODE:string,
@@ -35,6 +36,11 @@ export class UserService extends CoreClient {
 
     @POST("user/login")
     public login(@Body loginRequest:Auth):Observable<User> {
+        return null;
+    };
+
+    @POST("password/reset")
+    public passwordReset(@Body resetPasswordRequest:ResetPassword):Observable<{}> {
         return null;
     };
 
