@@ -92,9 +92,7 @@ export class AuthLogin implements OnInit {
                     this.lockoutTime = err.LOCKOUT_TIME;
                     if (err.RETRY_AFTER) {
                         this.retryAfter = err.RETRY_AFTER;
-                        this.retryAfter$ = Observable.range(0, err.RETRY_AFTER + 1).zip(Observable.timer(0, 1000), function (x) {
-                            return x;
-                        });
+                        this.retryAfter$ = Observable.range(0, err.RETRY_AFTER + 1).zip(Observable.timer(0, 1000), x => x);
                     } else {
                         this.retryAfter = 0;
                         this.retryAfter$ = null;
