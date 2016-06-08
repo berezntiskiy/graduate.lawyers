@@ -3,6 +3,7 @@ import {RESTClient, GET, PUT, POST, DELETE, BaseUrl, Headers, DefaultHeaders, Pa
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response, Request} from '@angular/http';
 import {SessionFactory} from "../app/user/session.factory";
+import {Observable} from "rxjs/Rx";
 
 
 
@@ -26,11 +27,20 @@ export class CoreClient extends RESTClient {
 
     protected responseInterceptor(res:Response):Response {
         const csrf = res.headers.get('X-CSRF-TOKEN');
-        console.info(res.headers);
+
         if (csrf)
             SessionFactory.csrfToken = csrf;
 
         let body = res.json();
+        // if (body.status != 'ok')
+        //     throw new Error();
+        alert('done');
+
         return body.data || { };
+    }
+
+
+    protected errorInterceptor(error) {
+        return Observable.throw(error.json().data || 'Server error');
     }
 }

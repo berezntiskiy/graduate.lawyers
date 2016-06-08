@@ -3,29 +3,36 @@ import {AppState} from '../app.service';
 import {ControlMessages} from "../control-messages.component";
 import {FormBuilder, Validators} from "@angular/common";
 import {ValidationService} from "../validation.service";
+import {UserService, AuthFail} from "./user.service";
+import {User} from "./user";
+import {Observable} from "rxjs/Rx";
+import {DurationPipe} from "angular2-moment/index";
 
 
 @Component({
-  selector: 'auth-login',
-  providers: [],
-  viewProviders: [],
-  directives: [
-    ControlMessages
-  ],
-  pipes: [],
-  styles: [
-    `
+    selector: 'auth-login',
+    providers: [
+        UserService
+    ],
+    viewProviders: [],
+    directives: [
+        ControlMessages
+    ],
+    pipes: [
+    ],
+    styles: [
+        `
       md-card{
               margin: 25px;
       }
       
-      .invalidCredentials {
+      .bad {
         color: tomato;
         margin: 5px 0 15px;
       }
       `
-  ],
-  template: `
+    ],
+    template: `
     <md-card class="demo-card demo-basic">
       <md-card-content>
         <form [ngFormModel]="authForm" (submit)="login()">
@@ -39,9 +46,11 @@ import {ValidationService} from "../validation.service";
                   <control-messages control="password"></control-messages>
               </md-hint>
             </md-input>
-            
-            <div class="invalidCredentials">
-                Invalid credentials
+            <div class="bad" *ngIf="attemptsLeft < 1 && retryAfter - (retryAfter$ | async) > 0">
+                You have locked down for {{retryAfter - (retryAfter$ | async)}} seconds
+            </div>
+            <div class="bad" *ngIf="invalidCredentials">
+                Invalid credentials. <span *ngIf="attemptsLeft != null">Attempts left: {{attemptsLeft}}</span>
             </div>
             <button md-raised-button color="primary" type="submit" [disabled]="!authForm.valid">Submit</button>
         </form>
@@ -51,26 +60,40 @@ import {ValidationService} from "../validation.service";
 `
 })
 export class AuthLogin implements OnInit {
-  authForm:any;
-  invalidCredentials:boolean = false;
+    authForm:any;
+    invalidCredentials:boolean = false;
+    lockout:boolean = false;
+    attemptsLeft:number = 1;
+    retryAfter$:any;
+    retryAfter:number;
 
-  constructor(public appState:AppState,
-              _builder:FormBuilder) {
-    this.authForm = _builder.group({
-      'password': ['', Validators.required],
-      'email': ['', Validators.compose([Validators.required, ValidationService.emailValidator])]
-    });
+    constructor(public appState:AppState,
+                _builder:FormBuilder,
+                private userService:UserService) {
+        this.authForm = _builder.group({
+            'password': ['', null && Validators.compose([Validators.required, Validators.minLength(6)])],
+            'email': ['', null && Validators.compose([Validators.required, ValidationService.emailValidator])]
+        });
 
-  }
+    }
 
-  ngOnInit() {
-    setInterval(() => {
-      this.invalidCredentials = !this.invalidCredentials;
-    }, 2000);
-  }
+    ngOnInit() {
+    }
 
-  login() {
-    alert('qwe');
-  }
+    login() {
+        this.userService.login(this.authForm.value)
+            .subscribe(
+                (data) => {
+                    this.invalidCredentials = false;
+                },
+                (err:AuthFail) => {
+                    this.attemptsLeft = err.ATTEMPTS_LEFT + 1;
+                    this.invalidCredentials = err.ERROR_CODE == 'WRONG_CREDENTIALS';
+                    this.lockout = true;
+                    this.retryAfter = err.RETRY_AFTER;
+                    this.retryAfter$ = Observable.range(0, err.RETRY_AFTER + 1).zip(Observable.timer(0, 1000), function (x) { return x; });
+                }
+            );
+    }
 
 }

@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Exceptions\LogicException;
+use App\Http\Controllers\RestController;
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller
+class AuthController extends RestController
 {
     /*
     |--------------------------------------------------------------------------
@@ -30,13 +34,9 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function __construct(Request $request)
     {
+        parent::__construct($request);
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
@@ -69,4 +69,39 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+    public function postLogin(Request $request)
+    {
+        return $this->login($request);
+    }
+
+    public function login(Request $request)
+    {
+        // If the class is using the ThrottlesLogins trait, we can automatically throttle
+        // the login attempts for this application. We'll key this by the username and
+        // the IP address of the client making these requests into this application.
+        $throttles = $this->isUsingThrottlesLoginsTrait();
+
+        if ($throttles && $lockedOut = $this->hasTooManyLoginAttempts($request)) {
+            $this->fireLockoutEvent($request);
+            throw new LogicException('TOO_MANY_ATTEMPTS', ['RETRY_AFTER' => $this->secondsRemainingOnLockout($request), 'ATTEMPTS_LEFT' => -1 ]);
+        }
+
+        $credentials = $this->getCredentials($request);
+
+        if (Auth::guard($this->getGuard())->attempt($credentials, $request->has('remember'))) {
+            return $this->handleUserWasAuthenticated($request, $throttles);
+        }
+
+        // If the login attempt was unsuccessful we will increment the number of attempts
+        // to login and redirect the user back to the login form. Of course, when this
+        // user surpasses their maximum number of attempts they will get locked out.
+        if ($throttles && ! $lockedOut) {
+            $this->incrementLoginAttempts($request);
+        }
+
+        throw new LogicException('WRONG_CREDENTIALS', ['ATTEMPTS_LEFT' => $this->retriesLeft($request), 'LOCKOUT_TIME' => $this->lockoutTime(), 'RETRY_AFTER' => $this->lockoutTime()]);
+    }
+
 }

@@ -19,7 +19,7 @@ class ResponseWrap
 
         if ($response->headers->get('content-type') == 'application/json') {
             $response->setContent(json_encode(array(
-                'status' => 'ok',
+                'status' => $response->status() == 200 ? 'ok' : 'error',
                 'data' => json_decode($response->getContent()),
             )));
         }
