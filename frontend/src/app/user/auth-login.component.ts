@@ -46,7 +46,7 @@ import {DurationPipe} from "angular2-moment/index";
               </md-hint>
             </md-input>
             <div class="bad" *ngIf="attemptsLeft < 1 && retryAfter - (retryAfter$ | async) > 0">
-                You have locked down for {{retryAfter - (retryAfter$ | async)}} seconds
+                You have locked out for {{retryAfter - (retryAfter$ | async)}} seconds
             </div>
             <div class="bad" *ngIf="invalidCredentials">
                 Invalid credentials. <span *ngIf="attemptsLeft != null">Attempts left: {{attemptsLeft}}</span><br>

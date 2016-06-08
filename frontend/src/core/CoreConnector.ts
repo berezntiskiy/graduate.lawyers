@@ -32,9 +32,6 @@ export class CoreClient extends RESTClient {
             SessionFactory.csrfToken = csrf;
 
         let body = res.json();
-        // if (body.status != 'ok')
-        //     throw new Error();
-        alert('done');
 
         return body.data || { };
     }
