@@ -49,7 +49,8 @@ import {DurationPipe} from "angular2-moment/index";
                 You have locked down for {{retryAfter - (retryAfter$ | async)}} seconds
             </div>
             <div class="bad" *ngIf="invalidCredentials">
-                Invalid credentials. <span *ngIf="attemptsLeft != null">Attempts left: {{attemptsLeft}}</span>
+                Invalid credentials. <span *ngIf="attemptsLeft != null">Attempts left: {{attemptsLeft}}</span><br>
+                Lockout time is {{lockoutTime}} seconds.
             </div>
             <button md-raised-button color="primary" type="submit" [disabled]="!authForm.valid">Submit</button>
         </form>
@@ -61,8 +62,8 @@ import {DurationPipe} from "angular2-moment/index";
 export class AuthLogin implements OnInit {
     authForm:any;
     invalidCredentials:boolean = false;
-    lockout:boolean = false;
     attemptsLeft:number = 1;
+    lockoutTime:number = 1;
     retryAfter$:any;
     retryAfter:number;
 
@@ -88,7 +89,7 @@ export class AuthLogin implements OnInit {
                 (err:AuthFail) => {
                     this.attemptsLeft = err.ATTEMPTS_LEFT + 1;
                     this.invalidCredentials = err.ERROR_CODE == 'WRONG_CREDENTIALS';
-                    this.lockout = true;
+                    this.lockoutTime = err.LOCKOUT_TIME;
                     if (err.RETRY_AFTER) {
                         this.retryAfter = err.RETRY_AFTER;
                         this.retryAfter$ = Observable.range(0, err.RETRY_AFTER + 1).zip(Observable.timer(0, 1000), function (x) {
