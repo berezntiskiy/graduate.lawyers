@@ -32,7 +32,7 @@ import {DurationPipe} from "angular2-moment/index";
       `
     ],
     template: `
-    <md-card class="demo-card demo-basic">
+    <md-card>
       <md-card-content>
         <form [ngFormModel]="authForm" (submit)="login()">
             <md-input placeholder="Email" ngControl="email" style="width:100%">
