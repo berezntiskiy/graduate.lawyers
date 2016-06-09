@@ -12,7 +12,7 @@ import {AppState} from '../app.service';
     ],
     pipes: [],
     template: `
-    template for auth page
+    
 `
 })
 export class Chat implements OnInit {

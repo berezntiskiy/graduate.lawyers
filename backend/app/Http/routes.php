@@ -66,3 +66,9 @@ Route::post('api/user/login', 'Auth\AuthController@postLogin');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 //Route::post('api/password/reset', 'Auth\PasswordController@postReset');
 Route::post('api/password/reset', 'Auth\PasswordController@ajaxReset');
+
+
+Route::get('api/chat/conversations', 'Chat\ConversationController@index');
+Route::get('api/chat/messages/{id}', 'Chat\MessageController@show');
+
+

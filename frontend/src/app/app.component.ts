@@ -125,6 +125,9 @@ import {UserService} from "./user/user.service";
               <button md-button router-active [routerLink]=" ['Library'] ">
                 Library
               </button>
+              <button md-button router-active [routerLink]=" ['Chat'] ">
+                Chat
+              </button>
               
               <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="!sessionService.auth">
                 Login

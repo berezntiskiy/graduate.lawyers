@@ -36,4 +36,8 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function conversations() {
+        return $this->belongsToMany(Conversation::class, 'conversations_users', 'user_id', 'conversation_id');
+    }
 }
