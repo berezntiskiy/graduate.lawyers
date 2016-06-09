@@ -20,10 +20,36 @@ import {User} from "../user/user";
         ChatMessages
     ],
     pipes: [],
+    styles: [
+        `
+    md-card {
+        margin: 15px;
+    }
+    .chat {
+        display: flex;
+    }
+`
+    ],
     template: `
     <h1>Chat</h1>
-    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
-    <chat-messages [messages]="messages$ | async"></chat-messages>
+    <div class="chat">
+        <sidebar>
+            <md-card>
+              <md-card-content>
+                <h1>Conversations</h1>
+                <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+              </md-card-content>
+            </md-card>
+        </sidebar>
+        <content *ngIf="activeConversation">
+            <md-card>
+              <md-card-content>
+                <h1>Messages</h1>
+                <chat-messages [messages]="messages$ | async"></chat-messages>
+              </md-card-content>
+            </md-card>
+        </content>
+    </div>
 `
 })
 export class Chat implements OnInit {
