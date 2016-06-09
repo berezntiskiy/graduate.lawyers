@@ -35,14 +35,6 @@ class ConversationsUsersTableSeeder extends Seeder {
 			array(
 				'user_id' 		  => $user4->id,
 				'conversation_id' => $conversation2->id
-			),
-			array(
-				'user_id' 		  => $user3->id,
-				'conversation_id' => $conversation1->id
-			),
-			array(
-				'user_id' 		  => $user4->id,
-				'conversation_id' => $conversation1->id
 			)
 		);
 

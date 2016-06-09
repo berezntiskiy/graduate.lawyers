@@ -11,10 +11,11 @@ class MessageController extends RestController {
      *
      * @return Response
      */
-    public function show($id) {
+    public function show() {
+        $id = $this->request->get('conversation_id');
         // todo !! make check if user exist in this conversation
 //        Message::where('conversation_id', $conversation->id);
-        return Message::where('conversation_id', $id)->orderBy('created_at')->get();
+        return Message::where('conversation_id', $id)->with('user')->orderBy('created_at')->get();
 //        $messages       = Message::where('conversation_id', $conversation->id)->orderBy('created_at')->get();
 //
 //        return View::make('templates/messages')->with('messages', $messages)->render();

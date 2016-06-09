@@ -12,15 +12,15 @@ class Message extends Model {
 
     public function user()
     {
-        return $this->belongsTo('User', 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function conversation()
     {
-        return $this->belongsTo('Conversation', 'conversation_id');
+        return $this->belongsTo(Conversation::class, 'conversation_id');
     }
 
     public function messages_notifications() {
-        return $this->hasMany('MessageNotification', 'message_id', 'id');
+        return $this->hasMany(MessageNotification::class, 'message_id', 'id');
     }
 }

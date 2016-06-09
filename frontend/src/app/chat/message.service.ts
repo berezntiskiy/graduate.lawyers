@@ -1,6 +1,6 @@
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response, Request} from '@angular/http';
-import {Conversation} from "./conversation";
+import {Message} from "./message";
 
 import {RESTClient, GET, PUT, POST, DELETE, BaseUrl, Headers, DefaultHeaders, Path, Body, Query} from 'angular2-rest/angular2-rest.ts';
 import {Observable} from "rxjs/Observable";
@@ -13,8 +13,8 @@ export class MessageService extends CoreClient {
         super(http);
     }
 
-    @GET("chat/messages/{id}")
-    public getList( @Path("conversation") conversationId: number): Observable<Conversation[]> { return null; };
+    @GET("chat/messages/")
+    public getList( @Query("conversation_id") conversation_id: any): Observable<Message[]> { return null; };
 
 
     // @POST("todo")
