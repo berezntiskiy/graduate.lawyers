@@ -7,14 +7,20 @@ import {Observable} from "rxjs/Rx";
 
 
 
-@BaseUrl("http://192.168.50.10/api/")
+@BaseUrl("/api/")
 @DefaultHeaders({
     'Accept': 'application/json',
     'Content-Type': 'application/json'
 })
 export class CoreClient extends RESTClient {
-    // public constructor( @Inject(Http) protected http: Http) {
-    //     super(http);
+    // public constructor( http: Http) {
+    //     let _build = (<any> http)._backend._browserXHR.build;
+    //     (<any> http)._backend._browserXHR.build = () => {
+    //         let _xhr =  _build();
+    //         _xhr.withCredentials = true;
+    //         return _xhr;
+    //     };
+    //     super(_build);
     // }
 
     protected requestInterceptor(req: Request) {

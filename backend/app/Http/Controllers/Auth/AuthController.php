@@ -7,6 +7,7 @@ use App\Http\Controllers\RestController;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -37,7 +38,6 @@ class AuthController extends RestController
     public function __construct(Request $request)
     {
         parent::__construct($request);
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
     /**
@@ -102,6 +102,43 @@ class AuthController extends RestController
         }
 
         throw new LogicException('WRONG_CREDENTIALS', ['ATTEMPTS_LEFT' => $this->retriesLeft($request), 'LOCKOUT_TIME' => $this->lockoutTime()]);
+    }
+
+    protected function handleUserWasAuthenticated(Request $request, $throttles)
+    {
+        if ($throttles) {
+            $this->clearLoginAttempts($request);
+        }
+
+        Auth::attempt($request->all());
+
+        if (method_exists($this, 'authenticated')) {
+            return $this->authenticated($request, Auth::guard($this->getGuard())->user());
+        }
+
+        return Auth::user();
+    }
+
+
+    public function postRegister(Request $request)
+    {
+        return $this->register($request);
+    }
+
+    public function register(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $newUser = $this->create($request->all());
+        Auth::loginUsingId($newUser->id);
+
+        return $newUser;
     }
 
 }

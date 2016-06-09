@@ -5,6 +5,7 @@ import {FormBuilder, Validators} from "@angular/common";
 import {ValidationService} from "../validation.service";
 import {AuthLogin} from "./auth-login.component";
 import {AuthResetPassword} from "./auth-resetpassword.component";
+import {AuthRegistration} from "./auth-registration.component";
 
 
 @Component({
@@ -13,7 +14,8 @@ import {AuthResetPassword} from "./auth-resetpassword.component";
     viewProviders: [],
     directives: [
         AuthLogin,
-        AuthResetPassword
+        AuthResetPassword,
+        AuthRegistration
     ],
     pipes: [],
     styles: [
@@ -35,7 +37,7 @@ import {AuthResetPassword} from "./auth-resetpassword.component";
     </md-card>
     <md-card>
       <md-card-content>
-        <h1>Login</h1>
+        <h1>Log in</h1>
         <auth-login></auth-login>
       </md-card-content>
     </md-card>
@@ -43,6 +45,12 @@ import {AuthResetPassword} from "./auth-resetpassword.component";
       <md-card-content>
         <h1>Reset password</h1>
         <auth-resetpassword></auth-resetpassword>
+      </md-card-content>
+    </md-card>
+    <md-card>
+      <md-card-content>
+        <h1>Registration</h1>
+        <auth-registration></auth-registration>
       </md-card-content>
     </md-card>
 `

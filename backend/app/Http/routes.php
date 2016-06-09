@@ -10,26 +10,33 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-header("Access-Control-Allow-Origin: *");
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: X-CSRF-TOKEN, Origin, Content-Type, Accept, Authorization, X-Request-With, Content-Type, Content-Range, Content-Disposition, Content-Description');
+//header("Access-Control-Allow-Origin: http://localhost:3000");
+//header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+//header('Access-Control-Allow-Credentials: true');
+//header('Access-Control-Allow-Headers: X-CSRF-TOKEN, Origin, Content-Type, Accept, Authorization, X-Request-With, Content-Type, Content-Range, Content-Disposition, Content-Description');
 
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
 //sleep(2);
 
 // Book -> Section -> Chapter -> Article
-Route::resource('/api/book', 'BooksController');
-Route::resource('/api/section', 'SectionsController');
-Route::resource('/api/chapter', 'ChaptersController');
-Route::resource('/api/article', 'ArticlesController');
-Route::resource('/api/staff', 'StaffController');
-Route::resource('/api/service', 'ServicesController');
-Route::resource('/api/price', 'PricesController');
+Route::resource('api/book', 'BooksController');
+Route::resource('api/section', 'SectionsController');
+Route::resource('api/chapter', 'ChaptersController');
+Route::resource('api/article', 'ArticlesController');
+Route::resource('api/staff', 'StaffController');
+Route::resource('api/service', 'ServicesController');
+Route::resource('api/price', 'PricesController');
 
+Route::any('api', function() {
+    return Session::all() ;
+});
+Route::any('api/user/isAuthenticated', function() {
+    return ['isAuthenticated' => Auth::check()];
+});
 
 function createAdminCrudRoutes($entity, $controller) {
     Route::resource("/admin/$entity", "Admin\\$controller");
@@ -49,16 +56,17 @@ createAdminCrudRoutes('staff', 'AdminStaffController');
 
 
 
-Route::get('/admin/login', 'Admin\AdminLoginController@index');
-Route::post('/admin/login', 'Admin\AdminLoginController@login');
-Route::any('/admin/logout', 'Admin\AdminLoginController@logout');
+Route::get('admin/login', 'Admin\AdminLoginController@index');
+Route::post('admin/login', 'Admin\AdminLoginController@login');
+Route::any('admin/logout', 'Admin\AdminLoginController@logout');
 
-Route::resource('/admin', 'Admin\AdminDashboardController');
-
-
+Route::resource('admin', 'Admin\AdminDashboardController');
 
 
+
+
+Route::post('api/user/register', 'Auth\AuthController@postRegister');
 Route::post('api/user/login', 'Auth\AuthController@postLogin');
-Route::get('api/password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 //Route::post('api/password/reset', 'Auth\PasswordController@postReset');
 Route::post('api/password/reset', 'Auth\PasswordController@ajaxReset');

@@ -6,7 +6,6 @@ import {ValidationService} from "../validation.service";
 import {UserService, AuthFail} from "./user.service";
 import {User} from "./user";
 import {Observable} from "rxjs/Rx";
-import {DurationPipe} from "angular2-moment/index";
 
 
 @Component({

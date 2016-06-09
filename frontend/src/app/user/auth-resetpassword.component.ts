@@ -6,7 +6,7 @@ import {ValidationService} from "../validation.service";
 import {UserService, AuthFail} from "./user.service";
 import {User} from "./user";
 import {Observable} from "rxjs/Rx";
-import {DurationPipe} from "angular2-moment/index";
+import {ResetPassword} from "./resetpassword";
 
 
 @Component({
@@ -74,7 +74,7 @@ export class AuthResetPassword implements OnInit {
     resetPassword() {
         this.success = null;
         this.isLoading = true;
-        this.userService.passwordReset(this.resetForm.value)
+        this.userService.passwordReset(<ResetPassword>this.resetForm.value)
             .subscribe(
                 (data) => {
                     this.isLoading = false;

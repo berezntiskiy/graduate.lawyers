@@ -47,8 +47,11 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if ($request->header('content-type') == 'application/json' || $request->isJson()) {
+            $code = $e->getMessage();
+            if ($e instanceof ValidationException)
+                $code = 'VALIDATION_ERROR';
             $json = [
-                'ERROR_CODE' => $e->getMessage()
+                'ERROR_CODE' => $code
             ];
             if (method_exists($e, 'getData')) {
                 $json += $e->getData();

@@ -142,6 +142,12 @@ module.exports = webpackMerge(commonConfig, {
       aggregateTimeout: 300,
       poll: 1000
     },
+    proxy: {
+      '/api*': {
+        target: 'http://192.168.50.10/',
+        secure: false
+      }
+    },
     outputPath: helpers.root('dist')
   },
 

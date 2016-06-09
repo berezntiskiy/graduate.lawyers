@@ -44,6 +44,16 @@ export class UserService extends CoreClient {
         return null;
     };
 
+    @POST("user/register")
+    public register(@Body resetPasswordRequest:ResetPassword):Observable<{}> {
+        return null;
+    };
+
+    @POST("user/isAuthenticated")
+    public isAuthenticated():Observable<{isAuthenticated:boolean}> {
+        return null;
+    };
+
     // @GET("todo/{id}")
     // public getTodoById( @Path("id") id: string): Observable { return null; };
     //
