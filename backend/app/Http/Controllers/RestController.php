@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Http\Middleware\ResponseWrap;
+use App\Http\Middleware\SessionInfo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,5 +18,6 @@ class RestController extends Controller
     {
         $this->request = $request;
         $this->middleware(ResponseWrap::class);
+        $this->middleware(SessionInfo::class);
     }
 }

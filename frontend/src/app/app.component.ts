@@ -12,6 +12,8 @@ import {Library} from "./library/library.component";
 import {Services} from "./services"
 import {Auth} from "./user/auth.component"
 import {Chat} from "./chat/chat.component";
+import {SessionService} from "./user/session.service";
+import {UserService} from "./user/user.service";
 
 /*
  * App Component
@@ -20,7 +22,9 @@ import {Chat} from "./chat/chat.component";
 @Component({
   selector: 'app',
   pipes: [],
-  providers: [],
+  providers: [
+    UserService
+  ],
   directives: [
     RouterActive
   ],
@@ -121,8 +125,15 @@ import {Chat} from "./chat/chat.component";
               <button md-button router-active [routerLink]=" ['Library'] ">
                 Library
               </button>
-              <button md-button router-active [routerLink]=" ['UserAuth'] ">
+              
+              <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="!sessionService.auth">
                 Login
+              </button>
+              <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="sessionService.auth">
+                My account
+              </button>
+              <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="sessionService.auth">
+                Logout
               </button>
           </md-toolbar>
         </div>
@@ -155,15 +166,18 @@ export class App {
   name = 'PocketLawyer';
   url = 'https://twitter.com/AngularClass';
   expandHeader:boolean;
+  sessionService:SessionService;
 
   constructor(public appState:AppState,
               private router:Router,
+              private userService:UserService,
               @Query(RouterLink) public routerLink:QueryList<RouterLink>) {
     this.subscribeForHeaderToggling();
+    this.sessionService = SessionService;
   }
 
   ngOnInit() {
-    this.appLoaded();
+    this.userService.isAuthenticated().subscribe(() => this.appLoaded());
   }
 
 

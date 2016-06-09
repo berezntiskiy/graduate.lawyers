@@ -141,4 +141,8 @@ class AuthController extends RestController
         return $newUser;
     }
 
+    public function isAuthenticated() {
+        return ['isAuthenticated' => Auth::check()];
+    }
+
 }

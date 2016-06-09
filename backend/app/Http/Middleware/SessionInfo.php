@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
-class ResponseWrap
+class SessionInfo
 {
     /**
      * Handle an incoming request.
@@ -17,13 +18,7 @@ class ResponseWrap
     {
         $response = $next($request);
 
-        if ($response->headers->get('content-type') == 'application/json') {
-            $response->setContent(json_encode(array(
-                'status' => $response->status() == 200 ? 'ok' : 'error',
-                'data' => json_decode($response->getContent()),
-            )));
-        }
-
+        $response->headers->set('session.auth', Auth::check() ? 'true' : 'false');
         return $response;
     }
 }

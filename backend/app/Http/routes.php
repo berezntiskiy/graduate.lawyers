@@ -31,12 +31,7 @@ Route::resource('api/staff', 'StaffController');
 Route::resource('api/service', 'ServicesController');
 Route::resource('api/price', 'PricesController');
 
-Route::any('api', function() {
-    return Session::all() ;
-});
-Route::any('api/user/isAuthenticated', function() {
-    return ['isAuthenticated' => Auth::check()];
-});
+
 
 function createAdminCrudRoutes($entity, $controller) {
     Route::resource("/admin/$entity", "Admin\\$controller");
@@ -65,6 +60,7 @@ Route::resource('admin', 'Admin\AdminDashboardController');
 
 
 
+Route::any('api/user/isAuthenticated', 'Auth\AuthController@isAuthenticated');
 Route::post('api/user/register', 'Auth\AuthController@postRegister');
 Route::post('api/user/login', 'Auth\AuthController@postLogin');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');

@@ -2,7 +2,7 @@ import {ServiceConnector} from "./ServiceConnector";
 import {RESTClient, GET, PUT, POST, DELETE, BaseUrl, Headers, DefaultHeaders, Path, Body, Query} from 'angular2-rest/angular2-rest.ts';
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response, Request} from '@angular/http';
-import {SessionFactory} from "../app/user/session.factory";
+import {SessionService} from "../app/user/session.service";
 import {Observable} from "rxjs/Rx";
 
 
@@ -24,7 +24,7 @@ export class CoreClient extends RESTClient {
     // }
 
     protected requestInterceptor(req: Request) {
-        req.headers.append('X-CSRF-TOKEN', SessionFactory.csrfToken);
+        // req.headers.append('X-CSRF-TOKEN', SessionFactory.csrfToken);
         // if (SessionFactory.getInstance().isAuthenticated) {
         //     req.headers.append('jwt', SessionFactory.getInstance().credentials.jwt);
         // }
@@ -32,10 +32,9 @@ export class CoreClient extends RESTClient {
 
 
     protected responseInterceptor(res:Response):Response {
-        const csrf = res.headers.get('X-CSRF-TOKEN');
+        const isAuth = res.headers.get('session.auth') === 'true';
 
-        if (csrf)
-            SessionFactory.csrfToken = csrf;
+        SessionService.auth = isAuth;
 
         let body = res.json();
 
@@ -44,6 +43,6 @@ export class CoreClient extends RESTClient {
 
 
     protected errorInterceptor(error) {
-        return Observable.throw(error.json().data || 'Server error');
+        return Observable.throw(error.json().data || 'SERVER_ERROR');
     }
 }
