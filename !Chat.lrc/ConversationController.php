@@ -1,11 +1,24 @@
 <?php
-namespace App\Http\Controllers\Chat;
 
-use App\Http\Controllers\RestController;
-use App\User;
-use Illuminate\Support\Facades\Auth;
+use LaravelRealtimeChat\Repositories\Conversation\ConversationRepository;
 
-class ConversationController extends RestController {
+class ConversationController extends \BaseController {
+
+    /**
+     * @var LaravelRealtimeChat\Repositories\Conversation\ConversationRepository
+     */
+    private $conversationRepository;
+
+    /**
+     * @var LaravelRealtimeChat\Repositories\User\UserRepository
+     */ 
+    private $userRepository;
+
+    public function __construct(ConversationRepository $conversationRepository, UserRepository $userRepository)
+    {
+        $this->conversationRepository = $conversationRepository;
+        $this->userRepository = $userRepository;
+    }
 
     /**
      * Display a listing of conversations.
@@ -14,19 +27,18 @@ class ConversationController extends RestController {
      */
     public function index() 
     {
-        return auth()->user()->conversations()->with('users')->get();
-//        $viewData = array();
-//
-//        $users = $this->userRepository->getAllExcept(Auth::user()->id);
-//
-//        foreach($users as $key => $user) {
-//            $viewData['recipients'][$user->id] = $user->username;
-//        }
-//
-//        $viewData['current_conversation'] = $this->conversationRepository->getByName(Input::get('conversation'));
-//        $viewData['conversations'] = Auth::user()->conversations()->get();
-//
-//        return View::make('templates/conversations', $viewData);
+        $viewData = array();
+
+        $users = $this->userRepository->getAllExcept(Auth::user()->id);
+
+        foreach($users as $key => $user) {
+            $viewData['recipients'][$user->id] = $user->username;
+        }
+        
+        $viewData['current_conversation'] = $this->conversationRepository->getByName(Input::get('conversation'));
+        $viewData['conversations'] = Auth::user()->conversations()->get();
+
+        return View::make('templates/conversations', $viewData);
     }
 
     /**

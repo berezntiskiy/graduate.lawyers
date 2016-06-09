@@ -2,6 +2,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Conversation extends Model {
 
@@ -11,14 +12,14 @@ class Conversation extends Model {
     public $timestamps = false;
 
     public function users() {
-        return $this->belongsToMany('User', 'conversations_users', 'conversation_id', 'user_id')->where('user_id', '<>', Auth::user()->id);
+        return $this->belongsToMany(User::class, 'conversations_users', 'conversation_id', 'user_id')->where('user_id'  , '<>', Auth::user()->id);
     }
 
     public function messages() {
-        return $this->hasMany('Message', 'conversation_id', 'id');
+        return $this->hasMany(Message::class, 'conversation_id', 'id');
     }
 
     public function messagesNotifications() {
-        return $this->hasMany('MessageNotification', 'conversation_id', 'id')->where('read', 0)->where('user_id', Auth::user()->id);
+        return $this->hasMany(MessageNotification::class, 'conversation_id', 'id')->where('read', 0)->where('user_id', Auth::user()->id);
     }
 }

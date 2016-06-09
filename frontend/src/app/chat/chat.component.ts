@@ -1,55 +1,40 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {AppState} from '../app.service';
+import {ChatConversations} from "./chat-conversations.component";
+import {Conversation} from "./conversation";
+import {ConversationService} from "./conversation.service";
+
 
 
 @Component({
     selector: 'chat',
     providers: [
+        ConversationService
     ],
     viewProviders: [],
     directives: [
-
+        ChatConversations
     ],
     pipes: [],
     template: `
-    
+    <h1>Chat</h1>
+    <chat-conversations [conversations]="conversationObservable | async" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
 `
 })
 export class Chat implements OnInit {
-    // Set our default values
-    // localState = {value: ''};
-    // books:Book[];
-    // sections:Section[];
-    // chapters:Chapter[];
-    // articles:Article[];
-    //
-    // loadingBooks:boolean;
-    // loadingSections:boolean;
-    // loadingChapters:boolean;
-    // loadingArticles:boolean;
-    //
-    // activeBook:Book;
-    // activeSection:Section;
-    // // activeArticle:Article;
-    // activeChapter:Chapter;
-    //
-    // booksObservable: any;
-    // chaptersObservable: any;
-    // sectionsObservable: any;
-    // articlesObservable: any;
+    activeConversation:Conversation;
+    conversationObservable:any;
 
-    // TypeScript public modifiers
-    constructor(public appState:AppState
-                // public title:Title,
-                // public bookService:BookService,
-                // public chapterService:ChapterService,
-                // public sectionService:SectionService,
-                // public articleService:ArticleService
-                ) {
-
+    constructor(public appState:AppState,
+                public conversationService:ConversationService
+    ) {
     }
 
     ngOnInit() {
+        this.conversationObservable = this.conversationService.getList();
     }
 
+    setActiveConversation({value: conversation}) {
+        this.activeConversation = conversation;
+    }
 }
