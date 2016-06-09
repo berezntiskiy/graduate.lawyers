@@ -15,7 +15,7 @@ import {User} from "../user/user";
     template: `
     <ul>
         <li *ngFor="let message of messages; let i = index">
-            {{message.user.name}} - {{message.created_at}} {{message.created_at}}: {{message.body}}
+            {{message.user.name}} - {{message.created_at}}: {{message.body}}
         </li>
     </ul>
 `

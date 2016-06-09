@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Realtime Chat Server</title>
+		<title>PocketLawyer Comet Server Monitor</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
@@ -41,7 +41,11 @@
 			}
 		</style>
 		<script type="text/javascript">
-  			var socket = io('http://localhost:4000');
+			var http = location.protocol;
+			var slashes = http.concat("//");
+			var host = slashes.concat(window.location.hostname);
+
+  			var socket = io(host+':4000');
   			 	
   			socket.emit('join', { room:  'admin' });
 
@@ -75,7 +79,6 @@
    				appendMessage( 'Redis Message: ' + data , 'blue');
    			});
 
-  			// Funções
   			function appendMessage(msg, color) {
   				var 
   					date = new Date(),
