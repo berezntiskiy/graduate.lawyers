@@ -24,7 +24,9 @@ import {Conversation} from "./conversation";
                 </small>
             </div>
             <div>
-                Created at {{conversation.created_at}}
+                <small>
+                    Created at {{conversation.created_at}}
+                </small>
             </div>
         </li>
     </ul>
