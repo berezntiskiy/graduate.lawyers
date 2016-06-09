@@ -8,10 +8,10 @@ export class SessionService {
     }
 
     static get auth() {
-        return sessionStorage.getItem('auth');
+        return sessionStorage.getItem('auth') == 'true';
     }
 
     static set auth(state) {
-        sessionStorage.setItem('auth', state ? '1' : '');
+        sessionStorage.setItem('auth', state ? 'true' : 'false');
     }
 }
