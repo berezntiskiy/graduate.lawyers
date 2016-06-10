@@ -14,7 +14,7 @@ class CreateMessagesTable extends Migration {
 	{
 	    Schema::create('messages', function($table) {
             $table->increments('id');
-            $table->dateTime('created_at');
+            $table->timestamp('created_at');
             $table->text('body');
             $table->integer('conversation_id')->unsigned();
             $table->foreign('conversation_id')->references('id')->on('conversations');

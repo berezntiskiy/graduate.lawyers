@@ -3,14 +3,13 @@
 namespace App\Listeners;
 
 use App\Events\ChatConversationsEvent;
+use App\Events\CometEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Redis;
 
-class ChatConversationsEventHandler
+class CometEventHandler
 {
-    CONST CHANNEL = 'chat.conversations';
-
     /**
      * Create the event listener.
      *
@@ -24,12 +23,17 @@ class ChatConversationsEventHandler
     /**
      * Handle the event.
      *
-     * @param  ChatConversationsEvent  $event
+     * @param  ChatConversationsEvent $event
      * @return void
      */
-    public function handle(ChatConversationsEvent $event)
+    public function handle(CometEvent $event)
+    {
+        $this->pushEvent($event);
+    }
+
+    protected function pushEvent(CometEvent $event)
     {
         $redis = Redis::connection();
-        $redis->publish(self::CHANNEL, $event->data);
+        $redis->publish($event->getChanel(), $event->getComposedData());
     }
 }

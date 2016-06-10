@@ -13,6 +13,7 @@ import {Message} from "./message";
 // import io = require('socket.io-client/lib/index.js');
 
 import * as io from "socket.io-client";
+import {ReversePipe} from "../shared/pipes/reverse.pipe";
 
 
 @Component({
@@ -27,7 +28,9 @@ import * as io from "socket.io-client";
         ChatMessages,
         ChatSend
     ],
-    pipes: [],
+    pipes: [
+        ReversePipe
+    ],
     styles: [
         `
     md-card {
@@ -53,7 +56,7 @@ import * as io from "socket.io-client";
             <md-card>
               <md-card-content>
                 <h1>Messages</h1>
-                <chat-messages [messages]="messages$ | async"></chat-messages>
+                <chat-messages [messages]="messages"></chat-messages>
               </md-card-content>
             </md-card>
         </content>
@@ -69,11 +72,12 @@ import * as io from "socket.io-client";
 })
 export class Chat implements OnInit, OnDestroy {
     activeConversation:Conversation;
-    conversations:Conversation[];
+    conversations:Conversation[] = [];
     conversations$:any;
+    messages:Message[] = [];
     messages$:any;
     joinedMap:Map<number, boolean>;
-    socket: any; // io
+    socket:any; // io
     // relatedUsers:User[] = [];
 
     constructor(public appState:AppState,
@@ -94,9 +98,9 @@ export class Chat implements OnInit, OnDestroy {
             console.log('JOINED ', data.message)
         });
 
-        this.socket.on('chat.messages', (data)=> {
-            alert('message: ' + data.message.body.body);
-            console.info(data);
+        this.socket.on('chat.messages', (message:Message)=> {
+            console.info(message);
+            this.messages.push(message);
         });
     }
 
@@ -115,7 +119,10 @@ export class Chat implements OnInit, OnDestroy {
     setActiveConversation({value: conversation}) {
         this.activeConversation = conversation;
 
-        this.messages$ = this.messageService.getList(this.activeConversation.id);
+        this.messages = [];
+        this.messages$ = this.messageService.getList(this.activeConversation.id).subscribe((data)=> {
+            this.messages = data;
+        });
     }
 
     sendMessage({value}) {

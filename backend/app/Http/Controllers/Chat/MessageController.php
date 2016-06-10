@@ -12,18 +12,20 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 
-class MessageController extends RestController {
+class MessageController extends RestController
+{
 
     /**
      * Display a listing of messages.
      *
      * @return Response
      */
-    public function show() {
+    public function show()
+    {
         $id = $this->request->get('conversation_id');
         // todo !! make check if user exist in this conversation
 //        Message::where('conversation_id', $conversation->id);
-        return Message::where('conversation_id', $id)->with('user')->orderBy('created_at')->get();
+        return Message::where('conversation_id', $id)->with('user')->with('messages_notifications')->orderBy('created_at')->get();
 //        $messages       = Message::where('conversation_id', $conversation->id)->orderBy('created_at')->get();
 //
 //        return View::make('templates/messages')->with('messages', $messages)->render();
@@ -34,7 +36,8 @@ class MessageController extends RestController {
      *
      * @return Response
      */
-    public function store() {
+    public function store()
+    {
 
 //        $rules     = array('body' => 'required');
 //        $validator = Validator::make(Input::all(), $rules);
@@ -51,9 +54,9 @@ class MessageController extends RestController {
         $conversation = Conversation::findOrFail(Input::get('conversation_id'));
         $params = array(
             'conversation_id' => $conversation->id,
-            'body'               => Input::get('body'),
-            'user_id'           => $userId,
-            'created_at'      => new \DateTime
+            'body' => Input::get('body'),
+            'user_id' => $userId,
+            'created_at' => new \DateTime
         );
 
         $message = Message::create($params);
@@ -61,20 +64,15 @@ class MessageController extends RestController {
         // Create Message Notifications
         $messages_notifications = array();
 
-        foreach($conversation->users()->get() as $user) {
+        foreach ($conversation->users()->get() as $user) {
             array_push($messages_notifications, new MessageNotification(array('user_id' => $user->id, 'conversation_id' => $conversation->id, 'read' => false)));
         }
 
         $message->messages_notifications()->saveMany($messages_notifications);
 
-        // Publish Data To Redis
-        $data = array(
-            'room'        => $conversation->id,
-            'message'  => array( 'body' => $message, 'user_id' => $userId)
-        );
+        $outMessage = Message::with('user')->with('messages_notifications')->findOrFail($message->id);
+        event(new ChatMessagesEvent($conversation->id, $outMessage));
 
-        event(new ChatMessagesEvent(json_encode($data)));
-
-        return $message;
+        return $outMessage;
     }
 }
