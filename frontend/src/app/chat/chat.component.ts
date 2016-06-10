@@ -6,6 +6,13 @@ import {ConversationService} from "./conversation.service";
 import {MessageService} from "./message.service";
 import {ChatMessages} from "./chat-messages.component";
 import {User} from "../user/user";
+import {ChatSend} from "./chat-send.component";
+import {Message} from "./message";
+
+// import * as io from 'socket.io-client';
+// import io = require('socket.io-client/lib/index.js');
+
+import * as io from "socket.io-client";
 
 
 @Component({
@@ -17,7 +24,8 @@ import {User} from "../user/user";
     viewProviders: [],
     directives: [
         ChatConversations,
-        ChatMessages
+        ChatMessages,
+        ChatSend
     ],
     pipes: [],
     styles: [
@@ -41,7 +49,7 @@ import {User} from "../user/user";
               </md-card-content>
             </md-card>
         </sidebar>
-        <content *ngIf="activeConversation">
+        <content style="width:100%" *ngIf="activeConversation">
             <md-card>
               <md-card-content>
                 <h1>Messages</h1>
@@ -49,6 +57,13 @@ import {User} from "../user/user";
               </md-card-content>
             </md-card>
         </content>
+        
+        <md-card style="width:100%" *ngIf="activeConversation">
+          <md-card-content>
+            <chat-send (send)="sendMessage($event)"></chat-send>
+          </md-card-content>
+        </md-card>
+        
     </div>
 `
 })
@@ -83,6 +98,22 @@ export class Chat implements OnInit {
 
     setActiveConversation({value: conversation}) {
         this.activeConversation = conversation;
+
+
+        var
+            socket = io('/ws/');
+
+        socket.emit('join', { room: this.activeConversation.name });
+
         this.messages$ = this.messageService.getList(this.activeConversation.id);
+    }
+
+    sendMessage({value}) {
+        const message = new Message();
+        message.conversation_id = this.activeConversation.id;
+        message.body = value.body;
+        this.messageService.send(message).subscribe(() => {
+            console.log('success');
+        });
     }
 }

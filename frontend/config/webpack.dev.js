@@ -146,6 +146,10 @@ module.exports = webpackMerge(commonConfig, {
       '/api*': {
         target: 'http://192.168.50.10/',
         secure: false
+      },
+      '/socket.io*': {
+        target: 'http://192.168.50.10:4000/',
+        secure: false
       }
     },
     outputPath: helpers.root('dist')

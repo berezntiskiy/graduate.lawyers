@@ -17,8 +17,8 @@ export class MessageService extends CoreClient {
     public getList( @Query("conversation_id") conversation_id: any): Observable<Message[]> { return null; };
 
 
-    // @POST("todo")
-    // public postTodo( @Body todo: Todo): Observable { return null; };
+    @POST("chat/messages/")
+    public send( @Body message: Message): Observable<Message> { return null; };
     //
     // @PUT("todo/{id}")
     // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable { return null; };
