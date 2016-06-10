@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\ChatConversationsEvent;
+use App\Events\ChatMessagesEvent;
+use App\Listeners\ChatConversationsEventHandler;
+use App\Listeners\ChatMessagesEventHandler;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -13,8 +17,11 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        ChatConversationsEvent::class => [ChatConversationsEventHandler::class],
+        ChatMessagesEvent::class => [ChatMessagesEventHandler::class],
+
         'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
+            'App\Listeners\EventListener'
         ],
     ];
 

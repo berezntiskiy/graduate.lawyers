@@ -70,5 +70,6 @@ Route::post('api/password/reset', 'Auth\PasswordController@ajaxReset');
 
 Route::get('api/chat/conversations', 'Chat\ConversationController@index');
 Route::get('api/chat/messages/', 'Chat\MessageController@show');
+Route::post('api/chat/messages/', 'Chat\MessageController@store');
 
 

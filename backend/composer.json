@@ -10,7 +10,8 @@
         "laravel/homestead": "^2.0",
         "dimsav/laravel-translatable": "5.5.*",
         "zofe/rapyd": "2.2.*",
-        "adamwathan/bootforms": "^0.8.0"
+        "adamwathan/bootforms": "^0.8.0",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -35,6 +35,7 @@ redisClient.subscribe('chat.messages');
 ***/
 redisClient.on('message', function(channel, message) {
     var result = JSON.parse(message);
+    console.log('message > ', message);
 
     io.to('admin').emit(channel, 'channel -> ' + channel + ' |  room -> ' + result.room);
     io.to(result.room).emit(channel, result);
