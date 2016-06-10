@@ -18,7 +18,7 @@ class ChatMessagesEvent extends Event
      */
     public function __construct($data)
     {
-        $this->data;
+        $this->data = $data;
     }
 
     /**

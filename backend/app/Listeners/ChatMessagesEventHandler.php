@@ -5,10 +5,11 @@ namespace App\Listeners;
 use App\Events\ChatMessagesEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Redis;
 
 class ChatMessagesEventHandler
 {
-    CONST EVENT   = 'chat.messages';
+    CONST CHANNEL   = 'chat.messages';
 
     /**
      * Create the event listener.

@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Chat;
 
 use App\Conversation;
 use App\Events\ChatConversationsEvent;
+use App\Events\ChatMessagesEvent;
 use App\Events\ChatMessagesEventHandler;
 use App\Http\Controllers\RestController;
 use App\Message;
@@ -68,11 +69,11 @@ class MessageController extends RestController {
 
         // Publish Data To Redis
         $data = array(
-            'room'        => Input::get('conversation'),
+            'room'        => $conversation->id,
             'message'  => array( 'body' => $message, 'user_id' => $userId)
         );
 
-        event(new ChatConversationsEvent(json_encode($data)));
+        event(new ChatMessagesEvent(json_encode($data)));
 
         return $message;
     }

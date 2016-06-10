@@ -67,11 +67,13 @@ import * as io from "socket.io-client";
     </div>
 `
 })
-export class Chat implements OnInit {
+export class Chat implements OnInit, OnDestroy {
     activeConversation:Conversation;
     conversations:Conversation[];
     conversations$:any;
     messages$:any;
+    joinedMap:Map<number, boolean>;
+    socket: any; // io
     // relatedUsers:User[] = [];
 
     constructor(public appState:AppState,
@@ -80,30 +82,38 @@ export class Chat implements OnInit {
     }
 
     ngOnInit() {
+        this.socket = io();
+        this.joinedMap = new Map<number, boolean>();
+        // socket.emit('leave:all');
         this.conversations$ = this.conversationService.getList().subscribe((data) => {
             this.conversations = data;
-            // data.forEach((data:Conversation) => {
-            //     data.users.forEach(newUser => {
-            //         let canAdd = true;
-            //         this.relatedUsers.forEach((user) => {
-            //             if (user.id == newUser.id)
-            //                 canAdd = false;
-            //         });
-            //         if (canAdd)
-            //             this.relatedUsers[newUser.id] = (newUser);
-            //     });
-            // });
+            this.joinInRooms();
         });
+
+        this.socket.on('joined', (data)=> {
+            console.log('JOINED ', data.message)
+        });
+
+        this.socket.on('chat.messages', (data)=> {
+            alert('message: ' + data.message.body.body);
+            console.info(data);
+        });
+    }
+
+    joinInRooms() {
+        this.conversations.forEach(this.joinInRoom, this);
+    }
+
+    joinInRoom(conversation:Conversation) {
+        if (this.joinedMap.get(conversation.id) !== true) {
+            this.joinedMap.set(conversation.id, true);
+
+            this.socket.emit('join', {room: conversation.id});
+        }
     }
 
     setActiveConversation({value: conversation}) {
         this.activeConversation = conversation;
-
-
-        var
-            socket = io('/ws/');
-
-        socket.emit('join', { room: this.activeConversation.name });
 
         this.messages$ = this.messageService.getList(this.activeConversation.id);
     }
@@ -115,5 +125,9 @@ export class Chat implements OnInit {
         this.messageService.send(message).subscribe(() => {
             console.log('success');
         });
+    }
+
+    ngOnDestroy() {
+        this.socket.disconnect();
     }
 }
