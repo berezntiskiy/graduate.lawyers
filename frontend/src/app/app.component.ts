@@ -108,6 +108,11 @@ import {UserService} from "./user/user.service";
         font-size: 2em;
         margin-top: 15px;
     }
+    
+    .card-container {
+      display: flex;
+      flex-direction: column;
+    }
 `
   ],
   template: `

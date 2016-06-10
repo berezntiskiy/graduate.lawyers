@@ -13,7 +13,7 @@ import {FormBuilder, Validators, Control} from "@angular/common";
     pipes: [],
     template: `
     <form [ngFormModel]="form" (submit)="emitSend()">
-        <md-input required type="text" ngControl="body" ></md-input>
+        <md-input style="width:100%" placeholder="Type your message and press Enter" required type="text" ngControl="body" ></md-input>
     </form>
 `
 })
@@ -37,5 +37,6 @@ export class ChatSend implements OnInit {
 
     emitSend() {
         this.send.emit({value: this.form.value});
+        (<Control>this.form.controls['body']).updateValue('');
     }
 }

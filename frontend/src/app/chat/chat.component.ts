@@ -14,6 +14,7 @@ import {Message} from "./message";
 
 import * as io from "socket.io-client";
 import {ReversePipe} from "../shared/pipes/reverse.pipe";
+import {CardContainer} from "../shared/card-container";
 
 
 @Component({
@@ -26,7 +27,8 @@ import {ReversePipe} from "../shared/pipes/reverse.pipe";
     directives: [
         ChatConversations,
         ChatMessages,
-        ChatSend
+        ChatSend,
+        CardContainer
     ],
     pipes: [
         ReversePipe
@@ -38,36 +40,71 @@ import {ReversePipe} from "../shared/pipes/reverse.pipe";
     }
     .chat {
         display: flex;
+        flex-flow: row wrap;
+    }
+    
+    sidebar, content {
+        flex: 1 100%;
+    }
+    
+    sidebar {
+        flex: 1 auto;
+    }
+    
+    content {
+        flex: 10 auto;
+    }
+    
+    .stick {
+      position: sticky;
+      position: -webkit-sticky;
+      bottom: 30px;
+    }
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
     }
 `
     ],
     template: `
-    <h1>Chat</h1>
-    <div class="chat">
-        <sidebar>
-            <md-card>
-              <md-card-content>
-                <h1>Conversations</h1>
-                <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
-              </md-card-content>
-            </md-card>
-        </sidebar>
-        <content style="width:100%" *ngIf="activeConversation">
-            <md-card>
-              <md-card-content>
-                <h1>Messages</h1>
-                <chat-messages [messages]="messages"></chat-messages>
-              </md-card-content>
-            </md-card>
-        </content>
-        
-        <md-card style="width:100%" *ngIf="activeConversation">
-          <md-card-content>
-            <chat-send (send)="sendMessage($event)"></chat-send>
-          </md-card-content>
-        </md-card>
-        
-    </div>
+    <card-container>
+        <div class="chat clearfix">
+            <sidebar>
+                <md-card>
+                  <md-card-content>
+                    <h1>Conversations</h1>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                    <chat-conversations [conversations]="conversations" (open)="setActiveConversation($event)" [activeConversation]="activeConversation"></chat-conversations>
+                  </md-card-content>
+                </md-card>
+            </sidebar>
+            <content>
+                <div *ngIf="!activeConversation">
+                    <h1 style="color: #aec5c5">Choose conversation from sidebar</h1>
+                </div>
+                <md-card *ngIf="activeConversation">
+                  <md-card-content>
+                    <h1>Messages</h1>
+                    <chat-messages [messages]="messages"></chat-messages>
+                    <chat-send style="width: 100%" (send)="sendMessage($event)"></chat-send>
+                  </md-card-content>
+                </md-card>
+            </content>
+        </div>
+    </card-container>
 `
 })
 export class Chat implements OnInit, OnDestroy {
@@ -100,7 +137,7 @@ export class Chat implements OnInit, OnDestroy {
 
         this.socket.on('chat.messages', (message:Message)=> {
             console.info(message);
-            this.messages.push(message);
+            this.messages = [...this.messages, message];
         });
     }
 
