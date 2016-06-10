@@ -31,6 +31,7 @@ Route::resource('api/staff', 'StaffController');
 Route::resource('api/service', 'ServicesController');
 Route::resource('api/price', 'PricesController');
 
+Route::resource('api/address', 'OfficesController');
 
 
 function createAdminCrudRoutes($entity, $controller) {

@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
-import {ContactMap} from "./contact-map.component";
+import {ContactOffices} from "./contact-offices.component";
+import {Office} from "./office";
 
 @Component({
     directives: [
-        ContactMap
+        ContactOffices
     ],
-    selector: 'about',
+    selector: 'contact',
     styles: [`
     h1 {
       font-family: Arial, Helvetica, sans-serif
@@ -13,15 +14,18 @@ import {ContactMap} from "./contact-map.component";
     md-card{
       margin: 25px;
     }
+    
+    
+    
   `],
     template: `
-  <md-card style="padding:0">
-    <contact-map
+  <md-card style="padding:0;">
+    <contact-offices
         zoom="8"
-        [markers]="markers"
-        lat="51.673858"
-        lng="7.815982"
-    ></contact-map>
+        [offices]="offices"
+        [lat]="lat"
+        [lng]="lng"
+    ></contact-offices>
   </md-card>
   <md-card>
     
@@ -30,23 +34,106 @@ import {ContactMap} from "./contact-map.component";
   `
 })
 export class Contact {
-    markers = [
+    private offices:any[] = [
         {
-            lat: 51.673858,
-            lng: 7.815982
+            id: 1,
+            created_at: "2016-06-10 21:59:12",
+            updated_at: "2016-06-10 21:59:12",
+            lat: 10,
+            lng: 10,
+            phones: [
+                '111-222'
+            ],
+            deleted_at: null,
+            created_by: null,
+            updated_by: null,
+            deleted_by: null,
+            name: "name #1",
+            address: "address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1"
         },
         {
-            lat: 51.373858,
-            lng: 7.215982
+            id: 2,
+            created_at: "2016-06-10 21:59:12",
+            updated_at: "2016-06-10 21:59:12",
+            lat: 20,
+            lng: 20,
+            phones: [
+                '111-222'
+            ],
+            deleted_at: null,
+            created_by: null,
+            updated_by: null,
+            deleted_by: null,
+            name: "name #2",
+            address: "address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2"
         },
         {
-            lat: 51.723858,
-            lng: 7.895982
+            id: 3,
+            created_at: "2016-06-10 21:59:12",
+            updated_at: "2016-06-10 21:59:12",
+            lat: 30,
+            lng: 30,
+            deleted_at: null,
+            created_by: null,
+            updated_by: null,
+            deleted_by: null,
+            name: "name #3",
+            address: "address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3"
+        },
+        {
+            id: 4,
+            created_at: "2016-06-10 21:59:12",
+            updated_at: "2016-06-10 21:59:12",
+            lat: 40,
+            lng: 40,
+            deleted_at: null,
+            created_by: null,
+            updated_by: null,
+            deleted_by: null,
+            name: "name #4",
+            address: "address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4"
+        },
+        {
+            id: 5,
+            created_at: "2016-06-10 21:59:12",
+            updated_at: "2016-06-10 21:59:12",
+            lat: 50,
+            lng: 50,
+            deleted_at: null,
+            created_by: null,
+            updated_by: null,
+            deleted_by: null,
+            name: "name #5",
+            address: "address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5"
+        },
+        {
+            id: 6,
+            created_at: "2016-06-10 21:59:12",
+            updated_at: "2016-06-10 21:59:12",
+            lat: 60,
+            lng: 60,
+            deleted_at: null,
+            created_by: null,
+            updated_by: null,
+            deleted_by: null,
+            name: "name #6",
+            address: "address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6"
         }
     ];
+    private lat;
+    private lng;
 
     constructor() {
+        this.lat = this.offices[0].lat;
+        this.lng = this.offices[0].lng;
 
+        // var i=0;
+        // setInterval(() => {
+        //     i++;
+        //     this.lat = this.offices[i].lat;
+        //     this.lng = this.offices[i].lng;
+        //     if(i >= this.offices.length - 1) i = 0;
+        // }, 2000);
     }
 
     ngOnInit() {
