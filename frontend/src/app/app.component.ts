@@ -14,24 +14,26 @@ import {Auth} from "./user/auth.component"
 import {Chat} from "./chat/chat.component";
 import {SessionService} from "./user/session.service";
 import {UserService} from "./user/user.service";
+import {About} from "./about/about.component";
+import {Contact} from "./contact/contact.component";
 
 /*
  * App Component
  * Top Level Component
  */
 @Component({
-  selector: 'app',
-  pipes: [],
-  providers: [
-    UserService
-  ],
-  directives: [
-    RouterActive
-  ],
-  encapsulation: ViewEncapsulation.None,
-  styles: [
-    require('normalize.css'),
-    `html, body {
+    selector: 'app',
+    pipes: [],
+    providers: [
+        UserService
+    ],
+    directives: [
+        RouterActive
+    ],
+    encapsulation: ViewEncapsulation.None,
+    styles: [
+        require('normalize.css'),
+        `html, body {
       height: 100%;
       background: #F4FAFA;
     }
@@ -114,8 +116,8 @@ import {UserService} from "./user/user.service";
       flex-direction: column;
     }
 `
-  ],
-  template: `
+    ],
+    template: `
     <md-content>
         <div class="toolbar-bg-wrap hw3d0" [ngClass]="{expanded: expandHeader}">
           <md-toolbar color="primary" class="hw3d0">
@@ -132,6 +134,12 @@ import {UserService} from "./user/user.service";
               </button>
               <button md-button router-active [routerLink]=" ['Chat'] ">
                 Chat
+              </button>
+              <button md-button router-active [routerLink]=" ['About'] ">
+                About
+              </button>
+              <button md-button router-active [routerLink]=" ['Contact'] ">
+                Contact
               </button>
               
               <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="!sessionService.auth">
@@ -160,59 +168,61 @@ import {UserService} from "./user/user.service";
   `
 })
 @RouteConfig([
-  {path: '/', name: 'Home', component: Home, useAsDefault: true},
-  {path: '/library', name: 'Library', component: Library},
-  {path: '/services', name: 'Services', component: Services},
-  {path: '/user/auth', name: 'UserAuth', component: Auth},
-  {path: '/chat', name: 'Chat', component: Chat},
-  // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-  // {path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About')}
+    {path: '/', name: 'Home', component: Home, useAsDefault: true},
+    {path: '/library', name: 'Library', component: Library},
+    {path: '/services', name: 'Services', component: Services},
+    {path: '/user/auth', name: 'UserAuth', component: Auth},
+    {path: '/chat', name: 'Chat', component: Chat},
+    // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
+    // {path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About')}
+    {path: '/about', name: 'About', component: About},
+    {path: '/contact', name: 'Contact', component: Contact}
 ])
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  loading = false;
-  name = 'PocketLawyer';
-  url = 'https://twitter.com/AngularClass';
-  expandHeader:boolean;
-  sessionService:SessionService;
+    angularclassLogo = 'assets/img/angularclass-avatar.png';
+    loading = false;
+    name = 'PocketLawyer';
+    url = 'https://twitter.com/AngularClass';
+    expandHeader:boolean;
+    sessionService:SessionService;
 
-  constructor(public appState:AppState,
-              private router:Router,
-              private userService:UserService,
-              @Query(RouterLink) public routerLink:QueryList<RouterLink>) {
-    this.subscribeForHeaderToggling();
-    this.sessionService = SessionService;
-  }
-
-  ngOnInit() {
-    this.userService.isAuthenticated().subscribe(() => this.appLoaded());
-  }
-
-
-  private _findRootRouter():Router {
-    let router:Router = this.router;
-    while (isPresent(router.parent)) {
-      router = router.parent;
+    constructor(public appState:AppState,
+                private router:Router,
+                private userService:UserService,
+                @Query(RouterLink) public routerLink:QueryList<RouterLink>) {
+        this.subscribeForHeaderToggling();
+        this.sessionService = SessionService;
     }
-    return router;
-  }
 
-  private toggleHeader() {
-    const currentUrl = this.router.currentInstruction.toRootUrl();
-    const masterUrl = this.router.generate(['/Home']).toRootUrl();
-    this.expandHeader = currentUrl == masterUrl;
-  }
+    ngOnInit() {
+        this.userService.isAuthenticated().subscribe(() => this.appLoaded());
+    }
 
-  private subscribeForHeaderToggling() {
-    this.routerLink.changes.subscribe(() => {
-      this.toggleHeader();
-      this._findRootRouter().subscribe(() => {
-        this.toggleHeader();
-      });
-    });
-  }
 
-  appLoaded() {
-    document.body.className = document.body.className.replace("app-starting", "");
-  }
+    private _findRootRouter():Router {
+        let router:Router = this.router;
+        while (isPresent(router.parent)) {
+            router = router.parent;
+        }
+        return router;
+    }
+
+    private toggleHeader() {
+        const currentUrl = this.router.currentInstruction.toRootUrl();
+        const masterUrl = this.router.generate(['/Home']).toRootUrl();
+        this.expandHeader = currentUrl == masterUrl;
+    }
+
+    private subscribeForHeaderToggling() {
+        this.routerLink.changes.subscribe(() => {
+            this.toggleHeader();
+            this._findRootRouter().subscribe(() => {
+                this.toggleHeader();
+            });
+        });
+    }
+
+    appLoaded() {
+        document.body.className = document.body.className.replace("app-starting", "");
+    }
 }

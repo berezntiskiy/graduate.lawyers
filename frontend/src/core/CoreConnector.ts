@@ -1,5 +1,5 @@
 import {ServiceConnector} from "./ServiceConnector";
-import {RESTClient, GET, PUT, POST, DELETE, BaseUrl, Headers, DefaultHeaders, Path, Body, Query} from 'angular2-rest/angular2-rest.ts';
+import {RESTClient, GET, PUT, POST, DELETE, BaseUrl, Headers, DefaultHeaders, Path, Body, Query} from './angular2-rest.ts';
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response, Request} from '@angular/http';
 import {SessionService} from "../app/user/session.service";

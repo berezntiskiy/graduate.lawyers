@@ -13,7 +13,7 @@ import {
     Path,
     Body,
     Query
-} from 'angular2-rest/angular2-rest.ts';
+} from 'core/angular2-rest.ts';
 import {Observable} from "rxjs/Observable";
 import {CoreClient} from "../../core/CoreConnector";
 import {User} from "./user";
