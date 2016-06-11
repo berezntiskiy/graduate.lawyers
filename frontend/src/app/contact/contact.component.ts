@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
 import {ContactOffices} from "./contact-offices.component";
 import {Office} from "./office";
+import {ContactLetter} from "./contact-letter.component";
 
 @Component({
     directives: [
-        ContactOffices
+        ContactOffices,
+        ContactLetter
     ],
     selector: 'contact',
     styles: [`
@@ -28,7 +30,7 @@ import {Office} from "./office";
     ></contact-offices>
   </md-card>
   <md-card>
-    
+    <contact-letter></contact-letter>
   </md-card>
 
   `
