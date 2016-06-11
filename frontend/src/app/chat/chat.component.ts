@@ -123,7 +123,7 @@ export class Chat implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.socket = io();
+        this.socket = io(window.location.origin + '/chat');
         this.joinedMap = new Map<number, boolean>();
         // socket.emit('leave:all');
         this.conversations$ = this.conversationService.getList().subscribe((data) => {

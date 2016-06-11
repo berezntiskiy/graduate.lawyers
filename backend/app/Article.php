@@ -8,6 +8,7 @@ class Article extends Entity
 {
     use SoftDeletes;
     use \Dimsav\Translatable\Translatable;
+    use \Conner\Likeable\LikeableTrait;
 
     protected $table = 'articles';
 

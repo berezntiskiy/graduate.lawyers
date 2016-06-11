@@ -37,7 +37,7 @@ io.use(function(socket, next){
     // next(new Error('Authentication error'));
 });
 
-const activeConnections = [];
+const chat = io.of('chat');
 
 /***
  Redis Channels Subscribes
@@ -53,13 +53,15 @@ redisClient.on('message', function (channel, message) {
     console.log('message > ', message);
 
     io.to('admin').emit(channel, 'channel -> ' + channel + ' |  room -> ' + result.room);
-    io.to(result.room).emit(channel, result.data);
+    chat.to(result.room).emit(channel, result.data);
 });
 
 /***
  Socket.io Connection Event
  ***/
-io.on('connection', function (socket) {
+
+
+chat.on('connection', function (socket) {
     socket.emit('welcome', {message: welcome});
 
     /***

@@ -160,7 +160,8 @@ return [
 
         Zofe\Rapyd\RapydServiceProvider::class,
 
-        AdamWathan\BootForms\BootFormsServiceProvider::class
+        AdamWathan\BootForms\BootFormsServiceProvider::class,
+        Conner\Likeable\LikeableServiceProvider::class
 
     ],
 

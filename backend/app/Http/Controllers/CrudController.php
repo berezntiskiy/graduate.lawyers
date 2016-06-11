@@ -12,6 +12,7 @@ class CrudController extends RestController
 {
     protected $model = Book::class;
     protected $request = null;
+    protected $likeable = false;
 
     function getIndexFilters()
     {
@@ -23,6 +24,10 @@ class CrudController extends RestController
     {
         $Model = $this->model;
         $model = $Model::whereRaw('1 = 1');
+
+        if ($this->likeable && $this->request->get('likes')) {
+            $model = $model->whereLiked(auth()->user()->id);
+        }
 
         $filters = $this->getIndexFilters();
         foreach ($filters as $k => $v) {
@@ -56,5 +61,19 @@ class CrudController extends RestController
     {
         $model = $this->model;
         return $model::destroy($id);
+    }
+
+    function like($id)
+    {
+        $Model = $this->model;
+        $model = $Model::findOrFail($id);
+        $model->like();
+    }
+
+    function unlike($id)
+    {
+        $Model = $this->model;
+        $model = $Model::findOrFail($id);
+        $model->unlike();
     }
 }

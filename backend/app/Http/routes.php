@@ -31,6 +31,15 @@ Route::resource('api/staff', 'StaffController');
 Route::resource('api/service', 'ServicesController');
 Route::resource('api/price', 'PricesController');
 
+Route::any('api/book/{id}/like', 'BooksController@like');
+Route::any('api/book/{id}/unlike', 'BooksController@unlike');
+Route::any('api/section/{id}/like', 'SectionsController@like');
+Route::any('api/section/{id}/unlike', 'SectionsController@unlike');
+Route::any('api/chapter/{id}/like', 'ChaptersController@like');
+Route::any('api/chapter/{id}/unlike', 'ChaptersController@unlike');
+Route::any('api/article/{id}/like', 'ArticlesController@like');
+Route::any('api/article/{id}/unlike', 'ArticlesController@unlike');
+
 Route::resource('api/address', 'OfficesController');
 
 

@@ -8,6 +8,7 @@ use App\Http\Requests;
 class ChaptersController extends CrudController
 {
     protected $model = Chapter::class;
+    protected $likeable = true;
     
     function getIndexFilters()
     {

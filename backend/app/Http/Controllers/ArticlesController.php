@@ -8,6 +8,7 @@ use App\Http\Requests;
 class ArticlesController extends CrudController
 {
     protected $model = Article::class;
+    protected $likeable = true;
 
     function getIndexFilters()
     {
