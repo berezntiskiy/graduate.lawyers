@@ -46,6 +46,8 @@ class CrudController extends RestController
 
     function store()
     {
+        if (!$this->canStore())
+            throw new LogicException('DENIED');
         $model = $this->model;
         return $model::create(Input::all());
     }
@@ -56,6 +58,8 @@ class CrudController extends RestController
 
     function show($id)
     {
+        if (!$this->canShow())
+            throw new LogicException('DENIED');
         $model = $this->model;
         $entity = $model::find($id);
         if (!$entity)
@@ -69,6 +73,8 @@ class CrudController extends RestController
 
     function update()
     {
+        if (!$this->canUpdate())
+            throw new LogicException('DENIED');
         $model = $this->model;
         return $model::save(Input::all());
     }
@@ -79,6 +85,8 @@ class CrudController extends RestController
 
     function destroy($id)
     {
+        if (!$this->canDestroy())
+            throw new LogicException('DENIED');
         $model = $this->model;
         return $model::destroy($id);
     }
