@@ -4,6 +4,8 @@ import {Service} from "./service";
 import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
 import {ServicesItem} from "./services-item.component";
 import {TranslatePipe} from "ng2-translate/ng2-translate";
+import {ServicesPersonType} from "./services-persontype.component";
+import {ServicesList} from "./services-list.component";
 
 @Component({
     selector: 'services',
@@ -11,11 +13,12 @@ import {TranslatePipe} from "ng2-translate/ng2-translate";
         ServiceService
     ],
     directives: [
-        ServicesItem
+        ServicesItem,
+        ServicesList,
+        ServicesPersonType
     ],
     pipes: [
-        ServicesNaturalpersonPipe,
-        TranslatePipe
+        ServicesNaturalpersonPipe
     ],
     styles: [`
     h1 {
@@ -32,31 +35,20 @@ import {TranslatePipe} from "ng2-translate/ng2-translate";
     .naturalpersonToggler {
         text-align: center;
     }
+    .help {
+        text-align: center; display: block; color: #009688; padding: 18px 0 0;
+    }
   `],
     template: `
   <md-card>
-        <div class="naturalpersonToggler">
-            <span (click)="naturalperson=true" [ngClass]="{active: naturalperson}">
-                {{"services.person" | translate }}
-            </span>
-            <span (click)="naturalperson=false" [ngClass]="{active: !naturalperson}">
-                {{"services.company" | translate }}
-            </span>
-        </div>
-        <div *ngIf="loadingServices">
-            <md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
-        </div>
-        <div *ngIf="!loadingServices">
-            <services-item [service]="service" *ngFor="let service of services | servicesNaturalpersonFilter: naturalperson"></services-item>
-        </div>
+    <services-persontype [naturalperson]="naturalperson" (change)="naturalperson=$event.value"></services-persontype>
+    <services-list [isLoading]="loadingService" [naturalperson]="naturalperson" [services]="services"></services-list>
+    <small class="help">Для просмотра подробной информации об услуге кликните на нее</small>
   </md-card>
-  
-  <small style="text-align: center; display: block; color: #009688; padding-bottom: 20px;">Для просмотра подробной информации об услуге кликните на нее</small>
-
   `
 })
 export class Services {
-    services:Service[];
+    services:Service[] = [];
     loadingServices:boolean;
     naturalperson:boolean;
 

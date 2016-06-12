@@ -17,7 +17,7 @@ import {UserService} from "./user/user.service";
 import {About} from "./about/about.component";
 import {Contact} from "./contact/contact.component";
 import {Langs} from "./langs/langs.component";
-import {TranslateService} from "ng2-translate/ng2-translate";
+import {TranslateService, TranslatePipe} from "ng2-translate/ng2-translate";
 import {LangService} from "./langs/langs.service";
 
 /*
@@ -26,7 +26,8 @@ import {LangService} from "./langs/langs.service";
  */
 @Component({
     selector: 'app',
-    pipes: [],
+    pipes: [
+    ],
     providers: [
         UserService,
         LangService
@@ -129,32 +130,32 @@ import {LangService} from "./langs/langs.service";
               <span class="logo-title">{{ name }}</span>
               <span class="fill"></span>
               <button md-button router-active [routerLink]=" ['Home'] ">
-                Home
+                {{"menu.home" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['Services'] ">
-                Services
+                {{"menu.services" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['Library'] ">
-                Library
+                {{"menu.library" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['Chat'] ">
-                Chat
+                {{"menu.chat" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['About'] ">
-                About
+                {{"menu.about" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['Contact'] ">
-                Contact
+                {{"menu.contact" | translate}}
               </button>
               
               <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="!sessionService.auth">
-                Login
+                {{"menu.login" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="sessionService.auth">
-                My account
+                {{"menu.my_account" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="sessionService.auth">
-                Logout
+                {{"menu.logout" | translate}}
               </button>
           </md-toolbar>
         </div>
@@ -202,7 +203,7 @@ export class App {
     }
 
     ngOnInit() {
-        this.translate.getTranslation(this.langService.lang);
+        this.translate.use(this.langService.lang);
         this.userService.isAuthenticated().subscribe(() => this.appLoaded());
     }
 
