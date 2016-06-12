@@ -10,7 +10,6 @@ import {ServicesPrice} from "./services-price.component";
         ServicesPrice
     ],
     styles: [`
-    .price {color: tomato; border: 1px solid tomato; padding: 7px; margin: 7px; float: right;}
     .item {
       overflow: auto;
       zoom: 1;

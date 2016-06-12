@@ -6,7 +6,7 @@ import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
 @Component({
     selector: 'services-price',
     styles: [`
-    .price {color: tomato; border: 1px solid tomato; padding: 7px; margin: 7px; float: right;}
+    .price {color: tomato; border: 1px solid tomato; padding: 7px; margin: 7px; float: right; border-radius: 3px}
   `],
     template: `
     <div class="price">
