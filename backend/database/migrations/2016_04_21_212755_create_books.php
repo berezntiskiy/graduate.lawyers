@@ -18,12 +18,6 @@ class CreateBooks extends Migration
             $table->timestamps();
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
 
         Schema::create('book_translations', function(Blueprint $table)
@@ -40,12 +34,6 @@ class CreateBooks extends Migration
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
     }
 

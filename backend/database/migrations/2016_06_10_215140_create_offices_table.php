@@ -20,12 +20,6 @@ class CreateOfficesTable extends Migration
             $table->float('lng');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
 
         Schema::create('office_translations', function(Blueprint $table)
@@ -42,12 +36,6 @@ class CreateOfficesTable extends Migration
             $table->foreign('office_id')->references('id')->on('offices')->onDelete('cascade');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
     }
 

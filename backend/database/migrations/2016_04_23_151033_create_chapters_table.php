@@ -21,12 +21,6 @@ class CreateChaptersTable extends Migration
             $table->foreign('section_id')->references('id')->on('sections');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
 
         Schema::create('chapter_translations', function(Blueprint $table)
@@ -43,12 +37,6 @@ class CreateChaptersTable extends Migration
             $table->foreign('chapter_id')->references('id')->on('chapters')->onDelete('cascade');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
     }
 

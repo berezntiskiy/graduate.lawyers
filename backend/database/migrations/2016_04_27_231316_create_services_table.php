@@ -20,12 +20,6 @@ class CreateServicesTable extends Migration
             $table->boolean('naturalperson');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
 
         Schema::create('service_translations', function(Blueprint $table)
@@ -42,12 +36,6 @@ class CreateServicesTable extends Migration
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
     }
 

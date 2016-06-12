@@ -21,12 +21,6 @@ class CreatePricesTable extends Migration
             $table->integer('price_max');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
 
         Schema::create('price_translations', function(Blueprint $table)
@@ -43,12 +37,6 @@ class CreatePricesTable extends Migration
             $table->foreign('price_id')->references('id')->on('prices')->onDelete('cascade');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
     }
 

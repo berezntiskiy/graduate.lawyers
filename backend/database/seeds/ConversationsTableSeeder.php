@@ -7,8 +7,8 @@ class ConversationsTableSeeder extends Seeder {
 
 		DB::table('conversations')->delete();
 
-		$user1 = DB::table('users')->where('name', 'heisenberg')->first();
-		$user2 = DB::table('users')->where('name', 'skyler')->first();
+		$user1 = \App\User::findOrFail(1);
+//		$user2 = \App\User::findOrFail(2);
 
 		$conversations = array(
 			array(
@@ -16,11 +16,11 @@ class ConversationsTableSeeder extends Seeder {
 				'name' 		 => 'Room #1: '.str_random(30),
 				'author_id'  => $user1->id
 			),
-			array(
-				'created_at' => new DateTime,
-				'name' 		 => 'Room #2: '.str_random(30),
-				'author_id'  => $user2->id
-			)
+//			array(
+//				'created_at' => new DateTime,
+//				'name' 		 => 'Room #2: '.str_random(30),
+//				'author_id'  => $user2->id
+//			)
 		);
 
 		DB::table('conversations')->insert($conversations);

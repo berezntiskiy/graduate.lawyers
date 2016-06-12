@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 class UsersTableSeeder extends Seeder {
 
 	public function run() {
-		DB::table('users')->delete();
 
 		$users = array(
 			array(
@@ -44,6 +43,7 @@ class UsersTableSeeder extends Seeder {
 			)
 		);
 
-		DB::table('users')->insert($users);
+		foreach($users as $user)
+			App\User::create($user);
 	}
 }

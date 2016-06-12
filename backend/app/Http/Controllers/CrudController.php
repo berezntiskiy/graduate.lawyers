@@ -68,6 +68,7 @@ class CrudController extends RestController
         $Model = $this->model;
         $model = $Model::findOrFail($id);
         $model->like();
+        return [];
     }
 
     function unlike($id)
@@ -75,5 +76,6 @@ class CrudController extends RestController
         $Model = $this->model;
         $model = $Model::findOrFail($id);
         $model->unlike();
+        return [];
     }
 }

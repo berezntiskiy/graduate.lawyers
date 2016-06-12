@@ -7,10 +7,10 @@ class MessagesNotificationsTableSeeder extends Seeder {
 
 		DB::table('messages_notifications')->delete();
 
-		$user1 = DB::table('users')->where('name', 'heisenberg')->first();
-		$user2 = DB::table('users')->where('name', 'pinkman')->first();
-		$user3 = DB::table('users')->where('name', 'skyler')->first();
-		$user4 = DB::table('users')->where('name', 'hank')->first();
+		$user1 = DB::table('users')->where('id', 1)->first();
+		$user2 = DB::table('users')->where('id', 2)->first();
+		$user3 = DB::table('users')->where('id', 3)->first();
+		$user4 = DB::table('users')->where('id', 4)->first();
 
 		$message1 = DB::table('messages')->where('body', 'Jesse!')->first();
 		$message2 = DB::table('messages')->where('body', 'Yo, bitch!')->first();

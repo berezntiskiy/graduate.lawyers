@@ -21,12 +21,6 @@ class CreateStaff extends Migration
             $table->timestamps();
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
 
         Schema::create('staff_translations', function(Blueprint $table)
@@ -40,12 +34,6 @@ class CreateStaff extends Migration
             $table->foreign('staff_id')->references('id')->on('staff')->onDelete('cascade');
 
             $table->softDeletes();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('administrators');
-            $table->integer('updated_by')->unsigned()->nullable();
-            $table->foreign('updated_by')->references('id')->on('administrators');
-            $table->integer('deleted_by')->unsigned()->nullable();
-            $table->foreign('deleted_by')->references('id')->on('administrators');
         });
     }
 
@@ -58,6 +46,7 @@ class CreateStaff extends Migration
     {
         Schema::drop('staff');
         Schema::drop('staff_translations');
+        Schema::drop('staff_service');
     }
 }
 

@@ -7,13 +7,14 @@ class MessagesTableSeeder extends Seeder {
 
 		DB::table('messages')->delete();
 
-		$user1 = DB::table('users')->where('name', 'heisenberg')->first();
-		$user2 = DB::table('users')->where('name', 'pinkman')->first();
-		$user3 = DB::table('users')->where('name', 'skyler')->first();
-		$user4 = DB::table('users')->where('name', 'hank')->first();
+		$user1 = DB::table('users')->where('id', 1)->first();
+		$user2 = DB::table('users')->where('id', 2)->first();
+		$user3 = DB::table('users')->where('id', 3)->first();
+		$user4 = DB::table('users')->where('id', 4)->first();
 
 		$conversation1 = DB::table('conversations')->where('author_id', $user1->id)->first();
-		$conversation2 = DB::table('conversations')->where('author_id', $user3->id)->first();
+//		$conversation2 = DB::table('conversations')->where('author_id', $user3->id)->first();
+		$conversation2 = $conversation1;
 
 		$messages = array(
 			array(
