@@ -36,6 +36,41 @@ import {ArticleList} from "./article-list.component";
         ArticleList
     ],
     pipes: [],
+    styles:[`
+    .container {
+        display:flex; 
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+        width: 100%;
+        align-content: center; 
+        align-items: stretch; 
+        margin: 0; 
+        padding: 0; 
+    }
+    .transition {
+        transition: all 0.3s ease;
+    }
+    
+    .hidden {max-width: 0;}
+    
+    .size-1 {
+        // max-width: 20%;
+        flex-grow: 1;
+    }
+    .size-2 {
+        flex-grow: 1;
+        // max-width: 20%; 
+    }
+    .size-3 {
+        flex-grow: 1;
+        // max-width: 25%;
+    }
+    .size-4 {
+        flex-grow: 10;
+        min-width: 500px;
+        // max-width: 35%;
+    }
+`],
     template: require('./library.html')
 })
 export class Library {

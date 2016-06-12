@@ -3,18 +3,18 @@
     <md-card>
         <md-card-title>Local State</md-card-title>
         <md-card-content>
-            <div style="display: flex;">
+            <div class="container">
                 <!-- Books -->
-                <library-sidebar [isLoading]="loadingBooks" [collection]="books"
+                <library-sidebar class="sidebar size-1" [isLoading]="loadingBooks" [collection]="books"
                                  (open)="openBook($event.value)"></library-sidebar>
                 <!-- Sections -->
-                <library-sidebar [isLoading]="loadingSections" [collection]="sections"
+                <library-sidebar class="sidebar size-2" *ngIf="sections || loadingSections" [isLoading]="loadingSections" [collection]="sections"
                                  (open)="openSection($event.value)"></library-sidebar>
                 <!-- Chapters -->
-                <library-sidebar [isLoading]="loadingChapters" [collection]="chapters"
+                <library-sidebar class="sidebar size-3" *ngIf="chapters || loadingChapters" [isLoading]="loadingChapters" [collection]="chapters"
                                  (open)="openChapter($event.value)"></library-sidebar>
                 <!-- Articles -->
-                <library-main>
+                <library-main class="sidebar size-4" *ngIf="articles || loadingArticles">
                     <article-list [isLoading]="loadingArticles" [collection]="articles"></article-list>
                 </library-main>
             </div>
