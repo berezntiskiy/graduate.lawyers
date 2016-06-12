@@ -2,12 +2,12 @@ import {Component, Input} from '@angular/core';
 import {ServiceService} from "./service.service";
 import {Service} from "./service";
 import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
-import {ServicesPrice} from "./services-price.component";
+import {ServicePrice} from "./service-price.component";
 
 @Component({
-    selector: 'services-item',
+    selector: 'service-item',
     directives: [
-        ServicesPrice
+        ServicePrice
     ],
     styles: [`
     .item {
@@ -23,13 +23,13 @@ import {ServicesPrice} from "./services-price.component";
   `],
     template: `
     <div class="item">
-        <services-price [start]="service.price_start" [end]="service.price_end"></services-price>
+        <service-price [start]="service.price_start" [end]="service.price_end"></service-price>
         <h3 (click)="showText = !showText">{{service.title}}</h3>
         <div class="text" *ngIf="showText">{{service.text}}</div>
     </div>
   `
 })
-export class ServicesItem {
+export class ServiceItem {
     @Input() service:Service;
     showText = false;
 }

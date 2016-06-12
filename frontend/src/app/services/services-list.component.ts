@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {ServiceService} from "./service.service";
 import {Service} from "./service";
 import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
-import {ServicesItem} from "./services-item.component";
+import {ServiceItem} from "./service-item.component";
 
 @Component({
     selector: 'services-list',
@@ -10,7 +10,7 @@ import {ServicesItem} from "./services-item.component";
         ServiceService
     ],
     directives: [
-        ServicesItem
+        ServiceItem
     ],
     pipes: [
         ServicesNaturalpersonPipe
@@ -22,7 +22,7 @@ import {ServicesItem} from "./services-item.component";
         <md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
     </div>
     <div *ngIf="!isLoading">
-        <services-item [service]="service" *ngFor="let service of services | servicesNaturalpersonFilter: naturalperson"></services-item>
+        <service-item [service]="service" *ngFor="let service of services | servicesNaturalpersonFilter: naturalperson"></service-item>
     </div>
   `
 })

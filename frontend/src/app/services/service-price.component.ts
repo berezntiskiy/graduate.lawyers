@@ -4,7 +4,7 @@ import {Service} from "./service";
 import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
 
 @Component({
-    selector: 'services-price',
+    selector: 'service-price',
     styles: [`
     .price {color: tomato; border: 1px solid tomato; padding: 7px; margin: 7px; float: right; border-radius: 3px}
   `],
@@ -14,7 +14,7 @@ import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
     </div>
   `
 })
-export class ServicesPrice {
+export class ServicePrice {
     @Input() start = 0;
     @Input() end = 0;
 }

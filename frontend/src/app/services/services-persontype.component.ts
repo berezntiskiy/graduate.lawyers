@@ -2,7 +2,6 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {ServiceService} from "./service.service";
 import {Service} from "./service";
 import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
-import {ServicesItem} from "./services-item.component";
 import {TranslatePipe} from "ng2-translate/ng2-translate";
 
 @Component({
@@ -11,7 +10,6 @@ import {TranslatePipe} from "ng2-translate/ng2-translate";
         ServiceService
     ],
     directives: [
-        ServicesItem
     ],
     pipes: [
         ServicesNaturalpersonPipe

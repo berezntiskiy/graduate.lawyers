@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {ServiceService} from "./service.service";
 import {Service} from "./service";
 import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
-import {ServicesItem} from "./services-item.component";
 import {TranslatePipe} from "ng2-translate/ng2-translate";
 import {ServicesPersonType} from "./services-persontype.component";
 import {ServicesList} from "./services-list.component";
@@ -13,7 +12,6 @@ import {ServicesList} from "./services-list.component";
         ServiceService
     ],
     directives: [
-        ServicesItem,
         ServicesList,
         ServicesPersonType
     ],
