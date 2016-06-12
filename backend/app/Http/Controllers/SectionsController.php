@@ -21,4 +21,12 @@ class SectionsController extends CrudController
     }
 
 
+    function canIndex() {
+        return true;
+    }
+
+    function canShow()
+    {
+        return true;
+    }
 }

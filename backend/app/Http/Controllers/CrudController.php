@@ -20,6 +20,10 @@ class CrudController extends RestController
         return $res;
     }
 
+    function canIndex() {
+        return false;
+    }
+
     function index()
     {
         $Model = $this->model;
@@ -36,10 +40,18 @@ class CrudController extends RestController
         return $model->get();
     }
 
+    function canStore() {
+        return false;
+    }
+
     function store()
     {
         $model = $this->model;
         return $model::create(Input::all());
+    }
+
+    function canShow() {
+        return false;
     }
 
     function show($id)
@@ -51,10 +63,18 @@ class CrudController extends RestController
         return $entity;
     }
 
+    function canUpdate() {
+        return false;
+    }
+
     function update()
     {
         $model = $this->model;
         return $model::save(Input::all());
+    }
+
+    function canDestroy() {
+        return false;
     }
 
     function destroy($id)

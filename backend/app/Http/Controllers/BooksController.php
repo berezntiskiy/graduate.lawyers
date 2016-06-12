@@ -9,4 +9,13 @@ class BooksController extends CrudController
 {
     protected $model = Book::class;
     protected $likeable = true;
+
+    function canIndex() {
+        return true;
+    }
+
+    function canShow()
+    {
+        return true;
+    }
 }

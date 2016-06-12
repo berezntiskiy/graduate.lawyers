@@ -8,4 +8,13 @@ use App\Http\Requests;
 class OfficesController extends CrudController
 {
     protected $model = Office::class;
+
+    function canIndex() {
+        return true;
+    }
+
+    function canShow()
+    {
+        return true;
+    }
 }

@@ -8,4 +8,13 @@ use App\Http\Requests;
 class StaffController extends CrudController
 {
     protected $model = Staff::class;
+
+    function canIndex() {
+        return true;
+    }
+
+    function canShow()
+    {
+        return true;
+    }
 }

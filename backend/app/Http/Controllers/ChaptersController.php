@@ -19,4 +19,13 @@ class ChaptersController extends CrudController
 
         return $res;
     }
+
+    function canIndex() {
+        return true;
+    }
+
+    function canShow()
+    {
+        return true;
+    }
 }

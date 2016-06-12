@@ -8,4 +8,13 @@ use App\Http\Requests;
 class PricesController extends CrudController
 {
     protected $model = Price::class;
+
+    function canIndex() {
+        return true;
+    }
+
+    function canShow()
+    {
+        return true;
+    }
 }
