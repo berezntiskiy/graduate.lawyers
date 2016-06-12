@@ -72,6 +72,7 @@
     "@angular2-material/radio": "2.0.0-alpha.4",
     "@angular2-material/sidenav": "2.0.0-alpha.4",
     "@angular2-material/toolbar": "2.0.0-alpha.4",
+    "angular2-cookie": "^1.2.1",
     "angular2-google-maps": "^0.10.0",
     "core-js": "^2.2.2",
     "normalize.css": "^4.1.1",

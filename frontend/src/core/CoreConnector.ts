@@ -10,7 +10,8 @@ import {Observable} from "rxjs/Rx";
 @BaseUrl("/api/")
 @DefaultHeaders({
     'Accept': 'application/json',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'API-V': '1'
 })
 export class CoreClient extends RESTClient {
     // public constructor( http: Http) {
@@ -24,10 +25,7 @@ export class CoreClient extends RESTClient {
     // }
 
     protected requestInterceptor(req: Request) {
-        // req.headers.append('X-CSRF-TOKEN', SessionFactory.csrfToken);
-        // if (SessionFactory.getInstance().isAuthenticated) {
-        //     req.headers.append('jwt', SessionFactory.getInstance().credentials.jwt);
-        // }
+        req.headers.append('X-CSRF-TOKEN', window['CSRF_TOKEN']);
     }
 
 
@@ -43,6 +41,6 @@ export class CoreClient extends RESTClient {
 
 
     protected errorInterceptor(error) {
-        return Observable.throw(error.json().data || 'SERVER_ERROR');
+        return Observable.throw(error.json().data || {ERROR_CODE: 'SERVER_ERROR'});
     }
 }

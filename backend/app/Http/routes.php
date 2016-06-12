@@ -15,6 +15,8 @@
 //header('Access-Control-Allow-Credentials: true');
 //header('Access-Control-Allow-Headers: X-CSRF-TOKEN, Origin, Content-Type, Accept, Authorization, X-Request-With, Content-Type, Content-Range, Content-Disposition, Content-Description');
 
+$lang = isset($_COOKIE['lang']) ? $_COOKIE['lang'] : 'ru';
+App::setLocale($lang);
 
 Route::get('', function () {
     return view('welcome');

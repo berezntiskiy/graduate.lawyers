@@ -16,6 +16,7 @@ import {SessionService} from "./user/session.service";
 import {UserService} from "./user/user.service";
 import {About} from "./about/about.component";
 import {Contact} from "./contact/contact.component";
+import {Langs} from "./langs/langs.component";
 
 /*
  * App Component
@@ -28,7 +29,8 @@ import {Contact} from "./contact/contact.component";
         UserService
     ],
     directives: [
-        RouterActive
+        RouterActive,
+        Langs
     ],
     encapsulation: ViewEncapsulation.None,
     styles: [
@@ -161,8 +163,8 @@ import {Contact} from "./contact/contact.component";
       <!--<pre class="app-state">{{ appState.state | json }}</pre>-->
 
       <footer>
-        <img [src]="angularclassLogo" width="6%">
-        WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a>
+        <div style="margin-right:145px;">(c) 2016 AAAAAAAAA</div>
+        <langs></langs>
       </footer>
       </md-content>
   `
