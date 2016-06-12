@@ -18,6 +18,8 @@ class CreateServicesTable extends Migration
             $table->timestamps();
 
             $table->boolean('naturalperson');
+            $table->integer('price_start');
+            $table->integer('price_end');
 
             $table->softDeletes();
         });

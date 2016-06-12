@@ -17,6 +17,8 @@ import {UserService} from "./user/user.service";
 import {About} from "./about/about.component";
 import {Contact} from "./contact/contact.component";
 import {Langs} from "./langs/langs.component";
+import {TranslateService} from "ng2-translate/ng2-translate";
+import {LangService} from "./langs/langs.service";
 
 /*
  * App Component
@@ -26,7 +28,8 @@ import {Langs} from "./langs/langs.component";
     selector: 'app',
     pipes: [],
     providers: [
-        UserService
+        UserService,
+        LangService
     ],
     directives: [
         RouterActive,
@@ -163,7 +166,7 @@ import {Langs} from "./langs/langs.component";
       <!--<pre class="app-state">{{ appState.state | json }}</pre>-->
 
       <footer>
-        <div style="margin-right:145px;">(c) 2016 AAAAAAAAA</div>
+        <div style="margin-right:145px;">&copy; 2016 PocketLawyer</div>
         <langs></langs>
       </footer>
       </md-content>
@@ -191,12 +194,15 @@ export class App {
     constructor(public appState:AppState,
                 private router:Router,
                 private userService:UserService,
+                private translate: TranslateService,
+                private langService: LangService,
                 @Query(RouterLink) public routerLink:QueryList<RouterLink>) {
         this.subscribeForHeaderToggling();
         this.sessionService = SessionService;
     }
 
     ngOnInit() {
+        this.translate.getTranslation(this.langService.lang);
         this.userService.isAuthenticated().subscribe(() => this.appLoaded());
     }
 

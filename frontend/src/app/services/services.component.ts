@@ -2,14 +2,20 @@ import {Component} from '@angular/core';
 import {ServiceService} from "./service.service";
 import {Service} from "./service";
 import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
+import {ServicesItem} from "./services-item.component";
+import {TranslatePipe} from "ng2-translate/ng2-translate";
 
 @Component({
     selector: 'services',
     providers: [
         ServiceService
     ],
+    directives: [
+        ServicesItem
+    ],
     pipes: [
-        ServicesNaturalpersonPipe
+        ServicesNaturalpersonPipe,
+        TranslatePipe
     ],
     styles: [`
     h1 {
@@ -29,28 +35,19 @@ import {ServicesNaturalpersonPipe} from "./services-naturalperson.pipe";
   `],
     template: `
   <md-card>
-    For hot module reloading run
-    <pre>npm run start:hmr</pre>
-  </md-card>
-  <md-card>
-    <h3>
-      patrick@AngularClass.com
-    </h3>
         <div class="naturalpersonToggler">
             <span (click)="naturalperson=true" [ngClass]="{active: naturalperson}">
-                Физ лицо
+                {{"services.person" | translate }}
             </span>
             <span (click)="naturalperson=false" [ngClass]="{active: !naturalperson}">
-                Юр лицо
+                {{"services.company" | translate }}
             </span>
         </div>
         <div *ngIf="loadingServices">
             <md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
         </div>
         <div *ngIf="!loadingServices">
-            <ul>
-                <li *ngFor="let service of services | servicesNaturalpersonFilter: naturalperson">{{service | json}}</li>
-            </ul>
+            <services-item [service]="service" *ngFor="let service of services | servicesNaturalpersonFilter: naturalperson"></services-item>
         </div>
   </md-card>
 
