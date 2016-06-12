@@ -50,6 +50,8 @@ import {TranslatePipe} from "ng2-translate/ng2-translate";
             <services-item [service]="service" *ngFor="let service of services | servicesNaturalpersonFilter: naturalperson"></services-item>
         </div>
   </md-card>
+  
+  <small style="text-align: center; display: block; color: #009688; padding-bottom: 20px;">Для просмотра подробной информации об услуге кликните на нее</small>
 
   `
 })
