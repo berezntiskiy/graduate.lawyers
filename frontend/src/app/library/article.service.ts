@@ -20,6 +20,12 @@ export class ArticleService extends CoreClient {
 
     @GET("article/{id}")
     public getOne( @Path("id") id: number): Observable<Article> { return null; };
+
+    @POST("article/like")
+    public like( @Body article: Article): Observable { return null; };
+
+    @POST("article/unlike")
+    public unlike( @Body article: Article): Observable { return null; };
     //
     // @POST("todo")
     // public postTodo( @Body todo: Todo): Observable { return null; };

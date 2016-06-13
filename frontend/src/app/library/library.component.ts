@@ -189,4 +189,36 @@ export class Library {
         this.appState.set('value', value);
     }
 
+    likeBook(event) {
+        this.bookService.like(event.value).subscribe(() => {event.value.likes = true;});
+    }
+
+    unlikeBook(event) {
+        this.bookService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+    }
+
+    likeSection(event) {
+        this.sectionService.like(event.value).subscribe(() => {event.value.likes = true;});
+    }
+
+    unlikeSection(event) {
+        this.sectionService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+    }
+
+    likeChapter(event) {
+        this.chapterService.like(event.value).subscribe(() => {event.value.likes = true;});
+    }
+
+    unlikeChapter(event) {
+        this.chapterService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+    }
+
+    likeArticle(event) {
+        this.articleService.like(event.value).subscribe(() => {event.value.likes = true;});
+    }
+
+    unlikeArticle(event) {
+        this.articleService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+    }
+
 }

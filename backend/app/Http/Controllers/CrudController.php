@@ -106,4 +106,26 @@ class CrudController extends RestController
         $model->unlike();
         return [];
     }
+
+    function getLike($id)
+    {
+        return $this->like($id);
+    }
+
+    function postLike()
+    {
+        $id = $this->request->get('id');
+        return $this->like($id);
+    }
+
+    function getUnlike($id)
+    {
+        return $this->unlike($id);
+    }
+
+    function postUnlike()
+    {
+        $id = $this->request->get('id');
+        return $this->unlike($id);
+    }
 }

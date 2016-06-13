@@ -18,6 +18,12 @@ export class SectionService extends CoreClient {
     @GET("section/")
     public getList( @Query("book_id") book_id?: number): Observable<Section[]> { return null; };
 
+    @POST("section/like")
+    public like( @Body section: Section): Observable { return null; };
+
+    @POST("section/unlike")
+    public unlike( @Body section: Section): Observable { return null; };
+
     // @GET("todo/{id}")
     // public getTodoById( @Path("id") id: string): Observable { return null; };
     //

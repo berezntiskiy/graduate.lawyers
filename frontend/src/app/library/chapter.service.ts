@@ -18,6 +18,12 @@ export class ChapterService extends CoreClient {
     @GET("chapter/")
     public getList( @Query("section_id") section?: number): Observable<Chapter[]> { return null; };
 
+    @POST("chapter/like")
+    public like( @Body chapter: Chapter): Observable { return null; };
+
+    @POST("chapter/unlike")
+    public unlike( @Body chapter: Chapter): Observable { return null; };
+
     // @GET("todo/{id}")
     // public getTodoById( @Path("id") id: string): Observable { return null; };
     //
