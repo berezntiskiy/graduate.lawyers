@@ -16,6 +16,7 @@ import {Article} from "./article";
 import {ArticleService} from "./article.service";
 import {LibraryMain} from "./library-main.component";
 import {ArticleList} from "./article-list.component";
+import {LikedPipe} from "./liked.pipe";
 
 @Component({
     selector: 'library',
@@ -35,7 +36,9 @@ import {ArticleList} from "./article-list.component";
         LibraryMain,
         ArticleList
     ],
-    pipes: [],
+    pipes: [
+        LikedPipe
+    ],
     styles:[`
     .container {
         display:flex; 
@@ -190,35 +193,35 @@ export class Library {
     }
 
     likeBook(event) {
-        this.bookService.like(event.value).subscribe(() => {event.value.likes = true;});
+        this.bookService.like(event.value).subscribe(() => {event.value.likes = true; this.books = [...this.books];});
     }
 
     unlikeBook(event) {
-        this.bookService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+        this.bookService.unlike(event.value).subscribe(() => {event.value.likes = false; this.books = [...this.books];});
     }
 
     likeSection(event) {
-        this.sectionService.like(event.value).subscribe(() => {event.value.likes = true;});
+        this.sectionService.like(event.value).subscribe(() => {event.value.likes = true; this.sections = [...this.sections];});
     }
 
     unlikeSection(event) {
-        this.sectionService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+        this.sectionService.unlike(event.value).subscribe(() => {event.value.likes = false; this.sections = [...this.sections];});
     }
 
     likeChapter(event) {
-        this.chapterService.like(event.value).subscribe(() => {event.value.likes = true;});
+        this.chapterService.like(event.value).subscribe(() => {event.value.likes = true; this.chapters = [...this.chapters];});
     }
 
     unlikeChapter(event) {
-        this.chapterService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+        this.chapterService.unlike(event.value).subscribe(() => {event.value.likes = false; this.chapters = [...this.chapters];});
     }
 
     likeArticle(event) {
-        this.articleService.like(event.value).subscribe(() => {event.value.likes = true;});
+        this.articleService.like(event.value).subscribe(() => {event.value.likes = true; this.articles = [...this.articles];});
     }
 
     unlikeArticle(event) {
-        this.articleService.unlike(event.value).subscribe(() => {event.value.likes = false;});
+        this.articleService.unlike(event.value).subscribe(() => {event.value.likes = false; this.articles = [...this.articles];});
     }
 
 }

@@ -5,7 +5,7 @@
         <md-card-content>
             <div class="container">
                 <!-- Books -->
-                <library-sidebar (like)="likeBook($event)" (unlike)="unlikeBook($event)" class="sidebar size-1" [isLoading]="loadingBooks" [collection]="books"
+                <library-sidebar (like)="likeBook($event)" (unlike)="unlikeBook($event)" class="sidebar size-1" [isLoading]="loadingBooks" [collection]="books | liked:true"
                                  (open)="openBook($event.value)"></library-sidebar>
                 <!-- Sections -->
                 <library-sidebar (like)="likeSection($event)" (unlike)="unlikeSection($event)" class="sidebar size-2" *ngIf="sections || loadingSections" [isLoading]="loadingSections" [collection]="sections"
