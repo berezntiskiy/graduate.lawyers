@@ -13,7 +13,7 @@ import {Observable} from "rxjs/Rx";
     'Content-Type': 'application/json',
     'API-V': '1'
 })
-export class CoreClient extends RESTClient {
+export abstract class CoreClient extends RESTClient {
     // public constructor( http: Http) {
     //     let _build = (<any> http)._backend._browserXHR.build;
     //     (<any> http)._backend._browserXHR.build = () => {
