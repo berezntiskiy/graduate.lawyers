@@ -37,21 +37,42 @@
     }
 
     .app-starting .app-starting-loading {
-      display: block;
+      max-height: 9999999px;
+      opacity: 1;
     }
 
     .app-starting-loading {
-      color: red;
-      display: none;
+      max-height: 0;
       position: fixed;
       z-index: 999999999999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #eee;
+      opacity: 0;
+      -webkit-transition: opacity 700ms ease, max-height 0ms ease 700ms;
+      -moz-transition: opacity 700ms ease, max-height 0ms ease 700ms;
+      -ms-transition: opacity 700ms ease, max-height 0ms ease 700ms;
+      -o-transition: opacity 700ms ease, max-height 0ms ease 700ms;
+      transition: opacity 700ms ease, max-height 0ms ease 700ms;
+    }
+
+    .app-starting-msg {
+      font-size: 3em;
+      color: #aaa;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
     }
   </style>
 </head>
 
 <body class="app-starting">
   <div class="app-starting-loading">
-    <h1>App is loading...</h1>
+    <div style="display: table; height: 100%; width: 100%; text-align: center; overflow: hidden;">
+      <div style="display: table-cell; vertical-align: middle;">
+        <div class="app-starting-msg">App is loading...</div>
+      </div>
+    </div>
   </div>
   <app></app>
 
