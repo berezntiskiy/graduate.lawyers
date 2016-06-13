@@ -21,14 +21,14 @@ class ArticlesSeeder extends Seeder
 //            ['name' => '', 'description' => ''],
         ];
         $rCount = count($records);
-        for($i = $rCount - 1; $i < $rCount + 70; $i++)
+        for($i = $rCount - 1; $i < $rCount + 150; $i++)
             $records[] = ['name' => 'Название статьи '.$i, 'description' => 'Описание статьи '.$i];
 
         foreach ($records as $record)
             \App\Article::create([
-                'title' => $record['name'],
-                'text' => $record['description'],
-                'chapter_id' => rand(1,3)
+                'title' => $record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'].$record['name'],
+                'text' => $record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'].$record['description'],
+                'chapter_id' => rand(1,10)
             ]);
     }
 }

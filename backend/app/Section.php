@@ -8,7 +8,7 @@ class Section extends Entity
 {
     use SoftDeletes;
     use \Dimsav\Translatable\Translatable;
-    use \Conner\Likeable\LikeableTrait;
+        use MyLikableTrait;     protected $appends = ['likes'];
 
     protected $table = 'sections';
 

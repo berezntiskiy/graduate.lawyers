@@ -10,7 +10,8 @@ class Book extends Entity
 {
     use SoftDeletes;
     use Translatable;
-    use \Conner\Likeable\LikeableTrait;
+    use MyLikableTrait;
+    protected $appends = ['likes'];
 
     public $table = 'books';
 

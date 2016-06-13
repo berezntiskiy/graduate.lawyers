@@ -168,8 +168,8 @@ class ServicesSeeder extends Seeder
         foreach ($records as $record)
             \App\Service::create([
                 'naturalperson' => $record['naturalperson'],
-                'price_start' => $record['price_start'],
-                'price_end' => $record['price_end'],
+                'price_start' => isset($record['price_start']) ? $record['price_start'] : rand(1, 5000),
+                'price_end' => isset($record['price_end']) ? $record['price_end'] : rand(1, 5000),
                 'ru' => [
                     'title' => $record['title'],
                     'text' => $record['text']

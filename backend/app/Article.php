@@ -8,14 +8,16 @@ class Article extends Entity
 {
     use SoftDeletes;
     use \Dimsav\Translatable\Translatable;
-    use \Conner\Likeable\LikeableTrait;
+    use MyLikableTrait;
+    protected $appends = ['likes'];
 
     protected $table = 'articles';
 
     protected $fillable = ['title', 'text', 'chapter_id'];
     public $translatedAttributes = ['title', 'text'];
 
-    function chapter() {
+    function chapter()
+    {
         return $this->belongsTo(Chapter::class);
     }
 }
