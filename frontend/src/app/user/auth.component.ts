@@ -27,15 +27,6 @@ import {AuthRegistration} from "./auth-registration.component";
     ],
     template: `
     <md-card>
-      For hot module reloading run
-      <pre>npm run start:hmr</pre>
-    </md-card>
-    <md-card>
-      <h3>
-        patrick@AngularClass.com
-      </h3>
-    </md-card>
-    <md-card>
       <md-card-content>
         <h1>Log in</h1>
         <auth-login></auth-login>

@@ -17,6 +17,7 @@ import {ArticleService} from "./article.service";
 import {LibraryMain} from "./library-main.component";
 import {ArticleList} from "./article-list.component";
 import {LikedPipe} from "./liked.pipe";
+import {OnlyLikedPipe} from "./onlyLiked.pipe";
 
 @Component({
     selector: 'library',
@@ -37,7 +38,7 @@ import {LikedPipe} from "./liked.pipe";
         ArticleList
     ],
     pipes: [
-        LikedPipe
+        OnlyLikedPipe
     ],
     styles:[`
     .container {
@@ -98,6 +99,11 @@ export class Library {
     chaptersObservable: any;
     sectionsObservable: any;
     articlesObservable: any;
+
+    onlyLikedBooks:boolean = false;
+    onlyLikedSection:boolean = false;
+    onlyLikedChapters:boolean = false;
+    onlyLikedArticles:boolean = false;
 
     // TypeScript public modifiers
     constructor(public appState:AppState,
