@@ -60,15 +60,15 @@ export class UserService extends CoreClient {
     };
 
     // @GET("todo/{id}")
-    // public getTodoById( @Path("id") id: string): Observable { return null; };
+    // public getTodoById( @Path("id") id: string): Observable<any> { return null; };
     //
     // @POST("todo")
-    // public postTodo( @Body todo: Todo): Observable { return null; };
+    // public postTodo( @Body todo: Todo): Observable<any> { return null; };
     //
     // @PUT("todo/{id}")
-    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable { return null; };
+    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable<any> { return null; };
     //
     // @DELETE("todo/{id}")
-    // public deleteTodoById( @Path("id") id: string): Observable { return null; };
+    // public deleteTodoById( @Path("id") id: string): Observable<any> { return null; };
 
 }

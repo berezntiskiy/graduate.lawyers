@@ -17,8 +17,8 @@ export class BookService extends CoreClient {
     public getList( @Query("sort") sort?: string): Observable<Book[]> { return null; };
 
     @POST("book/like")
-    public like( @Body book: Book): Observable { return null; };
+    public like( @Body book: Book): Observable<any> { return null; };
 
     @POST("book/unlike")
-    public unlike( @Body book: Book): Observable { return null; };
+    public unlike( @Body book: Book): Observable<any> { return null; };
 }

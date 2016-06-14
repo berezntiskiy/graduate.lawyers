@@ -21,9 +21,9 @@ export class MessageService extends CoreClient {
     public send( @Body message: Message): Observable<Message> { return null; };
     //
     // @PUT("todo/{id}")
-    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable { return null; };
+    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable<any> { return null; };
     //
     // @DELETE("todo/{id}")
-    // public deleteTodoById( @Path("id") id: string): Observable { return null; };
+    // public deleteTodoById( @Path("id") id: string): Observable<any> { return null; };
 
 }

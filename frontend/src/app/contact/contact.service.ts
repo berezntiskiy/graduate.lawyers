@@ -14,6 +14,6 @@ export class ContactService extends CoreClient {
     }
 
     @POST("contact")
-    public send( @Body contact: Contact): Observable { return null; };
+    public send( @Body contact: Contact): Observable<any> { return null; };
 
 }

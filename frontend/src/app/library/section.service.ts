@@ -19,21 +19,21 @@ export class SectionService extends CoreClient {
     public getList( @Query("book_id") book_id?: number): Observable<Section[]> { return null; };
 
     @POST("section/like")
-    public like( @Body section: Section): Observable { return null; };
+    public like( @Body section: Section): Observable<any> { return null; };
 
     @POST("section/unlike")
-    public unlike( @Body section: Section): Observable { return null; };
+    public unlike( @Body section: Section): Observable<any> { return null; };
 
     // @GET("todo/{id}")
-    // public getTodoById( @Path("id") id: string): Observable { return null; };
+    // public getTodoById( @Path("id") id: string): Observable<any> { return null; };
     //
     // @POST("todo")
-    // public postTodo( @Body todo: Todo): Observable { return null; };
+    // public postTodo( @Body todo: Todo): Observable<any> { return null; };
     //
     // @PUT("todo/{id}")
-    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable { return null; };
+    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable<any> { return null; };
     //
     // @DELETE("todo/{id}")
-    // public deleteTodoById( @Path("id") id: string): Observable { return null; };
+    // public deleteTodoById( @Path("id") id: string): Observable<any> { return null; };
 
 }

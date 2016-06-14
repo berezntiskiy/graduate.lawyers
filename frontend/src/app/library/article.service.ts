@@ -22,18 +22,18 @@ export class ArticleService extends CoreClient {
     public getOne( @Path("id") id: number): Observable<Article> { return null; };
 
     @POST("article/like")
-    public like( @Body article: Article): Observable { return null; };
+    public like( @Body article: Article): Observable<any> { return null; };
 
     @POST("article/unlike")
-    public unlike( @Body article: Article): Observable { return null; };
+    public unlike( @Body article: Article): Observable<any> { return null; };
     //
     // @POST("todo")
-    // public postTodo( @Body todo: Todo): Observable { return null; };
+    // public postTodo( @Body todo: Todo): Observable<any> { return null; };
     //
     // @PUT("todo/{id}")
-    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable { return null; };
+    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable<any> { return null; };
     //
     // @DELETE("todo/{id}")
-    // public deleteTodoById( @Path("id") id: string): Observable { return null; };
+    // public deleteTodoById( @Path("id") id: string): Observable<any> { return null; };
 
 }

@@ -18,9 +18,9 @@ export class ConversationService extends CoreClient {
     public getList( @Query("sort") sort?: string): Observable<Conversation[]> { return null; };
 
     @POST("chat/conversations/createNew")
-    public create( @Body body): Observable { return null; };
+    public create( @Body body): Observable<any> { return null; };
 
     @POST("chat/conversations/markAsRead")
-    public markAsRead( @Body body): Observable { return null; };
+    public markAsRead( @Body body): Observable<any> { return null; };
 
 }

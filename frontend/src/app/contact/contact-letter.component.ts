@@ -45,8 +45,8 @@ enum Status {
 export class ContactLetter implements OnInit {
     @Input() private conversations = null;
     @Input() private activeConversation = null;
-    private status:Status;
-    private statuses:Status = Status;
+    private status;
+    private statuses = Status;
     private sending = false;
     form:any;
 
