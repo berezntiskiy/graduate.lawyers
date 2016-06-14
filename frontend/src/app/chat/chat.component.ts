@@ -137,12 +137,14 @@ export class Chat implements OnInit, OnDestroy {
 
         this.socket.on('chat.conversations', (conversation:Conversation)=> {
             let found = false;
-            console.warn(conversation);
             this.conversations.forEach((conv, id) => {
-                console.log(conv, id);
                 if (conv.id == conversation.id) {
                     conv.new_messages = conversation.new_messages; // todo
                     found = true;
+
+                    if (conv.id == this.activeConversation.id) {
+                        this.markAsRead(conv);
+                    }
                 }
             });
             if (found == false) {
@@ -166,7 +168,7 @@ export class Chat implements OnInit, OnDestroy {
 
     setActiveConversation({value: conversation}) {
         this.activeConversation = conversation;
-
+        this.markAsRead(conversation);
         this.messages = [];
         this.messages$ = this.messageService.getList(this.activeConversation.id).subscribe((data)=> {
             this.messages = data;
@@ -174,6 +176,7 @@ export class Chat implements OnInit, OnDestroy {
     }
 
     sendMessage({value}) {
+        this.markAsRead(this.activeConversation);
         const message = new Message();
         message.conversation_id = this.activeConversation.id;
         message.body = value.body;
@@ -191,6 +194,10 @@ export class Chat implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.socket.disconnect();
+    }
+
+    markAsRead(conversation) {
+        this.conversationService.markAsRead(conversation).subscribe();
     }
 
 

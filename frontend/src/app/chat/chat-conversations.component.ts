@@ -21,12 +21,26 @@ import {Conversation} from "./conversation";
     .item.active {
         border-left: 5px solid tomato;
     }
+    .unread {
+        float: right;
+        background: tomato;
+        padding: 5px;
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        height: 24px;
+        line-height: 24px;
+        font-size: 20px;
+        text-align: center;
+        min-width: 24px;
+        
+    }
 `],
     template: `
     <div>
         <div class="item" [ngClass]="{active: activeConversation == conversation}" (click)="emitChoose(conversation)" *ngFor="let conversation of conversations; let i = index">
             <div>
-                {{conversation.name}} <span style="color: tomato" *ngIf="conversation.new_messages">NEW {{conversation.new_messages}}</span>
+                {{conversation.name}} <span class="unread" *ngIf="conversation.new_messages">{{conversation.new_messages}}</span>
             </div>
             <div>
                 <small>

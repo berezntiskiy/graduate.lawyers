@@ -20,4 +20,7 @@ export class ConversationService extends CoreClient {
     @POST("chat/conversations/createNew")
     public create( @Body body): Observable { return null; };
 
+    @POST("chat/conversations/markAsRead")
+    public markAsRead( @Body body): Observable { return null; };
+
 }

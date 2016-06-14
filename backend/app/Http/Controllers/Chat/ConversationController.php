@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Chat;
 use App\Conversation;
 use App\Events\ChatConversationsEvent;
 use App\Http\Controllers\RestController;
+use App\MessageNotification;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,5 +52,14 @@ class ConversationController extends RestController {
         foreach($toNotify as $userId)
         event(new ChatConversationsEvent('personal.'.$userId, $conv));
         return $conv;
+    }
+
+    function markAsRead() {
+        $userId = auth()->user()->id;
+        $convId = +$this->request->get('id');
+        $conv = Conversation::with('users')->findOrFail($convId);
+        MessageNotification::where('conversation_id', $convId)->where('user_id', $userId)->where('read', 0)->update(['read' => 1]);
+        event(new ChatConversationsEvent('personal.'.$userId, $conv));
+        return [];
     }
 }

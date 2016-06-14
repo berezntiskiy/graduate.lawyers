@@ -92,6 +92,7 @@ Route::post('api/password/reset', 'Auth\PasswordController@ajaxReset');
 
 Route::get('api/chat/conversations', 'Chat\ConversationController@index');
 Route::post('api/chat/conversations/createNew', 'Chat\ConversationController@store');
+Route::post('api/chat/conversations/markAsRead', 'Chat\ConversationController@markAsRead');
 Route::get('api/chat/messages/', 'Chat\MessageController@show');
 Route::post('api/chat/messages/', 'Chat\MessageController@store');
 
