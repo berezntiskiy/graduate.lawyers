@@ -15,6 +15,7 @@ import {Message} from "./message";
 import * as io from "socket.io-client";
 import {ReversePipe} from "../shared/pipes/reverse.pipe";
 import {CardContainer} from "../shared/card-container";
+import {ChatNewRoom} from "./chat-newroom.component";
 
 
 @Component({
@@ -28,7 +29,8 @@ import {CardContainer} from "../shared/card-container";
         ChatConversations,
         ChatMessages,
         ChatSend,
-        CardContainer
+        CardContainer,
+        ChatNewRoom
     ],
     pipes: [
         ReversePipe
@@ -68,6 +70,10 @@ import {CardContainer} from "../shared/card-container";
 `
     ],
     template: `
+    <button md-mini-fab style="float:right; margin-right: 10px; margin-top: 5px; z-index: 10;" (click)="showCreateNew = !showCreateNew">
+        {{showCreateNew ? '-' : '+'}}
+    </button>
+    <chat-newroom *ngIf="showCreateNew" (create)="createNewRoom($event)"></chat-newroom>
     <card-container>
         <div class="chat clearfix">
             <sidebar>
@@ -103,6 +109,7 @@ export class Chat implements OnInit, OnDestroy {
     joinedMap:Map<number, boolean>;
     socket:any; // io
     // relatedUsers:User[] = [];
+    showCreateNew:boolean = false; // io
 
     constructor(public appState:AppState,
                 public conversationService:ConversationService,
@@ -155,6 +162,12 @@ export class Chat implements OnInit, OnDestroy {
         message.body = value.body;
         this.messageService.send(message).subscribe(() => {
             console.log('success');
+        });
+    }
+
+    createNewRoom(event) {
+        this.conversationService.create(event.value).subscribe((data) => {
+            this.conversations.push(data);
         });
     }
 

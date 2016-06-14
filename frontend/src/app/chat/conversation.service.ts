@@ -17,16 +17,7 @@ export class ConversationService extends CoreClient {
     @GET("chat/conversations/")
     public getList( @Query("sort") sort?: string): Observable<Conversation[]> { return null; };
 
-    // @GET("todo/{id}")
-    // public getTodoById( @Path("id") id: string): Observable { return null; };
-    //
-    // @POST("todo")
-    // public postTodo( @Body todo: Todo): Observable { return null; };
-    //
-    // @PUT("todo/{id}")
-    // public putTodoById( @Path("id") id: string, @Body todo: Todo): Observable { return null; };
-    //
-    // @DELETE("todo/{id}")
-    // public deleteTodoById( @Path("id") id: string): Observable { return null; };
+    @POST("chat/conversations/createNew")
+    public create( @Body body): Observable { return null; };
 
 }

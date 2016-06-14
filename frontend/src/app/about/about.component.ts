@@ -24,7 +24,7 @@ console.log('`About` component loaded asynchronously');
     }
   `],
   template: `
-  <md-card>
+  <md-card style="margin:0">
     <md-card-title>О нас</md-card-title>
     <p>Специалисты нашей компании – это адвокаты, которым можно доверять. Они защитят ваши права в
         следственных органах, судах арбитражного типа и общей юрисдикции, предоставят юридическую
