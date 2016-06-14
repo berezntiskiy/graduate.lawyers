@@ -76,6 +76,11 @@ class AuthController extends RestController
         return $this->login($request);
     }
 
+    public function getLogout() {
+        Auth::guard($this->getGuard())->logout();
+        return [];
+    }
+
     public function login(Request $request)
     {
         // If the class is using the ThrottlesLogins trait, we can automatically throttle

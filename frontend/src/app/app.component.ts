@@ -19,6 +19,8 @@ import {Contact} from "./contact/contact.component";
 import {Langs} from "./langs/langs.component";
 import {TranslateService, TranslatePipe} from "ng2-translate/ng2-translate";
 import {LangService} from "./langs/langs.service";
+import {UserEdit} from "./user/user-edit.component";
+import {UserLogout} from "./user/user-logout.component";
 
 /*
  * App Component
@@ -151,10 +153,10 @@ import {LangService} from "./langs/langs.service";
               <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="!sessionService.auth">
                 {{"menu.login" | translate}}
               </button>
-              <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="sessionService.auth">
+              <button md-button router-active [routerLink]=" ['UserEdit'] " *ngIf="sessionService.auth">
                 {{"menu.my_account" | translate}}
               </button>
-              <button md-button router-active [routerLink]=" ['UserAuth'] " *ngIf="sessionService.auth">
+              <button md-button router-active [routerLink]=" ['UserLogout'] " *ngIf="sessionService.auth">
                 {{"menu.logout" | translate}}
               </button>
           </md-toolbar>
@@ -178,6 +180,8 @@ import {LangService} from "./langs/langs.service";
     {path: '/library', name: 'Library', component: Library},
     {path: '/services', name: 'Services', component: Services},
     {path: '/user/auth', name: 'UserAuth', component: Auth},
+    {path: '/user/edit', name: 'UserEdit', component: UserEdit},
+    {path: '/user/logout', name: 'UserLogout', component: UserLogout},
     {path: '/chat', name: 'Chat', component: Chat},
     // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
     // {path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About')}

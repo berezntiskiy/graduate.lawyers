@@ -84,6 +84,7 @@ Route::resource('admin', 'Admin\AdminDashboardController');
 Route::any('api/user/isAuthenticated', 'Auth\AuthController@isAuthenticated');
 Route::post('api/user/register', 'Auth\AuthController@postRegister');
 Route::post('api/user/login', 'Auth\AuthController@postLogin');
+Route::post('api/user/logout', 'Auth\AuthController@getLogout');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 //Route::post('api/password/reset', 'Auth\PasswordController@postReset');
 Route::post('api/password/reset', 'Auth\PasswordController@ajaxReset');

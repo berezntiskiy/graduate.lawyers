@@ -54,6 +54,11 @@ export class UserService extends CoreClient {
         return null;
     };
 
+    @POST("user/logout")
+    public logout():Observable<any> {
+        return null;
+    };
+
     // @GET("todo/{id}")
     // public getTodoById( @Path("id") id: string): Observable { return null; };
     //

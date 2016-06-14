@@ -83,6 +83,7 @@ export class AuthLogin implements OnInit {
                 (data) => {
                     this.isLoading = false;
                     this.invalidCredentials = false;
+                    location.hash = '#/user/edit';
                 },
                 (err:AuthFail) => {
                     this.isLoading = false;
