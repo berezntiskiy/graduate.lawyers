@@ -168,6 +168,7 @@ export class Chat implements OnInit, OnDestroy {
     createNewRoom(event) {
         this.conversationService.create(event.value).subscribe((data) => {
             this.conversations.push(data);
+            this.joinInRooms();
         });
     }
 
