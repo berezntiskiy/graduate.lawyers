@@ -10,9 +10,18 @@ import {Conversation} from "./conversation";
     viewProviders: [],
     directives: [],
     pipes: [],
+    styles: [`
+    .item {
+        padding: 15px 5px;
+        box-sizing: border-box;
+    }
+    .item:hover {
+        background: #eee;
+    }
+`],
     template: `
-    <ul>
-        <li (click)="emitChoose(conversation)" *ngFor="let conversation of conversations; let i = index">
+    <div>
+        <div class="item" (click)="emitChoose(conversation)" *ngFor="let conversation of conversations; let i = index">
             <div>
                 {{conversation.name}}{{activeConversation == conversation ? ' (active)' : ''}}
             </div>
@@ -28,8 +37,8 @@ import {Conversation} from "./conversation";
                     Created at {{conversation.created_at}}
                 </small>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 `
 })
 export class ChatConversations implements OnInit {

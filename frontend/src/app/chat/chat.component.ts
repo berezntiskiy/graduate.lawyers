@@ -175,4 +175,6 @@ export class Chat implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.socket.disconnect();
     }
+
+
 }

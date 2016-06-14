@@ -16,7 +16,8 @@ class ConversationController extends RestController {
      */
     public function index()
     {
-        return auth()->user()->conversations()->with('users')->get();
+        return auth()->user()->conversations()->with('users')
+            ->get();
     }
 
     /**

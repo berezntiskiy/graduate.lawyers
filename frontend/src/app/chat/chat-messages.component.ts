@@ -12,12 +12,26 @@ import {User} from "../user/user";
     viewProviders: [],
     directives: [],
     pipes: [],
+    styles:[`
+    .item {
+        padding: 15px 5px;
+        box-sizing: border-box;
+    }
+    .item:nth-child(2n) {
+        background: #eee;
+    }
+    .date {
+        float: right;
+        color: #999;
+    }
+`],
     template: `
-    <ul>
-        <li *ngFor="let message of messages; let i = index">
-            {{message.user.name}} - {{message.created_at}}: {{message.body}}
-        </li>
-    </ul>
+    <div>
+        <div class="item" *ngFor="let message of messages; let i = index">
+            <div class="date">{{message.created_at}}</div>
+            {{message.user.name}}: {{message.body}}
+        </div>
+    </div>
 `
 })
 export class ChatMessages implements OnInit {
