@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {StaffService} from "../shared/services/staff.service";
+import {User} from "../user/user";
 
 /*
  * We're loading this component asynchronously
@@ -10,6 +12,9 @@ console.log('`About` component loaded asynchronously');
 
 @Component({
   selector: 'about',
+  providers: [
+      StaffService
+  ],
   styles: [`
     h1 {
       font-family: Arial, Helvetica, sans-serif
@@ -27,42 +32,24 @@ console.log('`About` component loaded asynchronously');
         граждан, юридических лиц, коммерческих и некоммерческих организаций, то есть всех тех, кто нуждается
         в квалифицированной помощи адвоката.</p>
   </md-card>
-  <md-card>
+  <md-card *ngFor="let person of staff">
     <md-card-title>
-        Наши сотрудники
+        {{person.name}}
     </md-card-title>
-        
-    ...
+    {{person.about}}
   </md-card>
-
   `
 })
 export class About {
-  constructor() {
+  staff:User[];
+  constructor(private staffService:StaffService) {
 
   }
 
   ngOnInit() {
-    console.log('hello `About` component');
-    // static data that is bundled
-    // var mockData = require('assets/mock-data/mock-data.json');
-    // console.log('mockData', mockData);
-    // if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
-    // this.asyncDataWithWebpack();
-  }
-  asyncDataWithWebpack() {
-    // you can also async load mock data with 'es6-promise-loader'
-    // you would do this if you don't want the mock-data bundled
-    // remember that 'es6-promise-loader' is a promise
-    // var asyncMockDataPromiseFactory = require('es6-promise!assets/mock-data/mock-data.json');
-    // setTimeout(() => {
-    //
-    //   let asyncDataPromise = asyncMockDataPromiseFactory();
-    //   asyncDataPromise.then(json => {
-    //     console.log('async mockData', json);
-    //   });
-    //
-    // });
+    this.staffService.getList().subscribe((data) => {
+      this.staff = data;
+    });
   }
 
 }

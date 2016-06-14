@@ -4,17 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Staff;
 use App\Http\Requests;
+use App\User;
 
 class StaffController extends CrudController
 {
-    protected $model = Staff::class;
 
-    function canIndex() {
-        return true;
-    }
-
-    function canShow()
-    {
-        return true;
+    function index() {
+        return User::where('isStaff', true)->get();
     }
 }
