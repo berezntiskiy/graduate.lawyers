@@ -137,12 +137,15 @@ export class Chat implements OnInit, OnDestroy {
 
         this.socket.on('chat.conversations', (conversation:Conversation)=> {
             let found = false;
+            console.warn('conversation', conversation, conversation.id);
+            this.joinInRoom(conversation);
             this.conversations.forEach((conv, id) => {
+                console.log('conv', conv, conv.id);
                 if (conv.id == conversation.id) {
                     conv.new_messages = conversation.new_messages; // todo
                     found = true;
 
-                    if (conv.id == this.activeConversation.id) {
+                    if (this.activeConversation && conv.id == this.activeConversation.id) {
                         this.markAsRead(conv);
                     }
                 }
@@ -187,8 +190,7 @@ export class Chat implements OnInit, OnDestroy {
 
     createNewRoom(event) {
         this.conversationService.create(event.value).subscribe((data) => {
-            // this.conversations.push(data);
-            // this.joinInRooms();
+            this.showCreateNew = false;
         });
     }
 
@@ -197,7 +199,8 @@ export class Chat implements OnInit, OnDestroy {
     }
 
     markAsRead(conversation) {
-        this.conversationService.markAsRead(conversation).subscribe();
+        if (conversation.new_messages)
+            this.conversationService.markAsRead(conversation).subscribe();
     }
 
 
