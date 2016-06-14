@@ -51,6 +51,7 @@ export class Contact {
             updated_by: null,
             deleted_by: null,
             name: "name #1",
+            phone: "1(111)111111111",
             address: "address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1"
         },
         {
@@ -67,6 +68,7 @@ export class Contact {
             updated_by: null,
             deleted_by: null,
             name: "name #2",
+            phone: "2(222)222222222",
             address: "address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2 address 2"
         },
         {
@@ -80,6 +82,7 @@ export class Contact {
             updated_by: null,
             deleted_by: null,
             name: "name #3",
+            phone: "3(333)333333333",
             address: "address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3 address 3"
         },
         {
@@ -93,6 +96,7 @@ export class Contact {
             updated_by: null,
             deleted_by: null,
             name: "name #4",
+            phone: "4(444)444444444",
             address: "address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4 address 4"
         },
         {
@@ -106,6 +110,7 @@ export class Contact {
             updated_by: null,
             deleted_by: null,
             name: "name #5",
+            phone: "5(555)555555555",
             address: "address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5 address 5"
         },
         {
@@ -119,6 +124,7 @@ export class Contact {
             updated_by: null,
             deleted_by: null,
             name: "name #6",
+            phone: "6(666)666666666",
             address: "address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6 address 6"
         }
     ];

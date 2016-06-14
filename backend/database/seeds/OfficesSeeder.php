@@ -19,6 +19,7 @@ class OfficesSeeder extends Seeder
                 'lat' => 10 * $i,
                 'lng' => 10 * $i,
                 'name' => 'name #' . $i,
+                'phone' => $i.'('.$i.')'.$i.$i.$i.$i.$i.$i.$i,
                 'address' => 'address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i.' address ' . $i
             ];
 

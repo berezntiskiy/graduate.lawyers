@@ -45,7 +45,7 @@ import {ContactOffice} from "./contact-office.component";
         </div>
         <contact-map
             class="item"
-            zoom="8"
+            zoom="11"
             [offices]="offices"
             [lat]="lat"
             [lng]="lng"

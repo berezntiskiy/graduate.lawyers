@@ -15,17 +15,23 @@ import {ContactPhone} from "./contact-phone.component";
         padding: 5px;
     }
     .active {
-        background: #ccc;
+        background: #9c27b0;
+        color: white;
+    }
+    .active .phone {color:white}
+    .phone {
+        color: #999;
+        float:right;
+        margin-left: 15px;
     }
     
   `],
     template: `
-    <div class="root" (click)="emitOpen(office)">
-        {{active ? 'ACTIVE' : ''}}
-        {{office.name}}<br>
-        <small>{{office.address}}</small>
-        <!--todo-->
-        <contact-phone *ngFor="let p of phones;" [phone]="p"></contact-phone>
+    <div class="root" [ngClass]="{active:active}" (click)="emitOpen(office)">
+        {{office.name}}
+        <div>
+            <small>{{office.address}}</small> <small class="phone">{{office.phone}}</small>
+        </div>
     </div>
   `
 })

@@ -18,6 +18,7 @@ class CreateOfficesTable extends Migration
             $table->timestamps();
             $table->float('lat');
             $table->float('lng');
+            $table->string('phone');
 
             $table->softDeletes();
         });
