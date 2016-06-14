@@ -15,15 +15,18 @@ import {Conversation} from "./conversation";
         padding: 15px 5px;
         box-sizing: border-box;
     }
-    .item:hover {
-        background: #eee;
+    .item:nth-child(2n) {
+        background: #f6f6f6;
+    }
+    .item.active {
+        border-left: 5px solid tomato;
     }
 `],
     template: `
     <div>
-        <div class="item" (click)="emitChoose(conversation)" *ngFor="let conversation of conversations; let i = index">
+        <div class="item" [ngClass]="{active: activeConversation == conversation}" (click)="emitChoose(conversation)" *ngFor="let conversation of conversations; let i = index">
             <div>
-                {{conversation.name}}{{activeConversation == conversation ? ' (active)' : ''}}
+                {{conversation.name}} <span style="color: tomato" *ngIf="conversation.new_messages">NEW {{conversation.new_messages}}</span>
             </div>
             <div>
                 <small>

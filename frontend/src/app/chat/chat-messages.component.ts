@@ -18,7 +18,7 @@ import {User} from "../user/user";
         box-sizing: border-box;
     }
     .item:nth-child(2n) {
-        background: #eee;
+        background: #f6f6f6;
     }
     .date {
         float: right;

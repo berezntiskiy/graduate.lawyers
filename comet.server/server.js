@@ -50,10 +50,19 @@ redisClient.subscribe('chat.messages');
  ***/
 redisClient.on('message', function (channel, message) {
     var result = JSON.parse(message);
-    console.log('message > ', message);
+    // console.log('message > ', message);
 
-    io.to('admin').emit(channel, 'channel -> ' + channel + ' |  room -> ' + result.room);
+    // io.to('admin').emit(channel, 'channel -> ' + channel + ' |  room -> ' + result.room);
+    console.log('channel -> ' + channel + ' |  room -> ' + result.room);
+
+    // if (channel == 'chat.messages')
     chat.to(result.room).emit(channel, result.data);
+    // if (channel == 'chat.conversations') {
+    //     chat.to('chat.conversations.'+result.data.author_id).emit(channel, result.data);
+    //     result.data.users.forEach(user => {
+    //         chat.to('chat.conversations.'+user.id).emit(channel, result.data);
+    //     });
+    // }
 });
 
 /***
@@ -75,5 +84,10 @@ chat.on('connection', function (socket) {
 
         socket.join(data.room);
         socket.emit('joined', {message: 'Joined room: ' + data.room});
+    });
+
+    socket.on('personal', function (data) {
+        socket.join('personal.' + data.userId);
+        socket.emit('joined', {message: 'Joined room: ' + 'personal.' + data.userId});
     });
 });

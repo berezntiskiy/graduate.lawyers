@@ -6,4 +6,5 @@ export class Conversation {
     name: string;
     author_id: number;
     users: User[]
+    new_messages: number;
 }

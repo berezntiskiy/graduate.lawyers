@@ -31,8 +31,10 @@ export abstract class CoreClient extends RESTClient {
 
     protected responseInterceptor(res:Response):Response {
         const isAuth = res.headers.get('session.auth') === 'true';
+        const userId = res.headers.get('session.userid');
 
         SessionService.auth = isAuth;
+        SessionService.userId = userId;
 
         let body = res.json();
 

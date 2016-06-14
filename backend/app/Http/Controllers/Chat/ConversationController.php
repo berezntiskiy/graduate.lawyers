@@ -44,8 +44,12 @@ class ConversationController extends RestController {
 
 
         $conv = Conversation::with('users')->findOrFail($conversation->id);
-
-        event(new ChatConversationsEvent($conversation->id, $conv));
+        $toNotify = [];
+        $toNotify[] = $conv['author_id'];
+        foreach ($conv['users'] as $user)
+            $toNotify[] = $user['id'];
+        foreach($toNotify as $userId)
+        event(new ChatConversationsEvent('personal.'.$userId, $conv));
         return $conv;
     }
 }

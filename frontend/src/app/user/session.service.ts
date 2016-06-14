@@ -14,4 +14,12 @@ export class SessionService {
     static set auth(state) {
         sessionStorage.setItem('auth', state ? 'true' : 'false');
     }
+
+    static get userId() {
+        return sessionStorage.getItem('userId');
+    }
+
+    static set userId(state) {
+        sessionStorage.setItem('userId', state);
+    }
 }

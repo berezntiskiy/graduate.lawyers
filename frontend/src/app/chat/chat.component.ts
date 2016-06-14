@@ -16,6 +16,7 @@ import * as io from "socket.io-client";
 import {ReversePipe} from "../shared/pipes/reverse.pipe";
 import {CardContainer} from "../shared/card-container";
 import {ChatNewRoom} from "./chat-newroom.component";
+import {SessionService} from "../user/session.service";
 
 
 @Component({
@@ -133,6 +134,22 @@ export class Chat implements OnInit, OnDestroy {
             console.info(message);
             this.messages = [...this.messages, message];
         });
+
+        this.socket.on('chat.conversations', (conversation:Conversation)=> {
+            let found = false;
+            console.warn(conversation);
+            this.conversations.forEach((conv, id) => {
+                console.log(conv, id);
+                if (conv.id == conversation.id) {
+                    conv.new_messages = conversation.new_messages; // todo
+                    found = true;
+                }
+            });
+            if (found == false) {
+                this.conversations = [conversation,...this.conversations]
+            }
+        });
+        this.socket.emit('personal', {userId: SessionService.userId});
     }
 
     joinInRooms() {
@@ -167,8 +184,8 @@ export class Chat implements OnInit, OnDestroy {
 
     createNewRoom(event) {
         this.conversationService.create(event.value).subscribe((data) => {
-            this.conversations.push(data);
-            this.joinInRooms();
+            // this.conversations.push(data);
+            // this.joinInRooms();
         });
     }
 

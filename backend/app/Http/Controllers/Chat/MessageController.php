@@ -73,6 +73,16 @@ class MessageController extends RestController
         $outMessage = Message::with('user')->with('messages_notifications')->findOrFail($message->id);
         event(new ChatMessagesEvent($conversation->id, $outMessage));
 
+        $conv = Conversation::with('users')->findOrFail($conversation->id);
+        $toNotify = [];
+        $toNotify[] = $conv['author_id'];
+        foreach ($conv['users'] as $user)
+            $toNotify[] = $user['id'];
+        foreach($toNotify as $userId)
+        {
+            $unread = MessageNotification::where('conversation_id', $conv->id)->where('user_id', $userId)->where('read', 0)->count();
+            event(new ChatConversationsEvent('personal.'.$userId, ['new_messages' => $unread] + $conv->toArray()));
+        }
         return $outMessage;
     }
 }

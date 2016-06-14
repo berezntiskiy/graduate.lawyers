@@ -18,7 +18,10 @@ class SessionInfo
     {
         $response = $next($request);
 
-        $response->headers->set('session.auth', Auth::check() ? 'true' : 'false');
+        $check = Auth::check();
+        $response->headers->set('session.auth', $check ? 'true' : 'false');
+        if($check)
+            $response->headers->set('session.userId', Auth::user()->id);
         return $response;
     }
 }
