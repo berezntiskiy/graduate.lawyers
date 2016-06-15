@@ -25,7 +25,7 @@ import {Chapter} from "./chapter";
     ],
     pipes: [],
     template: `
-        <div style="border: 1px solid red;">
+        <div style="border: 1px solid #eee; min-width: 500px; max-width: 800px;">
             <ng-content></ng-content>
         </div>
     `

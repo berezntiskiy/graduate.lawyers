@@ -30,7 +30,7 @@ import {ContactLetter} from "./contact-letter.component";
     ></contact-offices>
   </md-card>
   <md-card>
-    <contact-letter></contact-letter>
+    <md-card-title align="center">Мы защитим Ваши права!</md-card-title>
   </md-card>
 
   `
@@ -39,17 +39,8 @@ export class Contact {
     private offices:any[] = [
         {
             id: 1,
-            created_at: "2016-06-10 21:59:12",
-            updated_at: "2016-06-10 21:59:12",
             lat: 10,
             lng: 10,
-            phones: [
-                '111-222'
-            ],
-            deleted_at: null,
-            created_by: null,
-            updated_by: null,
-            deleted_by: null,
             name: "name #1",
             phone: "1(111)111111111",
             address: "address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1 address 1"

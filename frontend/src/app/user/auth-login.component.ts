@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+    import {Component, OnInit} from '@angular/core';
 import {AppState} from '../app.service';
 import {ControlMessages} from "../control-messages.component";
 import {FormBuilder, Validators} from "@angular/common";

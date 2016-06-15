@@ -16,7 +16,6 @@ import {Component} from '@angular/core';
       flex-direction: column;
       margin: 15px;
     
-      border: 2px dashed #FBC02D;
     }
 `
     ],

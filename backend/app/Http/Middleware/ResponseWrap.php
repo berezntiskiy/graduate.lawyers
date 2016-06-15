@@ -10,11 +10,12 @@ class ResponseWrap
     {
         $response = $next($request);
 
-        if ($response->headers->get('content-type') == 'application/json') {
+        if ($request->headers->get('content-type') == 'application/json') {
             $response->setContent(json_encode(array(
                 'status' => $response->status() == 200 ? 'ok' : 'error',
                 'data' => json_decode($response->getContent()),
             )));
+            $response->header('Content-Type', 'application/json');
         }
 
         return $response;

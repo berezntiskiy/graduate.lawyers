@@ -7,6 +7,7 @@ import {Observable} from "rxjs/Rx";
 
 
 
+// @BaseUrl("http://46.101.109.207/api/")
 @BaseUrl("/api/")
 @DefaultHeaders({
     'Accept': 'application/json',
@@ -25,7 +26,7 @@ export abstract class CoreClient extends RESTClient {
     // }
 
     protected requestInterceptor(req: Request) {
-        req.headers.append('X-CSRF-TOKEN', window['CSRF_TOKEN']);
+        // req.headers.append('X-CSRF-TOKEN', window['CSRF_TOKEN']);
     }
 
 

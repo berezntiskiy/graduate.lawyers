@@ -14,5 +14,12 @@
     "login": "Авторизация",
     "my_account": "Мой аккаунт",
     "logout": "Выйти"
+  },
+  "library": {
+    "title": "Библиотека",
+    "onlyLikedBooks": "Только избранные книги",
+    "onlyLikedSection": "Только избранные разделы",
+    "onlyLikedChapters": "Только избранные главы",
+    "onlyLikedArticles": "Только избранные статьи"
   }
 }

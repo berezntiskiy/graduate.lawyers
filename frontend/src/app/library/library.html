@@ -1,37 +1,37 @@
 <div class="card-container">
-    <md-card>
+    <md-card *ngIf="true">
         <md-checkbox [(ngModel)]="onlyLikedBooks">
-            Only liked books
+            {{"library.onlyLikedBooks" | translate}}
         </md-checkbox>
         &nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;
         <md-checkbox [(ngModel)]="onlyLikedSection">
-            Only liked sections
+            {{"library.onlyLikedSection" | translate}}
         </md-checkbox>
         &nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;
         <md-checkbox [(ngModel)]="onlyLikedChapters">
-            Only liked chapters
+            {{"library.onlyLikedChapters" | translate}}
         </md-checkbox>
         &nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;
         <md-checkbox [(ngModel)]="onlyLikedArticles">
-            Only liked articles
+            {{"library.onlyLikedArticles" | translate}}
         </md-checkbox>
     </md-card>
     <md-card>
-        <md-card-title>Local State</md-card-title>
+        <md-card-title>{{"library.title" | translate}}</md-card-title>
         <md-card-content>
             <div class="container">
                 <!-- Books -->
                 <library-sidebar (like)="likeBook($event)" (unlike)="unlikeBook($event)" class="sidebar size-1" [isLoading]="loadingBooks" [collection]="books | onlyLiked:onlyLikedBooks"
-                                 (open)="openBook($event.value)"></library-sidebar>
+                                 (open)="openBook($event.value)" [activeEntity]="activeBook"></library-sidebar>
                 <!-- Sections -->
                 <library-sidebar (like)="likeSection($event)" (unlike)="unlikeSection($event)" class="sidebar size-2" *ngIf="sections || loadingSections" [isLoading]="loadingSections" [collection]="sections | onlyLiked:onlyLikedSection"
-                                 (open)="openSection($event.value)"></library-sidebar>
+                                 (open)="openSection($event.value)" [activeEntity]="activeSection"></library-sidebar>
                 <!-- Chapters -->
                 <library-sidebar (like)="likeChapter($event)" (unlike)="unlikeChapter($event)" class="sidebar size-3" *ngIf="chapters || loadingChapters" [isLoading]="loadingChapters" [collection]="chapters | onlyLiked:onlyLikedChapters"
-                                 (open)="openChapter($event.value)"></library-sidebar>
+                                 (open)="openChapter($event.value)" [activeEntity]="activeChapter"></library-sidebar>
                 <!-- Articles -->
                 <library-main class="sidebar size-4" *ngIf="articles || loadingArticles">
                     <article-list (like)="likeArticle($event)" (unlike)="unlikeArticle($event)" [isLoading]="loadingArticles" [collection]="articles | onlyLiked:onlyLikedArticles"></article-list>

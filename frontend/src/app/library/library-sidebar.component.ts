@@ -28,6 +28,14 @@ import {SessionService} from "../user/session.service";
         BooksSidebarList,
         BooksSidebarItem
     ],
+    styles: [`
+    .active >>> .title, .active >>> .description {
+        color: tomato;
+        // outline: 3px solid tomato;
+        // background: #999 !important;
+        // border: red 1px solid !important;
+    }
+`],
     pipes: [],
     template: `
         <div *ngIf="isLoading">
@@ -36,6 +44,7 @@ import {SessionService} from "../user/session.service";
         <div *ngIf="!isLoading">
             <books-sidebar-list>
                 <books-sidebar-item
+                    [ngClass]="{active: activeEntity == entity}"
                     (like)="like.emit({value: entity})"
                     (unlike)="unlike.emit({value: entity})"
                     [canLike]="SessionService.auth"
@@ -51,6 +60,7 @@ import {SessionService} from "../user/session.service";
 export class LibrarySidebar {
     @Input() isLoading:boolean;
     @Input() collection:any[];
+    @Input() activeEntity:any;
     @Output() open:EventEmitter<any> = new EventEmitter();
     @Output() like:EventEmitter<any> = new EventEmitter();
     @Output() unlike:EventEmitter<any> = new EventEmitter();

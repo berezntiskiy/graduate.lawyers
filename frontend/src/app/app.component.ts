@@ -140,7 +140,7 @@ import {UserLogout} from "./user/user-logout.component";
               <button md-button router-active [routerLink]=" ['Library'] ">
                 {{"menu.library" | translate}}
               </button>
-              <button md-button router-active [routerLink]=" ['Chat'] ">
+              <button *ngIf="sessionService.auth" md-button router-active [routerLink]=" ['Chat'] ">
                 {{"menu.chat" | translate}}
               </button>
               <button md-button router-active [routerLink]=" ['About'] ">
@@ -208,7 +208,8 @@ export class App {
 
     ngOnInit() {
         this.translate.use(this.langService.lang);
-        this.userService.isAuthenticated().subscribe(() => this.appLoaded());
+        this.appLoaded();
+        // this.userService.isAuthenticated().subscribe(() => this.appLoaded());
     }
 
 

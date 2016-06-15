@@ -18,6 +18,7 @@ import {LibraryMain} from "./library-main.component";
 import {ArticleList} from "./article-list.component";
 import {LikedPipe} from "./liked.pipe";
 import {OnlyLikedPipe} from "./onlyLiked.pipe";
+import {SessionService} from "../user/session.service";
 
 @Component({
     selector: 'library',
@@ -26,7 +27,8 @@ import {OnlyLikedPipe} from "./onlyLiked.pipe";
         BookService,
         SectionService,
         ChapterService,
-        ArticleService
+        ArticleService,
+        SessionService
     ],
     viewProviders: [],
     directives: [
@@ -111,7 +113,8 @@ export class Library {
                 public bookService:BookService,
                 public chapterService:ChapterService,
                 public sectionService:SectionService,
-                public articleService:ArticleService) {
+                public articleService:ArticleService,
+                public sessionService:SessionService) {
 
     }
 

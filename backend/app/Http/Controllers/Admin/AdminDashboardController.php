@@ -12,11 +12,6 @@ class AdminDashboardController extends AdminController
     protected $name = null;
 
     function index() {
-        Mail::send('emails.resetpassword', [], function ($m) {
-            $m->from('hello@app.com', 'Your Application');
-
-            $m->to('test@ta.ru', 'test')->subject('Your Reminder!');
-        });
         return $this->createPage(view('admin.page.dashboard'));
     }
 }

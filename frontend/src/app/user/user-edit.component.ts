@@ -37,29 +37,53 @@ import {ResetPassword} from "./resetpassword";
       `
     ],
     template: `
-    <form [ngFormModel]="registrationForm" (submit)="resetPassword()">
-        <md-input placeholder="Name" ngControl="name" style="width:100%">
-          <md-hint align="end">
-              <control-messages control="name"></control-messages>
-          </md-hint>
-        </md-input>
-        <md-input placeholder="Email" ngControl="email" style="width:100%">
-          <md-hint align="end">
-              <control-messages control="email"></control-messages>
-          </md-hint>
-        </md-input>
-        <md-input placeholder="Password" ngControl="password" style="width:100%">
-          <md-hint align="end">
-              <control-messages control="password"></control-messages>
-          </md-hint>
-        </md-input>
-        <md-input placeholder="Phone (optional)" ngControl="phone" style="width:100%">
-          <md-hint align="end">
-              <control-messages control="phone"></control-messages>
-          </md-hint>
-        </md-input>
-        <button md-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid || isLoading">{{isLoading ? 'Trying to register' : 'Register'}}</button>
-    </form>
+    <md-card>
+        <md-card-title>General info</md-card-title>
+        <form [ngFormModel]="registrationForm" (submit)="resetPassword()">
+            <md-input placeholder="Name" ngControl="name" style="width:100%">
+              <md-hint align="end">
+                  <!--<control-messages control="name"></control-messages>-->
+              </md-hint>
+            </md-input>
+            <md-input placeholder="Email" ngControl="email" style="width:100%">
+              <md-hint align="end">
+                  <!--<control-messages control="email"></control-messages>-->
+              </md-hint>
+            </md-input>
+            <md-input placeholder="Password" ngControl="password" style="width:100%">
+              <md-hint align="end">
+                  <!--<control-messages control="password"></control-messages>-->
+              </md-hint>
+            </md-input>
+            <md-input placeholder="Phone (optional)" ngControl="phone" style="width:100%">
+              <md-hint align="end">
+                  <!--<control-messages control="phone"></control-messages>-->
+              </md-hint>
+            </md-input>
+            <button md-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid || isLoading">{{isLoading ? 'Trying to register' : 'Register'}}</button>
+        </form>
+    </md-card>
+    <md-card>
+        <md-card-title>Change password</md-card-title>
+        <form [ngFormModel]="registrationForm" (submit)="newPassword()">
+            <md-input required placeholder="Current password" ngControl="password" style="width:100%">
+              <md-hint align="end">
+                  <!--<control-messages control="currentPassword"></control-messages>-->
+              </md-hint>
+            </md-input>
+            <md-input required placeholder="New password" ngControl="password" style="width:100%">
+              <md-hint align="end">
+                  <!--<control-messages control="password"></control-messages>-->
+              </md-hint>
+            </md-input>
+            <md-input required placeholder="New password(confirm)" ngControl="password" style="width:100%">
+              <md-hint align="end">
+                  <!--<control-messages control="password-confirm"></control-messages>-->
+              </md-hint>
+            </md-input>
+            <button md-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid || isLoading">{{isLoading ? 'Trying to register' : 'Register'}}</button>
+        </form>
+    </md-card>
 
 `
 })
